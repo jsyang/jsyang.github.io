@@ -82,6 +82,21 @@
   </url>
   
   <url>
+    <loc>http://jsyang.ca/art/particle-tracks/</loc>
+    <lastmod>2016-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/art/pewpew/</loc>
+    <lastmod>2016-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/art/cellular-automata/</loc>
+    <lastmod>2016-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/cycling/free-spirit-single-speed/</loc>
     <lastmod>2016-07-31T00:00:00+00:00</lastmod>
   </url>
@@ -112,8 +127,23 @@
   </url>
   
   <url>
+    <loc>http://jsyang.ca/tools/slackson/</loc>
+    <lastmod>2015-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/cycling/cycling-2015/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/tools/translucify/</loc>
+    <lastmod>2015-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/art/maze/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -164,6 +194,11 @@
   <url>
     <loc>http://jsyang.ca/tools/road-signs/</loc>
     <lastmod>2010-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/tools/colorrunbot/</loc>
+    <lastmod>2009-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
