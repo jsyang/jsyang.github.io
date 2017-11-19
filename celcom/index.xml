@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Celcoms on jsyang.ca</title>
+    <link>http://jsyang.ca/celcom/</link>
+    <description>Recent content in Celcoms on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/celcom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CelCom: Feature Toggles and Testing</title>
+      <link>http://jsyang.ca/celcom/feature-toggles-and-testing/</link>
+      <pubDate>Sun, 20 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/celcom/feature-toggles-and-testing/</guid>
+      <description>This post is a Celestial Combat devlog and also be found here.
+Some of the code for Celestial Combat has been structured to provide a easy facility for switching major subsystems of the game on/off. Additionally, unit testing is not time-efficient given the benefits vs effort involved: we offer a cheaper solution in the form of scenario tests.
+Feature toggles You have the option of toggling game functionality via the URL you use to access the game.</description>
+    </item>
+    
+    <item>
+      <title>CelCom: Simplifying development tooling</title>
+      <link>http://jsyang.ca/celcom/tooling/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/celcom/tooling/</guid>
+      <description>This post is a Celestial Combat devlog and also be found here.
+Writing code is a necessary evil to get things done on a project and often the best kind of code is no code at all. Good tooling helps us do things:
+ FASTER: avoid writing code when the task least requires it CHEAPER: avoid writing code when results are not worth the effort EASIER: avoid barriers for contributors of all skill levels  Creating game art (EASIER) CelCom exclusively uses vector graphics, which is one of the simplest and most space-efficient ways to represent art in a game.</description>
+    </item>
+    
+    <item>
+      <title>CelCom: Improving HUD indicator designs</title>
+      <link>http://jsyang.ca/celcom/hud-indicators/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/celcom/hud-indicators/</guid>
+      <description>This post is a Celestial Combat devlog and also be found here.
+Game design is essentially UX design. Bad experience design is more than jarring: it drives beginner players away. CelCom previously had an example of bad experience design in one of it core gameplay mechanics: landing spaceships was awkward and difficult. First you needed to be able to find the planet you want to land on, then you had to move to it, possibly avoiding other planets and stars en route.</description>
+    </item>
+    
+    <item>
+      <title>CelCom: Implementing saved games</title>
+      <link>http://jsyang.ca/celcom/saved-games/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/celcom/saved-games/</guid>
+      <description>This post is a Celestial Combat devlog and also be found here.
+Celestial Combat is a game large in ambition and scope. Battles often span multiple solar systems with hundreds of spacecraft and planets with caches of materials for war production.
+As the gameplay solidified, finding a way to persist player progress grew more important. Saving score and progress within a battle means players are likely to come back to the game.</description>
+    </item>
+    
+  </channel>
+</rss>

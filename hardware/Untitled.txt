@@ -1,0 +1,39 @@
+## Distraction free writing setup
+
+
+So I had to add these settings in ~/.vimrc in order to make VIM behave as it would usually in MacOS:
+
+```
+set term=$TERM
+set nocompatible
+```
+
+then restarted the terminal emulator (jackpal.androidterm)
+
+Setup is:
+- Syncthing (com.nutomic.syncthingandroid)
+- Editor (org.billthefarmer.editor)
+- ConnectBot (org.connectbot)
+- Terminal Emulator (jackpal.androidterm)
+
+I also uninstalled all Google related apps and disabled / reverted them to
+their factory defaults:
+
+- GMail
+- Google Play Services
+- Google Play Store
+- Google Maps
+- Phone Dialer
+- For all other unused system apps I've denied all permissions
+  - This cuts down on any kind of load on the phone and silences network
+    traffic
+  - The phone is much snappier now
+
+Also had to set the default shell to `/system/xbin/bash -i` and the HOME
+directory (i.e. `~`) to `/sdcard/` and add a `.bashrc` which starts us off in
+the home directory:
+
+```
+cd ~
+```
+

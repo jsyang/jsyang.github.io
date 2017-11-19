@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/guides/snapshot-testing-with-preact-and-picostyle/" />
+  <link rel="canonical" href="http://jsyang.ca/guides/snapshot-testing-with-preact-and-picostyle/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "guides",
+      "name" : "Snapshot testing with Jest \x2b Preact \x2b Picostyle",
+      "headline" : "Snapshot testing with Jest \x2b Preact \x2b Picostyle",
+      "description" : "I\x26rsquo;ve been using Preact as my alternative (API compatible) React of choice for a few side projects for a while now, the main advantage being the API compatibility with a significantly smaller sized addition to dependencies.\nLikewise, my favorite CSS-in-JS microlibrary: Picostyle has similar file-size advantages.\nMicro-libraries are great because they are small enough to be able to dig into their source code quickly and make customizations.\nSnapshot testing with Preact and Picostyle It\x26rsquo;s not immediately obvious how to test Preact JSX within a Jest snapshot test, especially when they are styled with Picostyle.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-03-16 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-03-16 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/guides\/snapshot-testing-with-preact-and-picostyle\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Snapshot testing with Jest &#43; Preact &#43; Picostyle - jsyang.ca</title>
+  <meta property="og:title" content="Snapshot testing with Jest &#43; Preact &#43; Picostyle - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="I&rsquo;ve been using Preact as my alternative (API compatible) React of choice for a few side projects for a while now, the main advantage being the API compatibility with a significantly smaller sized addition to dependencies.
+Likewise, my favorite CSS-in-JS microlibrary: Picostyle has similar file-size advantages.
+Micro-libraries are great because they are small enough to be able to dig into their source code quickly and make customizations.
+Snapshot testing with Preact and Picostyle It&rsquo;s not immediately obvious how to test Preact JSX within a Jest snapshot test, especially when they are styled with Picostyle." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Snapshot testing with Jest &#43; Preact &#43; Picostyle</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2019-03-16 00:00:00 UTC">
+                            16 Mar 2019
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p>I&rsquo;ve been using Preact as my alternative (API compatible) React of choice for a
+few side projects for a while now, the main advantage being the API compatibility
+with a significantly smaller sized addition to dependencies.</p>
+
+<p>Likewise, my favorite CSS-in-JS microlibrary: <a href="https://github.com/morishitter/picostyle">Picostyle</a>
+has similar file-size advantages.</p>
+
+<p>Micro-libraries are great because they are small
+enough to be able to dig into their source code quickly and make
+customizations.</p>
+
+<h3 id="snapshot-testing-with-preact-and-picostyle">Snapshot testing with Preact and Picostyle</h3>
+
+<p>It&rsquo;s not immediately obvious how to test Preact JSX within a Jest snapshot test, especially
+when they are styled with Picostyle. However, the great thing about micro-libraries is
+the minimal length of their source code. We can dig into them to see
+what missing links they might need in order to do what we want to do:</p>
+
+<ul>
+<li><p>Preact needs a render to string wrapper for snapshots: <code>preact-render-to-string</code> works fine</p></li>
+
+<li><p>Picostyle appends a stylesheet to the virtual DOM (VDOM) while generating CSS class names:
+to get the CSS rules we just need to read them back out from the VDOM.
+This can only be done in sequence (after the <code>render()</code>).</p>
+
+<pre><code>expect(render(renderable)).toMatchSnapshot();
+expect(getCSSRules()).toMatchSnapshot('css');
+</code></pre></li>
+</ul>
+
+<p>A Jest helper lives inside the setup file for the CSS rules: <code>getCSSRules()</code></p>
+
+<p>See <a href="https://github.com/jsyang/fresh/commit/adb778d3a4ac0d319d880af89b997752de52c98d#diff-898d36809543307c565081762664faf8"><code>src/client/components/AdminScreen/TableRow.spec.tsx</code></a> for a full example.</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

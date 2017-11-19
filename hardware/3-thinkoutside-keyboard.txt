@@ -1,0 +1,31 @@
+this is a note that I've written on the new keyboard
+It is a very good keyboard, just needs some getting used to.
+The Q key is a little stuck if you hit it in the wrong spot, but otherwise
+it looks alright.
+
+I had to glue the hinge plates as well. I think there was a material weakness
+near the battery cover that stressed a really thin part of the frame when
+new batteries are inserted. Not affecting anything functionally.
+
+Cheers!
+
+Some of the punctuation marks take a bit of getting used to
+if you're coming from using a normal laptop or full sized keyboard.
+I think this is pretty good though.
+
+
+http://www.cy384.com/projects/palm-keyboard.html
+
+Palm 3245WW Wireless Keyboard also similar, it has the "palmOne" era logo instead of the other logos on it
+Essentially the same design.
+https://www.ebay.co.uk/itm/Palm-3245WW-Portable-Folding-Bluetooth-Wireless-Keyboard-5-3-4-X-3-7-8-X-3-4/274428264858
+
+https://www.ebay.co.uk/itm/Palm-3245WW-Wireless-Keyboard-NEW-SEALED/164562822093
+https://www.ebay.com/p/74083971
+
+https://www.youtube.com/watch?v=PC_ZrnFRf_A
+
+https://www.youtube.com/watch?v=7RbzUIquxtY
+
+https://github.com/cy384/ppk_usb
+

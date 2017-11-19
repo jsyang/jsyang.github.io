@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/tools/tabular-vertical-alignment/" />
+  <link rel="canonical" href="http://jsyang.ca/tools/tabular-vertical-alignment/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "tools",
+      "name" : "Tabular \/ vertical code alignment in ES without IntelliJ",
+      "headline" : "Tabular \/ vertical code alignment in ES without IntelliJ",
+      "description" : "While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or \x26ldquo;vertical\x26rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:\n\/\/ (1) const bike: Record\x26lt;string|number\x26gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \x27Brompton\x27 }; \/\/ vs \/\/ (2) const bike: Record\x26lt;string|number\x26gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \x27Brompton\x27 };  The code in (2) is much clearer in tabular form.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-01-22 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-01-22 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/tools\/tabular-vertical-alignment\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Tabular / vertical code alignment in ES without IntelliJ - jsyang.ca</title>
+  <meta property="og:title" content="Tabular / vertical code alignment in ES without IntelliJ - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or &ldquo;vertical&rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:
+// (1) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; };  The code in (2) is much clearer in tabular form." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Tabular / vertical code alignment in ES without IntelliJ</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2019-01-22 00:00:00 UTC">
+                            22 Jan 2019
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p>While block indentation alignment (1) is enough for most people, I believe further alignment formatters,
+especially tabular or &ldquo;vertical&rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:</p>
+
+<pre><code>// (1)
+const bike: Record&lt;string|number&gt; = {
+    wheelSize: 16,
+    topTubeLength: 24.5,
+    manufacturer: 'Brompton'
+};
+
+// vs
+// (2)
+const bike: Record&lt;string|number&gt; = {
+    wheelSize:      16,
+    topTubeLength:  24.5,
+    manufacturer:   'Brompton'
+};
+</code></pre>
+
+<p>The code in (2) is much clearer in tabular form.</p>
+
+<h2 id="formatters">Formatters</h2>
+
+<p>Every code-formatter out there can already do (1), e.g. <a href="https://prettier.io/">prettier</a>, <a href="https://www.npmjs.com/package/js-beautify">js-beautifier</a>.
+But very few can automatically align your object values vertically. Outside of using a built-in IDE code-formatting plugin, such as ones
+provided by IntelliJ IDEs (WebStorm, Android Studio), your options are limited on tools for this.</p>
+
+<p><img src="/images/tabular-vertical-alignment/ide-formatter.png" alt="ide-formatter" /></p>
+
+<h2 id="eslint-https-eslint-org"><a href="https://eslint.org/">ESLint</a></h2>
+
+<p>I recently discovered that ESLint can actually do this in the same way that prettier does: automatically fix alignment.
+It will also do this for Typescript files through a plugin <code>@typescript-eslint/parser</code>!
+As a proof of concept, you can create a file called <code>notAligned.ts</code> that contains code from (1).</p>
+
+<p>The formatting rule to use for this alignment is the <code>key-spacing</code> and the CLI command to apply the alignment fixes directly is</p>
+
+<pre><code>eslint --fix --parser &quot;@typescript-eslint/parser&quot; --rule 'key-spacing: [&quot;warn&quot;, {align: &quot;value&quot;} ]' --rule 'indent: [&quot;warn&quot;]' notAligned.ts
+</code></pre>
+
+<p>Once complete, you can peek inside <code>notAligned.ts</code> to see that it should now look like (2).
+This was quite the revelation for me!</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

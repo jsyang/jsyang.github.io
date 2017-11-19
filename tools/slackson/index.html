@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/tools/slackson/" />
+  <link rel="canonical" href="http://jsyang.ca/tools/slackson/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "tools",
+      "name" : "Slackson bot",
+      "headline" : "Slackson bot",
+      "description" : "I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.\n jim [5:35 PM] whats playing sonosbot BOT [5:35 PM] `The Avener \x26amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework` jim [5:35 PM] pause sonosbot BOT [5:35 PM] `jim requested to pause this track.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2015",
+      "datePublished": "2015-09-22 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2015-09-22 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/tools\/slackson\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Slackson bot - jsyang.ca</title>
+  <meta property="og:title" content="Slackson bot - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.
+ jim [5:35 PM] whats playing sonosbot BOT [5:35 PM] `The Avener &amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework` jim [5:35 PM] pause sonosbot BOT [5:35 PM] `jim requested to pause this track." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Slackson bot</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2015-09-22 00:00:00 UTC">
+                            22 Sep 2015
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p><img src="/images/slackson/slackson_360.png" alt="slackson" /></p>
+
+<p>I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.</p>
+
+<pre><code>
+jim [5:35 PM]
+whats playing
+
+sonosbot BOT [5:35 PM]
+`The Avener &amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework`
+
+jim [5:35 PM]
+pause
+
+sonosbot BOT [5:35 PM]
+`jim requested to pause this track.`
+
+jim [5:35 PM] 
+play
+
+sonosbot BOT [5:35 PM]
+`jim requested to continue playing music.`
+
+
+</code></pre>
+
+<h2 id="running">Running</h2>
+
+<p>You will need to provide your own credentials within <code>config.js</code>, a <code>sample-config.js</code> is provided as an example.
+The bot server must run on the same network that hosts your Sonos devices.</p>
+
+<pre><code class="language-bash">npm install
+node bot.js
+</code></pre>
+
+<h2 id="source-code">Source code</h2>
+
+<p>You can find the <a href="https://github.com/jim-thisplace/slackson">latest version on GitHub</a>.</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

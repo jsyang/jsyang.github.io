@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/3dprinting/ender-3-mods/" />
+  <link rel="canonical" href="http://jsyang.ca/3dprinting/ender-3-mods/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "3dprinting",
+      "name" : "Ender 3 Configuration Notes",
+      "headline" : "Ender 3 Configuration Notes",
+      "description" : "What follows is a collection of notes I compiled for setting up my current (as of 2019) 3D printer. Table of contents for major sections as follows:\n1. Costs 2. Subtractive modifications 3. Printable mods 4. Octoprint 5. `mjpg-streamer` tweaks 6. Raspbian tweaks 7. G-Code tweaks  1. Costs 1 x Ender 3: £176\n 50% cheaper vs previous 3D printer (Wanhao Duplicator i3 plus): £339  1 x Raspberry Pi Zero W: £18",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-08-03 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-08-03 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/3dprinting\/ender-3-mods\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Ender 3 Configuration Notes - jsyang.ca</title>
+  <meta property="og:title" content="Ender 3 Configuration Notes - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="What follows is a collection of notes I compiled for setting up my current (as of 2019) 3D printer. Table of contents for major sections as follows:
+1. Costs 2. Subtractive modifications 3. Printable mods 4. Octoprint 5. `mjpg-streamer` tweaks 6. Raspbian tweaks 7. G-Code tweaks  1. Costs 1 x Ender 3: £176
+ 50% cheaper vs previous 3D printer (Wanhao Duplicator i3 plus): £339  1 x Raspberry Pi Zero W: £18" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Ender 3 Configuration Notes</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2019-08-03 00:00:00 UTC">
+                            03 Aug 2019
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p>What follows is a collection of notes I compiled for setting up my current (as of 2019)
+3D printer. Table of contents for major sections as follows:</p>
+
+<pre><code>1. Costs
+2. Subtractive modifications
+3. Printable mods
+4. Octoprint
+5. `mjpg-streamer` tweaks
+6. Raspbian tweaks
+7. G-Code tweaks
+</code></pre>
+
+<h2 id="1-costs">1. Costs</h2>
+
+<p>1 x Ender 3: <strong>£176</strong></p>
+
+<ul>
+<li>50% cheaper vs previous 3D printer (Wanhao Duplicator i3 plus): £339</li>
+</ul>
+
+<p>1 x Raspberry Pi Zero W: <strong>£18</strong></p>
+
+<ul>
+<li>remote monitoring and print control</li>
+</ul>
+
+<p>1 x Pimoroni Scroll pHAT HD <strong>£10</strong></p>
+
+<ul>
+<li>enables night-time printer monitoring via webcam</li>
+</ul>
+
+<p>2 x buck DC-DC step-down converters <strong>£2</strong></p>
+
+<ul>
+<li>for powering the silent fans</li>
+</ul>
+
+<p>2 x Noctua 12V 40x40x10mm fans <strong>£23</strong></p>
+
+<ul>
+<li>reduces operating noise</li>
+</ul>
+
+<p>1 x Gelid Silent 6 Case Fan 60x60x15mm 12V fan <strong>£8</strong></p>
+
+<ul>
+<li>quieter power supply fan</li>
+<li>power supply original was 12V, no buck converter needed</li>
+</ul>
+
+<p>5 x Small heat sink 13x20mm on top of SOC <strong>£2.27</strong></p>
+
+<ul>
+<li>Conductive thermal adhesive (2 rolls for <strong>£4.92</strong>)</li>
+</ul>
+
+<p>2 x NEMA17 stepper motor dampener (X, Y only) <strong>£4.30</strong> for 3</p>
+
+<ul>
+<li>Installation is easy: <a href="https://www.youtube.com/watch?v=vu80vctXaxQ">https://www.youtube.com/watch?v=vu80vctXaxQ</a></li>
+<li>If your Y carriage is not hitting the limit switch after this install, move the limit switch forward to engage it earlier</li>
+</ul>
+
+<h2 id="2-subtractive-modifications">2. Subtractive modifications</h2>
+
+<ul>
+<li>Removed LCD control panel (since using OctoPrint fully instead)</li>
+<li>Taped off pin 1 from the USB OTG to mini-USB plug, this is the VCC pin, which feeds unnecessary additional power to the printer board (!) Without it, the board fan buck converter blew up during start-up phase of the printer (board fan full blast for 3 seconds then speed 0 for this fan)</li>
+<li>Running camera, wifi and OctoPrint on RP0W, current draw is OK
+<a href="https://discourse.octoprint.org/t/rpi-zero-w-and-cameras/1620/12">https://discourse.octoprint.org/t/rpi-zero-w-and-cameras/1620/12</a></li>
+</ul>
+
+<h2 id="3-printable-mods">3. Printable mods</h2>
+
+<ul>
+<li><p>Dampening feet <strong>installed</strong>
+<a href="https://www.thingiverse.com/thing:2913473">https://www.thingiverse.com/thing:2913473</a></p></li>
+
+<li><p>Silent PSU fan mod
+<a href="https://www.thingiverse.com/thing:2896035">https://www.thingiverse.com/thing:2896035</a></p></li>
+
+<li><p>BL Touch guide for Ender 2, 3, CR-10
+<a href="https://www.thingiverse.com/thing:2975949">https://www.thingiverse.com/thing:2975949</a></p></li>
+
+<li><p>40x40mm End cap for Ender 3 base aluminum extrusion
+<a href="https://www.thingiverse.com/thing:3005534">https://www.thingiverse.com/thing:3005534</a></p></li>
+
+<li><p>Ender 3 Y-axis limit switch
+<a href="https://www.thingiverse.com/thing:3016475">https://www.thingiverse.com/thing:3016475</a>
+<a href="https://www.thingiverse.com/thing:2879245">https://www.thingiverse.com/thing:2879245</a></p></li>
+</ul>
+
+<h2 id="4-octoprint">4. Octoprint</h2>
+
+<p>Octoprint is a 3D printer control service that has a web interface. You can use it
+to directly command your 3D printer over WiFi.</p>
+
+<p>These are basic changes to Octoprint I have ended up with:</p>
+
+<ul>
+<li><p>Installed OctoPrint plugins:</p>
+
+<ul>
+<li><a href="https://plugins.octoprint.org/plugins/estop/">https://plugins.octoprint.org/plugins/estop/</a>
+<br /></li>
+</ul></li>
+
+<li><p>Disabled OctoPrint plugins:</p>
+
+<ul>
+<li>Announcement Plugin</li>
+<li>CuraEngine Plugin</li>
+<li>Discovery</li>
+<li>Software Update</li>
+<li>Virtual Printer</li>
+</ul></li>
+
+<li><p>Disabled API</p></li>
+
+<li><p>Disabled GCodeViewer</p></li>
+
+<li><p>Disabled Feature &ldquo;SD support&rdquo;</p></li>
+</ul>
+
+<h4 id="octoprint-install">Octoprint install</h4>
+
+<ul>
+<li><p>Enable cam module first &gt; Interfacing options</p>
+
+<pre><code>sudo raspi-config
+</code></pre></li>
+
+<li><p>Use rpi cam module</p></li>
+
+<li><p>Settings from <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=192467">https://www.raspberrypi.org/forums/viewtopic.php?t=192467</a></p>
+
+<pre><code>./mjpg-streamer/mjpg-streamer-experimental/mjpg_streamer -i &quot;./mjpg-streamer/mjpg-streamer-experimental/input_raspicam.so -fps 20 -x 1024 -y 768 -q 10&quot; -o &quot;./mjpg-streamer/mjpg-streamer-experimental/output_http.so -w ./www&quot; &amp;
+</code></pre></li>
+
+<li><p>Run mjpg-streamer as daemon</p>
+
+<ul>
+<li><a href="https://gist.github.com/foosel/8185988">https://gist.github.com/foosel/8185988</a></li>
+<li><a href="https://github.com/foosel/OctoPrint/issues/441">https://github.com/foosel/OctoPrint/issues/441</a>
+(Better solution here)</li>
+</ul></li>
+</ul>
+
+<p>Stream available at <a href="http://raspberrypi.local:8080/?action=stream">http://raspberrypi.local:8080/?action=stream</a></p>
+
+<ul>
+<li><p>Run OctoPrint</p>
+
+<pre><code>./stable/run serve --basedir ~/.octoprint/stable &amp;
+</code></pre></li>
+</ul>
+
+<h2 id="5-mjpg-streamer-tweaks">5. <code>mjpg-streamer</code> tweaks</h2>
+
+<p><a href="https://github.com/jacksonliam/mjpg-streamer/blob/master/mjpg-streamer-experimental/plugins/output_http/httpd.h#L55">https://github.com/jacksonliam/mjpg-streamer/blob/master/mjpg-streamer-experimental/plugins/output_http/httpd.h#L55</a></p>
+
+<p>SD = socket descriptor
+- Change MAX_SD_LEN value to 2 (1 x stream socket, 1 x snapshot socket; I&rsquo;m the only one using it in my house)</p>
+
+<p><a href="https://github.com/jsyang/mjpg-streamer/blob/master/mjpg-streamer-experimental/mjpg_streamer.h#L28">https://github.com/jsyang/mjpg-streamer/blob/master/mjpg-streamer-experimental/mjpg_streamer.h#L28</a></p>
+
+<p>Change these to 1 each, since we&rsquo;re only using raspicam and http</p>
+
+<p>2 new scripts: </p>
+
+<ul>
+<li>faster compilation and run test script</li>
+<li>optimal framerate-vs-CPU balanced settings startup</li>
+</ul>
+
+<p>CPU load comparison</p>
+
+<ul>
+<li>Baseline CPU usage ~3% (raspbian without mjpg-streamer running)</li>
+<li>mjpg-streamer usage with 1 streaming clients ~29%</li>
+<li>mjpg-streamer usage with 4 streaming clients ~50%</li>
+
+<li><p>mjpg-streamer usage with 6 streaming clients ~65% (max 6 simultaneous connections)</p></li>
+
+<li><p>Modded mjpg-streamer usage ~40% with 2 streaming clients (capped at 2 clients)</p></li>
+</ul>
+
+<h2 id="6-raspbian-tweaks">6. Raspbian tweaks</h2>
+
+<p>Octoprint is running on a Raspberry Pi Zero W, which is lower spec than recommended.
+Here are some of the things I did to make its operation more reliable.</p>
+
+<h4 id="give-it-a-static-ip-on-your-home-network-so-we-can-disable-some-services-later">Give it a static IP on your home network (so we can disable some services later)</h4>
+
+<pre><code>sudo vim /etc/network/interfaces
+</code></pre>
+
+<p>Add these lines to the file:</p>
+
+<pre><code>iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet static
+  address 192.168.0.32
+</code></pre>
+
+<p>Bring the wifi interface down and back up to get your new static IP</p>
+
+<pre><code>sudo ifdown wlan0 ; sudo ifup wlan0
+</code></pre>
+
+<p>Check to see if the static IP has stuck</p>
+
+<pre><code>ifconfig
+</code></pre>
+
+<p>Add wifi startup to <code>/etc/rc.local</code></p>
+
+<pre><code>ifup wlan0
+</code></pre>
+
+<h4 id="disable-dhcpcd">Disable DHCPCD</h4>
+
+<pre><code>sudo systemctl disable dhcpcd
+</code></pre>
+
+<p>You can then add an alias for the static IP to your hosts file on your main machine by editing the <code>/etc/hosts</code> file.</p>
+
+<pre><code>sudo vim /etc/hosts
+</code></pre>
+
+<h4 id="remove-unused-services">Remove unused services</h4>
+
+<pre><code># Disable Bluetooth driver loading 
+# (add these lines to /etc/modprobe.d/raspi-blacklist.conf)
+	blacklist btbcm
+	blacklist hci_uart
+
+# Disable Bluetooth service
+	sudo systemctl disable bluetooth
+	sudo systemctl stop bluetooth
+
+# Disable timesyncd (NTP service)
+	sudo systemctl stop systemd-timesyncd
+	sudo systemctl disable systemd-timesyncd
+
+# Disable multi-cast DNS support
+	sudo systemctl disable avahi-daemon
+	sudo systemctl stop avahi-daemon
+
+# Disable triggerhappy (power button support)
+	sudo systemctl disable triggerhappy
+	sudo systemctl stop triggerhappy
+
+# Disable WiFi power management
+	sudo iwconfig wlan0 power off
+</code></pre>
+
+<h2 id="7-g-code-tweaks">7. G-Code tweaks</h2>
+
+<p>G-Code is the 3D printer firmware&rsquo;s native language: these are lowest level commands that tell
+each stepper motor how and when to move. These tweaks help ensure the execution of the print start
+and finish correctly.</p>
+
+<h4 id="start-of-print-gcode-tweaks">Start of Print GCode tweaks</h4>
+
+<pre><code>; Default Cura 3.4 start script
+G21 ;metric values
+G90 ;absolute positioning
+M82 ;set extruder to absolute mode
+M107 ;start with the fan off
+G28 X0 Y0 ;move X/Y to min endstops
+G28 Z0 ;move Z to min endstops
+;not needed (jsyang)
+;G1 Z15.0 F9000 ;move the platform down 15mm
+G92 E0 ;zero the extruded length
+G1 F200 E3 ;extrude 3mm of feed stock
+G92 E0 ;zero the extruded length again
+G1 F9000
+
+; taken from https://www.youtube.com/watch?v=6csbJ5965Bk
+; Prime and wipe nozzle - tweaks for magnetic bed
+G1 Y30.0 F500.0 ; move out of print volume
+G1 X60.0 E9 F500.0 ; start purge
+G1 X100 E12.5 F500.0 ; finish purge line﻿
+</code></pre>
+
+<h4 id="end-of-print-gcode-tweaks">End of Print GCode tweaks</h4>
+
+<pre><code>; End with bed forward instead of backwards
+M106 S0 ;cooling fan off
+M104 S0 ;extruder heater off
+M140 S0 ;heated bed heater off (if you have it)
+G91 ;relative positioning
+G1 E-1 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure
+G1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more
+G90 ;absolute positioning
+G1 X0 Y0 ;home x and y
+G0 Y200 ;move bed forward
+M84 ;steppers off
+G90 ;absolute positioning
+</code></pre>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

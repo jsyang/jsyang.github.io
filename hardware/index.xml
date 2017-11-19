@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardwares on jsyang.ca</title>
+    <link>http://jsyang.ca/hardware/</link>
+    <description>Recent content in Hardwares on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Think Outside Bluetooth Folding Keyboard</title>
+      <link>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</guid>
+      <description>When the local coronavirus restrictions were enacted early on this year, I was determined not to let this time go to waste. The idea: read more and improve my writing by removing distractions where possible. Distraction-free writing (post coming soon) and other activities of this sort require a lot of forethought and set-up to have a chance at consistent success.
+With respect to that, one area I started to consider was the hardware: what would I use to write?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/tools/keydings/" />
+  <link rel="canonical" href="http://jsyang.ca/tools/keydings/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "tools",
+      "name" : "KeyDings",
+      "headline" : "KeyDings",
+      "description" : "As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app that would provide IBM Model M \x26ldquo;clicky\x26rdquo; keyboard sound effects whenever the OS detected a key up or down event.\nTo my complete surprise I was able to get a functional app working within an afternoon, which goes to prove that the ecosystem for writing MacOS apps is well designed and mature.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-02-18 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-02-18 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/tools\/keydings\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>KeyDings - jsyang.ca</title>
+  <meta property="og:title" content="KeyDings - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app that would provide IBM Model M &ldquo;clicky&rdquo; keyboard sound effects whenever the OS detected a key up or down event.
+To my complete surprise I was able to get a functional app working within an afternoon, which goes to prove that the ecosystem for writing MacOS apps is well designed and mature." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">KeyDings</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2019-02-18 00:00:00 UTC">
+                            18 Feb 2019
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p>As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app
+that would provide IBM Model M &ldquo;clicky&rdquo; keyboard sound effects whenever the OS detected a key up or down event.</p>
+
+<p>To my complete surprise I was able to get a functional app working within an afternoon, which
+goes to prove that the ecosystem for writing MacOS apps is well designed and mature.</p>
+
+<h3 id="demo">Demo</h3>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/sQEByBpCZ0Q" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h3 id="functionality">Functionality</h3>
+
+<p>Version 1.0 of the app is a system tray app, meaning that it runs in the background once started
+and does not appear in the Dock. There are 3 distinct sound effect libraries:
+- IBM Model M sounds
+- iOS button sound
+- generic mechanical typewriter sounds</p>
+
+<p>These can be chosen from the system tray menu.</p>
+
+<p><img src="/images/keydings/options.png" alt="options" /></p>
+
+<h3 id="how-to-download-and-use">How to download and use</h3>
+
+<ol>
+<li>Download the <code>keydings.app.zip</code> file from <a href="https://github.com/jsyang/keydings/releases/tag/1.0">https://github.com/jsyang/keydings/releases/tag/1.0</a></li>
+<li>Extract and move <code>keydings.app</code> file somewhere, like in <code>/Applications</code>.</li>
+<li>Open &ldquo;Security &amp; Privacy&rdquo; panel in System Preferences (Cmd+Space, then type &ldquo;Security &amp; Privacy&rdquo;)</li>
+<li>Click on the &ldquo;Privacy&rdquo; tab then on Accessibility in the left hand menu.</li>
+<li>Click on the lock to enable changes to this section: on the right hand side you will see a list of apps with Accessibility access.</li>
+<li>Drag the <code>keydings.app</code> file into this list, this will enable the app to listen for keyDown and keyUp events across the OS.</li>
+<li>Then double click the <code>keydings.app</code> file in <code>/Applications</code> to run it. You should see a music note icon in the MacOS system tray.</li>
+</ol>
+
+<h3 id="source-code">Source code</h3>
+
+<p>The source code for the app can be found here: <a href="https://github.com/jsyang/keydings">https://github.com/jsyang/keydings</a></p>
+
+<p>You will need an up to date version of XCode to open the project.</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3dprintings on jsyang.ca</title>
+    <link>http://jsyang.ca/3dprinting/</link>
+    <description>Recent content in 3dprintings on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/3dprinting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ender 3 Configuration Notes</title>
+      <link>http://jsyang.ca/3dprinting/ender-3-mods/</link>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/3dprinting/ender-3-mods/</guid>
+      <description>What follows is a collection of notes I compiled for setting up my current (as of 2019) 3D printer. Table of contents for major sections as follows:
+1. Costs 2. Subtractive modifications 3. Printable mods 4. Octoprint 5. `mjpg-streamer` tweaks 6. Raspbian tweaks 7. G-Code tweaks  1. Costs 1 x Ender 3: £176
+ 50% cheaper vs previous 3D printer (Wanhao Duplicator i3 plus): £339  1 x Raspberry Pi Zero W: £18</description>
+    </item>
+    
+    <item>
+      <title>3D printers</title>
+      <link>http://jsyang.ca/3dprinting/3d-printers/</link>
+      <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/3dprinting/3d-printers/</guid>
+      <description>During 2012, I had access to TechShop SF, a makerspace in San Francisco which is sadly now defunct, I took several courses that taught FDM 3D printing basics. This got me hooked on the idea of owning my own 3D printers. However, this wasn&amp;rsquo;t reasonable until around 2017 owing to market forces driving down the prices to less than £300 or $400 for a decent entry-level printer.
+As of this writing, I&amp;rsquo;ve had the opportunity of owning and operating 3 different 3D printers.</description>
+    </item>
+    
+  </channel>
+</rss>

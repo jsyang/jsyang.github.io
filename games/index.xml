@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Games on jsyang.ca</title>
+    <link>http://jsyang.ca/games/</link>
+    <description>Recent content in Games on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/games/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Celestial Combat</title>
+      <link>http://jsyang.ca/games/celcom/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/celcom/</guid>
+      <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.
+Excerpt from &amp;ldquo;How to play&amp;rdquo;  You begin with either an invasion fleet (1 x Fighter + 4 invasion Freighters) or a single occupied planet.
+To colonize planets, you must land on them when they are unoccupied with your Fighter.</description>
+    </item>
+    
+    <item>
+      <title>Gamedev Weekend 3</title>
+      <link>http://jsyang.ca/games/gdw3/</link>
+      <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/gdw3/</guid>
+      <description>&amp;ldquo;Fisches&amp;rdquo; For the 3rd gamedev weekend project, I chose to take part in a game jam. The theme was set as anything related to &amp;ldquo;fishing&amp;rdquo;.
+I had grandiose visions for this game, but sadly the scope of that meant it would never be finished without burn out. Written in Coffeescript, but has since been ported over to JS. I drew all the graphics on a Samsung Galaxy Note 10.1 and resampled some public domain / royalty-free sounds.</description>
+    </item>
+    
+    <item>
+      <title>Gamedev Weekend 2</title>
+      <link>http://jsyang.ca/games/gdw2/</link>
+      <pubDate>Thu, 30 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/gdw2/</guid>
+      <description>My second gamedev weekend project, this time I attempted to create a web version of a popular board game: Kulami.
+Development finished on 30/05/2013. Current version has been patched to run in modern browsers (WebAudio API was changed since 2013).
+Original features: - an intermediate skill-level AI player with taunts (filthy meatbag!) - RANDOM or a completely user-defined board layout - final score breakdown
+Play it now  How to play Construct board layout Drag the tiles to form a board of non-overlapping tiles.</description>
+    </item>
+    
+    <item>
+      <title>Gamedev Weekend 1</title>
+      <link>http://jsyang.ca/games/gdw1/</link>
+      <pubDate>Sun, 21 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/gdw1/</guid>
+      <description>Junior&amp;rsquo;s first 48 hour collaborative gamedev Life gets boring sometimes when you do the same thing over and over again by yourself. Two weeks ago, I had an epiphany: I didn&amp;rsquo;t have to do the same thing by myself if there were people I could coax into doing it with me. Must have been what I&amp;rsquo;d missed out on all this time.
+Finding people was easy enough: I scrounged 30 seconds of my day and put up a Facebook status update.</description>
+    </item>
+    
+    <item>
+      <title>DOM-based RTS Engine</title>
+      <link>http://jsyang.ca/games/jscc/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/jscc/</guid>
+      <description>A Command and Conquer engine in JS Update Nov. 2011:
+Aditya Ravi Shankar created a version that uses canvas blitting instead of DOM manipulation.
+ Your unfinished C&amp;amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.
+  http://www.adityaravishankar.com/projects/games/command-and-conquer/
+ http://www.adityaravishankar.com/2011/11/command-and-conquer-programming-an-rts-game-in-html5-and-javascript/
+  This was a very ambitious project to fully recreate the first C&amp;amp;C game and introduce in-game objects for expansion by user scripting.</description>
+    </item>
+    
+    <item>
+      <title>Flash games</title>
+      <link>http://jsyang.ca/games/flash-games/</link>
+      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/flash-games/</guid>
+      <description>Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.
+Defend 2 - Super Tank (2004) 
+Controls  WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver.</description>
+    </item>
+    
+  </channel>
+</rss>

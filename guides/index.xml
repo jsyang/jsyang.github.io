@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on jsyang.ca</title>
+    <link>http://jsyang.ca/guides/</link>
+    <description>Recent content in Guides on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tiny Palm PVG100 phone on Three UK</title>
+      <link>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</guid>
+      <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these. Manufactured by TCL, it retains the &amp;ldquo;Palm&amp;rdquo; brand that people remember from the by-gone PDA days.
+Originally the concept of the phone was as a kind of &amp;ldquo;gig&amp;rdquo; device where you would install a SIM card that kept the same phone number as your main phone but was small enough to take with you to an event where you could use a compact version of your main phone (with the majority of its features) in a pinch.</description>
+    </item>
+    
+    <item>
+      <title>Pho Recipe</title>
+      <link>http://jsyang.ca/guides/pho-recipe/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/pho-recipe/</guid>
+      <description>Friday night Pho is one of our house traditions. Nobody can resist the delicious combination of tastes that this simple Vietnamese noodle soup offers.
+After years of eating pho, I finally decided to attempt making it for myself from scratch (or as from scratch as possible) purely as an exercise of appreciation for this noodle dish.
+Recipe Like all &amp;ldquo;fancy&amp;rdquo; foods, pho comes from a humble origin: it was created originally as an easy way to use the parts of cattle that could not otherwise be sold: namely, the bones, tendons, and other bits of beef.</description>
+    </item>
+    
+    <item>
+      <title>Snapshot testing with Jest &#43; Preact &#43; Picostyle</title>
+      <link>http://jsyang.ca/guides/snapshot-testing-with-preact-and-picostyle/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/snapshot-testing-with-preact-and-picostyle/</guid>
+      <description>I&amp;rsquo;ve been using Preact as my alternative (API compatible) React of choice for a few side projects for a while now, the main advantage being the API compatibility with a significantly smaller sized addition to dependencies.
+Likewise, my favorite CSS-in-JS microlibrary: Picostyle has similar file-size advantages.
+Micro-libraries are great because they are small enough to be able to dig into their source code quickly and make customizations.
+Snapshot testing with Preact and Picostyle It&amp;rsquo;s not immediately obvious how to test Preact JSX within a Jest snapshot test, especially when they are styled with Picostyle.</description>
+    </item>
+    
+    <item>
+      <title>Finding nostalgic music from 1996 Microsoft Interactive CD Sampler</title>
+      <link>http://jsyang.ca/guides/microsoft-interactive-cd-sampler-music/</link>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/microsoft-interactive-cd-sampler-music/</guid>
+      <description>In my childhood, I used to move around a lot. We usually didn&amp;rsquo;t have allowances for things that other kids used to hold onto, to be kept between moves. Instead I collected music files and other digital treasures that pleased my young brain.
+One file that&amp;rsquo;s firmly stuck in my memory was theme music for the 1996 Microsoft Interactive CD Sampler main menu. I rediscovered it on YouTube recently and it sounds like this:</description>
+    </item>
+    
+    <item>
+      <title>Try before you buy fonts</title>
+      <link>http://jsyang.ca/guides/try-before-you-buy-fonts/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/try-before-you-buy-fonts/</guid>
+      <description>A coding font called Dank Mono showed up in my programming feed recently. As someone who is always looking for ways to improve my coding environment, changing the default IDE font seemed like something worth investigating.
+I was pretty happy with Iosevka already but was curious to see if Dank Mono was worth the social media hype; setting it as the IDE font would be the best way to judge its merits.</description>
+    </item>
+    
+    <item>
+      <title>Samsung Gear 360 (SM-200) image and video workflow on MacOS</title>
+      <link>http://jsyang.ca/guides/gear-360-workflow/</link>
+      <pubDate>Sat, 17 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/gear-360-workflow/</guid>
+      <description>I&amp;rsquo;ve long been interested in 360 panoramic photos and videos and being a patient tech consumer, I was fortunate to get the 2016 Gear 360 camera for the low price of £80 shipped; 22% of the original launch price of £350.
+Additionally, I wrote a simple 360 web viewer, so I can use any image host (e.g. Imgur, Dropbox, etc.) and not be tied to a specific online platform like Kuula.</description>
+    </item>
+    
+    <item>
+      <title>Mocute Bluetooth Gamepads</title>
+      <link>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</guid>
+      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.</description>
+    </item>
+    
+    <item>
+      <title>Faulty Raspberry Pi Zero W</title>
+      <link>http://jsyang.ca/guides/faulty-rpi0w/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/faulty-rpi0w/</guid>
+      <description>If you&amp;rsquo;ve done everything you&amp;rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can&amp;rsquo;t get it to boot up and recognize the Wifi, there&amp;rsquo;s a chance you may have a defective board.
+  Setup After purchasing you should have been able to do this to get it working:
+ https://gist.github.com/gbaman/50b6cca61dd1c3f88f41 https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a https://www.youtube.com/watch?v=xj3MPmJhAPU  Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/celcom/feature-toggles-and-testing/" />
+  <link rel="canonical" href="http://jsyang.ca/celcom/feature-toggles-and-testing/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "celcom",
+      "name" : "CelCom: Feature Toggles and Testing",
+      "headline" : "CelCom: Feature Toggles and Testing",
+      "description" : "This post is a Celestial Combat devlog and also be found here.\nSome of the code for Celestial Combat has been structured to provide a easy facility for switching major subsystems of the game on\/off. Additionally, unit testing is not time-efficient given the benefits vs effort involved: we offer a cheaper solution in the form of scenario tests.\nFeature toggles You have the option of toggling game functionality via the URL you use to access the game.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-01-20 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-01-20 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/celcom\/feature-toggles-and-testing\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>CelCom: Feature Toggles and Testing - jsyang.ca</title>
+  <meta property="og:title" content="CelCom: Feature Toggles and Testing - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="This post is a Celestial Combat devlog and also be found here.
+Some of the code for Celestial Combat has been structured to provide a easy facility for switching major subsystems of the game on/off. Additionally, unit testing is not time-efficient given the benefits vs effort involved: we offer a cheaper solution in the form of scenario tests.
+Feature toggles You have the option of toggling game functionality via the URL you use to access the game." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">CelCom: Feature Toggles and Testing</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2019-01-20 00:00:00 UTC">
+                            20 Jan 2019
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/feature-toggles-and-testing.md">here</a>.</em></p>
+
+<p>Some of the code for Celestial Combat has been structured to provide a easy facility for
+switching major subsystems of the game on/off. Additionally, unit testing is not time-efficient
+given the benefits vs effort involved: we offer a cheaper solution in the form of scenario tests.</p>
+
+<h2 id="feature-toggles">Feature toggles</h2>
+
+<p>You have the option of toggling game functionality via the URL you use to access the game.
+The toggles are activated by the presence / absence of URL query strings: for instance,
+to turn off all game audio:</p>
+
+<ul>
+<li><a href="http://localhost:3000/?mute">http://localhost:3000/?mute</a></li>
+</ul>
+
+<p>or if you want to turn off all audio AND skip the title screen:</p>
+
+<ul>
+<li><a href="http://localhost:3000/?mute&amp;game">http://localhost:3000/?mute&amp;game</a></li>
+</ul>
+
+<p>See <code>src/client/startupOptions.ts</code> for a full list of feature toggles.</p>
+
+<pre><code>    AudioMuted          = 'mute',
+    GamePadInUse        = 'gamepad',
+    SkipTitleScreen     = 'game',
+    GeometryEditorInUse = 'editor',
+    TestSectorInUse     = 'test'
+</code></pre>
+
+<h4 id="scenario-tests">Scenario tests</h4>
+
+<p>Using the scenario feature toggle, you can establish a controlled environment
+where you can set exactly what the starting state is and see the emergent behaviors of
+your system unfold.</p>
+
+<ul>
+<li><code>yarn watch</code></li>
+<li>Edit <code>src/client/TestScreen/ScenarioSystem.ts</code> to create the scenario&rsquo;s initial conditions</li>
+</ul>
+
+<p>For example:</p>
+
+<pre><code class="language-typescript">function init() {
+    // Create enemy solar system with 1 star and 1 unpopulated planet
+    const star = Entity.create('Star', {x: 5000, y: 5000});
+
+    const planet = Entity.create('Planet', {
+        star,
+        orbitDistance: 1600 + 2 * 800,
+        orbitRotation: 0
+    });
+
+    planet.team = enemyTeam;
+    planet.updateFlagColor();
+
+    // Create an attacker that targets this planet and will attempt to land
+    // to lay claim to it
+    const fighter = Entity.create('Fighter', {
+        x:                        15000,
+        y:                        15000,
+        isFighterAutoAccelerated: true,
+        team:                     focusTeam,
+        attackTarget:             planet
+    });
+
+    Focus.setFocus(fighter);
+}
+</code></pre>
+
+<p>You may then observe the scenario unfold at: <a href="http://localhost:3000/?test&amp;game">http://localhost:3000/?test&amp;game</a> , and
+tweak entity / component values and logic accordingly until the desired behaviors are achieved.</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

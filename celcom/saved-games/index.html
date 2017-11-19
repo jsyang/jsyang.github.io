@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/celcom/saved-games/" />
+  <link rel="canonical" href="http://jsyang.ca/celcom/saved-games/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "celcom",
+      "name" : "CelCom: Implementing saved games",
+      "headline" : "CelCom: Implementing saved games",
+      "description" : "This post is a Celestial Combat devlog and also be found here.\nCelestial Combat is a game large in ambition and scope. Battles often span multiple solar systems with hundreds of spacecraft and planets with caches of materials for war production.\nAs the gameplay solidified, finding a way to persist player progress grew more important. Saving score and progress within a battle means players are likely to come back to the game.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2018",
+      "datePublished": "2018-12-16 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2018-12-16 00:00:00 \x2b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/celcom\/saved-games\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>CelCom: Implementing saved games - jsyang.ca</title>
+  <meta property="og:title" content="CelCom: Implementing saved games - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="This post is a Celestial Combat devlog and also be found here.
+Celestial Combat is a game large in ambition and scope. Battles often span multiple solar systems with hundreds of spacecraft and planets with caches of materials for war production.
+As the gameplay solidified, finding a way to persist player progress grew more important. Saving score and progress within a battle means players are likely to come back to the game." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">CelCom: Implementing saved games</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2018-12-16 00:00:00 UTC">
+                            16 Dec 2018
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/saved-games.md">here</a>.</em></p>
+
+<p>Celestial Combat is a game large in ambition and scope. Battles
+often span multiple solar systems with hundreds of spacecraft and
+planets with caches of materials for war production.</p>
+
+<p>As the gameplay solidified, finding a way to persist player progress grew more important.
+Saving score and progress within a battle means players are likely to come back to the game.</p>
+
+<h2 id="serialization">Serialization</h2>
+
+<p>At the heart of saved games is a computer science concept called <a href="https://en.wikipedia.org/wiki/Serialization"><em>serialization</em></a>.
+When you serialize the state of a program, you are turning the things represented in
+memory into a <em>series of bytes</em>. They can be a certain format: e.g. JSON or a predefined
+binary structure.</p>
+
+<p>The <a href="entity-component-system.md">ECS</a> architecture of Celestial Combat makes serialization easy.
+Game entities are all very basic classes that inherit a set of
+properties such as position (x,y) and a <code>type</code> field from the <code>LivingEntity</code> base class,
+then add their own properties to them, mostly fields relating to Components within the ECS pattern.</p>
+
+<p>The vast majority of these can be serialized via <code>JSON.stringify(...)</code> but what about
+fields that serve as references to other game entities? For instance, a planet that is
+occupied by a faction has references to its planetary structures:</p>
+
+<pre><code>class Planet extends LivingEntity {
+
+    // Simple serialization
+    canOrbitStar      = true;
+    canStoreMaterial  = true;
+    materialsRaw      = 0;
+    materialsFinished = 0;
+    hp                = 2000;
+    mass              = 180;
+
+    ...
+
+    // JSON.stringify(planetInstance) will fail here
+    star?: Star;
+    pbase?: PBase;
+    plab?: PLab;
+    pcolony?: PColony;
+    pcomm?: PComm;
+    spacedock?: SpaceDock;
+    sensorarray?: SensorArray;
+    spaceport?: SpacePort;
+    
+    ...
+}
+</code></pre>
+
+<p>Handling references was not immediately straightforward and to implement
+saving games, we would need to solve this problem and preserve those references somehow.</p>
+
+<h3 id="creation-ids">Creation IDs</h3>
+
+<p>If we can recognize that a game state is essentially an instance of a relational database,
+then we have a simple solution for this: use auto-incrementing primary keys or IDs to uniquely
+map references from one entity to another. In Celestial Combat, an ID is a number.</p>
+
+<p>These changes were done in a few steps:</p>
+
+<ol>
+<li><p>Within the <code>create()</code> of <code>src/client/Entity/index.ts</code>, we need to assign an ID field
+that is auto-incrementing. Its value is not mutated during the course of the game.</p></li>
+
+<li><p>This field needs to be set to a specific value when loading (deserializing) a saved game. Make it
+auto-increment by default or have it take a <code>creationId</code> just like any other field during the <code>create()</code> call.</p></li>
+
+<li><p>Use of Components (as part of ECS) adds specific references to other entities to implement its
+behavior. <code>const F_</code> inside <code>src/client/GameState/getEntityProperties.ts</code> defines a serialization map
+for this purpose.</p></li>
+
+<li><p>Entities are made up of Components. So map an entire Entity to a set of such Components.
+<code>const FIELDS_BY_ENTITY</code> in <code>src/client/GameState/getEntityProperties.ts</code>.</p></li>
+</ol>
+
+<h2 id="deserialization">Deserialization</h2>
+
+<p>Once serialized, the game will need some way of recreating those references when loading a saved game.
+The game can do this in 2 passes:</p>
+
+<ol>
+<li><p>Deserialize the saved game data into an intermediate game state. All entities are created and have their
+non-reference fields filled in. Reference fields are not yet linked and remain represented as numbers.</p></li>
+
+<li><p>Inflate the references. From a collection of all entities, find by ID and set the values of the
+reference fields: numbers are mapped to entity instances.</p>
+
+<pre><code>function inflateReferencesForEntity(entity, index, allEntities) {
+Object.keys(entity)
+    .forEach(prop =&gt; {
+        const value = entity[prop];
+
+        if (PROPERTY_IS_REFERENCE.test(prop) &amp;&amp; !isNaN(value)) {
+            entity[prop] = allEntities.find(e =&gt; e._creationId === value);
+        }
+    });
+}
+
+function deserialize(json: string): void {
+const all         = JSON.parse(json);
+let maxCreationId = 0;
+
+Entity.clearAll();
+
+// First pass, create all the entities, leaving references as numbers
+all.forEach(e =&gt; {
+    Entity.create(e.type, e);
+
+    if (maxCreationId &lt; e._creationId) {
+        maxCreationId = e._creationId;
+    }
+});
+
+...
+
+// Second pass, inflate references
+Entity.getAll().forEach(inflateReferencesForEntity);
+    
+...
+}
+
+</code></pre></li>
+</ol>
+
+<h2 id="saved-game-storage">Saved game storage</h2>
+
+<p>Currently, Celestial Combat stores only supports storing a single saved game
+as compressed JSON in localStorage. It uses the <code>lz-string</code> compression package
+because:</p>
+
+<ul>
+<li>it is pure JS</li>
+<li>has no dependencies of its own</li>
+<li>is space-efficient (meant for use with localStorage)</li>
+</ul>
+
+<p>Of course, we also want to save other info about a game session, not just entities:
+- rank
+- score
+- number of consecutive wins / losses (for game over)</p>
+
+<p>These are easily handled by <code>JSON.stringify()</code> and <code>JSON.parse()</code> and stored in the same
+manner. Each being assigned its own localStorage key.</p>
+
+<p>You can find the all source code for saving / loading games under
+<code>src/client/GameState</code>.</p>
+
+<p>Thanks for reading!</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

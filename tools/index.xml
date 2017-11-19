@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on jsyang.ca</title>
+    <link>http://jsyang.ca/tools/</link>
+    <description>Recent content in Tools on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>KeyDings</title>
+      <link>http://jsyang.ca/tools/keydings/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/keydings/</guid>
+      <description>As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app that would provide IBM Model M &amp;ldquo;clicky&amp;rdquo; keyboard sound effects whenever the OS detected a key up or down event.
+To my complete surprise I was able to get a functional app working within an afternoon, which goes to prove that the ecosystem for writing MacOS apps is well designed and mature.</description>
+    </item>
+    
+    <item>
+      <title>Tabular / vertical code alignment in ES without IntelliJ</title>
+      <link>http://jsyang.ca/tools/tabular-vertical-alignment/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/tabular-vertical-alignment/</guid>
+      <description>While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or &amp;ldquo;vertical&amp;rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:
+// (1) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; };  The code in (2) is much clearer in tabular form.</description>
+    </item>
+    
+    <item>
+      <title>GPXMapFactor</title>
+      <link>http://jsyang.ca/tools/gpx-mapfactor/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/gpx-mapfactor/</guid>
+      <description>Route-Importer for MapFactor doesn&amp;#39;t work :( Have to write my own...
+&amp;mdash; Jim (@spacefishing) June 30, 2016  
+Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
+MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program.</description>
+    </item>
+    
+    <item>
+      <title>Slackson bot</title>
+      <link>http://jsyang.ca/tools/slackson/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/slackson/</guid>
+      <description>I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.
+ jim [5:35 PM] whats playing sonosbot BOT [5:35 PM] `The Avener &amp;amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework` jim [5:35 PM] pause sonosbot BOT [5:35 PM] `jim requested to pause this track.</description>
+    </item>
+    
+    <item>
+      <title>Translucify</title>
+      <link>http://jsyang.ca/tools/translucify/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/translucify/</guid>
+      <description>Originally posted to https://medium.com/this-place/translucify-374ec3f621c5
+Translucify is a drop-in solution for mismatched background colors between a web page and its images.
+Highlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?</description>
+    </item>
+    
+    <item>
+      <title>ColorRun.pl bot</title>
+      <link>http://jsyang.ca/tools/colorrunbot/</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/colorrunbot/</guid>
+      <description>A regular lurker on the /r/WebGames subreddit, I found a perfect game to write a 15 minute bot for a game posted that was posted.
+ </description>
+    </item>
+    
+    <item>
+      <title>TSP Solver</title>
+      <link>http://jsyang.ca/tools/traveling-salesman/</link>
+      <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/traveling-salesman/</guid>
+      <description>The travelling salesman problem (TSP) asks the following question: &amp;ldquo;Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?&amp;rdquo; It is an NP-hard problem in combinatorial optimization, important in operations research and theoretical computer science.
+ Iteratively solving the Travelling Salesman problem with k-opt operations Fast operations such as 2-Opt are less computationally expensive, but due to granularity, more likely to become stuck in local extrema.</description>
+    </item>
+    
+    <item>
+      <title>Road signs</title>
+      <link>http://jsyang.ca/tools/road-signs/</link>
+      <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/road-signs/</guid>
+      <description>This was an undergraduate computer vision extra-curricular project.
+Image segmentation goal: finding text within am image of a road sign The growing abilities of video feed APIs allow for mobile and domain-specific programs that were previously out of reach. One application that I had in mind was video frame text extraction, which itself could be the foundation for magnification or text-to-speech capability that could aid the visually impaired, translation for foreign language signs and contextual advertising services.</description>
+    </item>
+    
+    <item>
+      <title>GMBrowser</title>
+      <link>http://jsyang.ca/tools/gmbrowser/</link>
+      <pubDate>Tue, 20 Oct 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/tools/gmbrowser/</guid>
+      <description>Cache Google Maps tiles by browsing the location of interest This is simple C app that I wrote up and tested in about 2 hours that automatically saves the map tiles of Google Maps as you browse a location of interest. The bundled tool, tiler is a handy utility for arranging the matrix of the gathered Google Maps tiles for a certain zoom level.
+Originally this was written as a fast and dirty way to get lots of map data for an independent project in the summer of 2009.</description>
+    </item>
+    
+  </channel>
+</rss>
