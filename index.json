@@ -7,13 +7,6 @@
 	"content": ""
 },
 {
-	"uri": "http://jsyang.ca/hacks/",
-	"title": "Hacks",
-	"tags": [],
-	"description": "",
-	"content": " an inelegant but effective solution to a problem\n "
-},
-{
 	"uri": "http://jsyang.ca/games/",
 	"title": "Games",
 	"tags": [],
@@ -40,6 +33,13 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "http://jsyang.ca/hacks/",
+	"title": "Hacks",
+	"tags": [],
+	"description": "",
+	"content": " an inelegant but effective solution to a problem\n "
 },
 {
 	"uri": "http://jsyang.ca/hikes/",
@@ -110,6 +110,13 @@
 	"tags": [],
 	"description": "",
 	"content": "                             I hadn\u0026rsquo;t been in town to join critical mass since moving to Manchester in Sept 2016. Finally free of obligations in London for the last Friday of the month, I decided to join fellow cyclists for Critical Mass.\nI ordered some of these 10 meter LED fairy lights (7 GBP) off Amazon a while back for our flat and they were conveniently USB powered. This was perfect for wrapping Bessie the Brompton up in and for pooting around town (with many happy onlookers!).\n   1st\n      2nd\n      3rd\n      4th\n      5th\n     Strava activity and photo blog  In total, we rode 11 km. Someone else was great enough to stop occasionally to get photos of all the riders throughout this ride; those photos can be seen here.\nGreat ride, hope to do another soon!\n"
+},
+{
+	"uri": "http://jsyang.ca/games/celcom/",
+	"title": "Celestial Combat",
+	"tags": [],
+	"description": "",
+	"content": " Currently a work in progress!   Celestial Combat is an expanded port of a Windows 3.1 era space game called Gravity Well. I wrote it to experiment with vector graphics and make use of PixiJS.\nSupports bluetooth gamepads and has its own game assets packing / loading system.\nSource code "
 },
 {
 	"uri": "http://jsyang.ca/art/particle-tracks/",
