@@ -1,14 +1,14 @@
 [
 {
-	"uri": "http://jsyang.ca/cycling/",
-	"title": "Cycling",
+	"uri": "http://jsyang.ca/games/",
+	"title": "Games",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://jsyang.ca/games/",
-	"title": "Games",
+	"uri": "http://jsyang.ca/cycling/",
+	"title": "Cycling",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -308,11 +308,11 @@
 	"content": "                             A Command and Conquer engine in JS Update Nov. 2011:\nAditya Ravi Shankar created a version that uses canvas blitting instead of DOM manipulation.\n Your unfinished C\u0026amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.\n  http://www.adityaravishankar.com/projects/games/command-and-conquer/\n http://www.adityaravishankar.com/2011/11/command-and-conquer-programming-an-rts-game-in-html5-and-javascript/\n  This was a very ambitious project to fully recreate the first C\u0026amp;C game and introduce in-game objects for expansion by user scripting. I envisioned an SDK type end-result as the final piece. The sparks flew in late 2007 and main implementation had begun by the time summer 2008 hit.\nThere were a multitude of intermediate problems that needed to be solved: question of creating / converting terrain maps, accurately modelling the damage and movement of units in the original game, extracting all the frames of all the game pieces, and handling animations, to name a few.\nPrior to the wide-spread adoption of the canvas tag, the most efficient way of manipulating hordes of sprites required for an RTS game was via the DOM image elements. Development stopped after about a week of intensive coding. As the first moderately large Javascript project, I felt the brunt of ill-planning and subsequently burnt out.\n   Jscc 0\n      Jscc 1\n     This is what I eventually had working before burning out:\n- Terrain blocks construction and movement of vehicles - Mobile construction vehicle unit / all non-turreted vehicles - Construction tech-tree prerequisites - Usable nuclear super-weapon - Structural damage and destruction - Unit and building selection, with healthbar - Basic construction interface - Fire and smoke animations  The Game Engine Click inside the iframe to interact with the engine.\n "
 },
 {
-	"uri": "http://jsyang.ca/games/war-sim/",
+	"uri": "http://jsyang.ca/games/flash-games/",
 	"title": "Flash games",
 	"tags": [],
 	"description": "",
-	"content": " Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.\nBase Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver. Two armies (white vs black) fight each other. Each battle (reload of the page) is completely random: background scenery changes, build order changes, reinforcements change.\nI loved making games that made use of many random factors. The only controls available to pause/unpause the sim with the UP/DOWN arrow keys. This one drew heavy inspiration from Armor Alley. I was clearly more fascinated by the ground forces sent around by the AI than the actual gameplay involved in this helicopter game. This Flash game would be recreated years later as Microarmy.\n\nThere were several types of units available to each side:\n Foot-soldier Tank Anti-air missle truck Sabotage van Bomber  Each side held its territory with a pillbox defending the main base: building with a radar dish atop. The game was lost once the main base was destroyed.\n"
+	"content": " Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.\nDefend 2 - Super Tank (2004) \nControls:\n WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver. Two armies (white vs black) fight each other. Each battle (reload of the page) is completely random: background scenery changes, build order changes, reinforcements change.\nI loved making games that made use of many random factors. The only controls available to pause/unpause the sim with the UP/DOWN arrow keys. This one drew heavy inspiration from Armor Alley. I was clearly more fascinated by the ground forces sent around by the AI than the actual gameplay involved in this helicopter game. This Flash game would be recreated years later as Microarmy.\n\nThere were several types of units available to each side:\n Foot-soldier Tank Anti-air missle truck Sabotage van Bomber  Each side held its territory with a pillbox defending the main base: building with a radar dish atop. The game was lost once the main base was destroyed.\n"
 },
 {
 	"uri": "http://jsyang.ca/_header/",

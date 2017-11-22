@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>Particle Tracks :: jsyang.ca</title>
+<title>Flash games :: jsyang.ca</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/art/particle-tracks/">
+  <body data-url="/games/flash-games/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -64,12 +64,13 @@
             <li data-nav-id="/" class="dd-item">
             <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="/games/" class="dd-item">
+    <li data-nav-id="/games/" class="dd-item parent">
       <a href="/games/">
         <span>
           Games
           (4)
-        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        </span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/games/celcom/" class="dd-item">
@@ -87,7 +88,7 @@
           <span>DOM-based RTS Engine</span>
         </a>
     </li>
-      <li data-nav-id="/games/flash-games/" class="dd-item">
+      <li data-nav-id="/games/flash-games/" class="dd-item active">
         <a href="/games/flash-games/">
           <span>Flash games</span>
         </a>
@@ -169,13 +170,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/art/" class="dd-item parent">
+    <li data-nav-id="/art/" class="dd-item">
       <a href="/art/">
         <span>
           Art
           (8)
-        </span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/art/polymer-clay-2017/" class="dd-item">
@@ -183,7 +183,7 @@
           <span>Polymer clay sculpting</span>
         </a>
     </li>
-      <li data-nav-id="/art/particle-tracks/" class="dd-item active">
+      <li data-nav-id="/art/particle-tracks/" class="dd-item">
         <a href="/art/particle-tracks/">
           <span>Particle Tracks</span>
         </a>
@@ -362,7 +362,7 @@
 
 
 
- <a href='/'>jsyang.ca</a> > <a href='/art/'>Art</a> > Particle Tracks
+ <a href='/'>jsyang.ca</a> > <a href='/games/'>Games</a> > Flash games
 
  
 
@@ -379,11 +379,8 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#live-play">Live play</a></li>
-<li><a href="#source-code-https-github-com-jsyang-particletracks"><a href="https://github.com/jsyang/particletracks">Source code</a></a></li>
-</ul></li>
+<li><a href="#defend-2-super-tank-2004">Defend 2 - Super Tank (2004)</a></li>
+<li><a href="#base-attack-2d-war-simulator-2002">Base Attack - 2D War Simulator (2002)</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -396,9 +393,9 @@
 
 <div id="body-inner">
   
-    <h1>Particle Tracks</h1>
+    <h1>Flash games</h1>
     
-    <div style="font-size: 0.8em; text-align:right">2016-12-19</div>
+    <div style="font-size: 0.8em; text-align:right">2004-02-01</div>
     
   
 
@@ -409,19 +406,47 @@
     
     
 
-<p>Wrote a little procedural art widget drawing inspiration from bubble / cloud chambers used to study particle trajectories. This toy makes use of the excellent <a href="https://github.com/dataarts/dat.gui">scrubbing <em>dat.GUI</em> library</a> to change initial values.</p>
+<p>Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.</p>
 
+<h2 id="defend-2-super-tank-2004">Defend 2 - Super Tank (2004)</h2>
 
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/jDAiQndl9-M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
- </div>
+<p><object type="application/x-shockwave-flash" 
+data="/bin/defend2.swf" id="applicationID" style="display: block; width: 100%; height: 640px">
+    <param name="movie" value="/bin/defend2.swf" />
+    <param name="quality" value="autohigh" />
+</object></p>
 
+<p>Controls:</p>
 
-<h3 id="live-play">Live play</h3>
+<ul>
+<li><code>WASD</code> to move the tank</li>
+<li>mouse to aim, click to fire</li>
+<li><code>SPACE</code> to switch weapons</li>
+</ul>
 
-<iframe src="https://cdn.rawgit.com/jsyang/particletracks/2b2922f4/index.html" width="100%" height="480"></iframe>
+<h2 id="base-attack-2d-war-simulator-2002">Base Attack - 2D War Simulator (2002)</h2>
 
-<h3 id="source-code-https-github-com-jsyang-particletracks"><a href="https://github.com/jsyang/particletracks">Source code</a></h3>
+<p>This was sort of half-way between a game and screen-saver. Two armies (white vs black) fight each other. Each battle (reload of the page) is completely random: background scenery changes, build order changes, reinforcements change.</p>
+
+<p>I loved making games that made use of many random factors. The only controls available to pause/unpause the sim with the <code>UP/DOWN arrow keys</code>. This one drew heavy inspiration from <a href="https://en.wikipedia.org/wiki/Armor_Alley">Armor Alley</a>. I was clearly more fascinated by the ground forces sent around by the AI than the actual gameplay involved in this helicopter game. This Flash game would be recreated years later as <a href="/games/microarmy">Microarmy</a>.</p>
+
+<p><object type="application/x-shockwave-flash" 
+data="/bin/aa.swf" id="applicationID" style="display: block; width: 100%; height: 300px">
+    <param name="movie" value="/bin/aa.swf" />
+    <param name="quality" value="autohigh" />
+</object></p>
+
+<p>There were several types of units available to each side:</p>
+
+<ul>
+<li>Foot-soldier</li>
+<li>Tank</li>
+<li>Anti-air missle truck</li>
+<li>Sabotage van</li>
+<li>Bomber</li>
+</ul>
+
+<p>Each side held its territory with a pillbox defending the main base: building with a radar dish atop. The game was lost once the main base was destroyed.</p>
 
 
     
