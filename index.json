@@ -116,7 +116,7 @@
 	"title": "Celestial Combat",
 	"tags": [],
 	"description": "",
-	"content": " Currently a work in progress!   Celestial Combat is an expanded port of a Windows 3.1 era space game called Gravity Well. I wrote it to experiment with vector graphics and make use of PixiJS.\nSupports bluetooth gamepads and has its own game assets packing / loading system.\nSource code "
+	"content": " Active work in progress!   Celestial Combat is an expanded port of a Windows 3.1 era space game called Gravity Well. Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game.\nSupports bluetooth gamepads and has its own game assets packing / loading system.\n Play Celestial Combat Play Celestial Combat with Gamepad support`  "
 },
 {
 	"uri": "http://jsyang.ca/art/particle-tracks/",
