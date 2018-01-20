@@ -7,13 +7,6 @@
 	"content": ""
 },
 {
-	"uri": "http://jsyang.ca/guides/",
-	"title": "Guides",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "http://jsyang.ca/cycling/",
 	"title": "Cycling",
 	"tags": [],
@@ -26,6 +19,13 @@
 	"tags": [],
 	"description": "",
 	"content": " the expression or application of human creative skill and imagination, typically in a visual form such as painting or sculpture\n "
+},
+{
+	"uri": "http://jsyang.ca/guides/",
+	"title": "Guides",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "http://jsyang.ca/tools/",

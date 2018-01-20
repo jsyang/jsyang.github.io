@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>http://jsyang.ca/guides/</loc>
-    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://jsyang.ca/cycling/</loc>
     <lastmod>2017-05-15T00:00:00+00:00</lastmod>
   </url>
@@ -20,6 +15,11 @@
   <url>
     <loc>http://jsyang.ca/art/</loc>
     <lastmod>2017-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/guides/</loc>
+    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
