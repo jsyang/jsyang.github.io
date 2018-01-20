@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>Foldable rowboat v1 :: jsyang.ca</title>
+<title>Faulty Raspberry Pi Zero W :: jsyang.ca</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/hacks/foldable-boat/">
+  <body data-url="/guides/faulty-rpi0w/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -64,12 +64,13 @@
             <li data-nav-id="/" class="dd-item">
             <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="/guides/" class="dd-item">
+    <li data-nav-id="/guides/" class="dd-item parent">
       <a href="/guides/">
         <span>
           Guides
           (2)
-        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        </span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/guides/mocute-bluetooth-gamepad/" class="dd-item">
@@ -77,7 +78,7 @@
           <span>Mocute Bluetooth Gamepads</span>
         </a>
     </li>
-      <li data-nav-id="/guides/faulty-rpi0w/" class="dd-item">
+      <li data-nav-id="/guides/faulty-rpi0w/" class="dd-item active">
         <a href="/guides/faulty-rpi0w/">
           <span>Faulty Raspberry Pi Zero W</span>
         </a>
@@ -304,13 +305,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/hacks/" class="dd-item parent">
+    <li data-nav-id="/hacks/" class="dd-item">
       <a href="/hacks/">
         <span>
           Hacks
           (2)
-        </span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/hacks/bike-bell-mod/" class="dd-item">
@@ -318,7 +318,7 @@
           <span>Cheap Bike Bell Modification</span>
         </a>
     </li>
-      <li data-nav-id="/hacks/foldable-boat/" class="dd-item active">
+      <li data-nav-id="/hacks/foldable-boat/" class="dd-item">
         <a href="/hacks/foldable-boat/">
           <span>Foldable rowboat v1</span>
         </a>
@@ -382,7 +382,7 @@
 
 
 
- <a href='/'>jsyang.ca</a> > <a href='/hacks/'>Hacks</a> > Foldable rowboat v1
+ <a href='/'>jsyang.ca</a> > <a href='/guides/'>Guides</a> > Faulty Raspberry Pi Zero W
 
  
 
@@ -399,15 +399,7 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#materials">Materials</a></li>
-<li><a href="#scale-models">Scale Models</a></li>
-<li><a href="#initial-folding">Initial Folding</a></li>
-<li><a href="#fold-photos">Fold photos</a></li>
-<li><a href="#maiden-voyage-and-success">Maiden voyage and success!</a></li>
-<li><a href="#launch-photos">Launch photos</a></li>
-</ul></li>
+<li><a href="#setup">Setup</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -420,9 +412,9 @@
 
 <div id="body-inner">
   
-    <h1>Foldable rowboat v1</h1>
+    <h1>Faulty Raspberry Pi Zero W</h1>
     
-    <div style="font-size: 0.8em; text-align:right">2013-08-01</div>
+    <div style="font-size: 0.8em; text-align:right">2017-10-01</div>
     
   
 
@@ -433,253 +425,67 @@
     
     
 
+<p>If you&rsquo;ve done everything you&rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can&rsquo;t
+get it to boot up and recognize the Wifi, there&rsquo;s a chance you may have a defective board.</p>
 
 
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/vv6KLQA2qJ0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+ </div>
 
 
-  
+<h2 id="setup">Setup</h2>
 
+<p>After purchasing you should have been able to do this to get it working:</p>
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="/js/load-photoswipe.js"></script>
+<ul>
+<li><a href="https://gist.github.com/gbaman/50b6cca61dd1c3f88f41">https://gist.github.com/gbaman/50b6cca61dd1c3f88f41</a></li>
+<li><a href="https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a">https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a</a></li>
+<li><a href="https://www.youtube.com/watch?v=xj3MPmJhAPU">https://www.youtube.com/watch?v=xj3MPmJhAPU</a></li>
+</ul>
 
+<p>Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W</p>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<ul>
+<li><a href="https://github.com/raspberrypi/firmware/issues/758">https://github.com/raspberrypi/firmware/issues/758</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=178362">https://www.raspberrypi.org/forums/viewtopic.php?t=178362</a></li>
+<li><a href="https://forum.core-electronics.com.au/t/pi-zero-w-firmware-showing-pi-model-b/1076/11">https://forum.core-electronics.com.au/t/pi-zero-w-firmware-showing-pi-model-b/1076/11</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=177652&amp;p=1132791">https://www.raspberrypi.org/forums/viewtopic.php?t=177652&amp;p=1132791</a></li>
+</ul>
 
+<p>Running <code>rpi-update</code> updated the firmware but hardware was still reporting bad results.</p>
 
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<pre><code>cat /sys/firmware/devicetree/base/model
+Raspberry Pi Model B Rev 2
 
-<div class="pswp__bg"></div>
+cat /proc/cpuinfo
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 697.95
+Features	: half thumb fastmult vfp edsp java tls
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
 
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
+Hardware	: BCM2835
+Revision	: 000f
+Serial	: 00000000dbe19693
 
+uname -a
+Linux raspberrypi 4.9.50+ #1035 Wed Sep 13 22:53:09 BST 2017 armv6l GNU/Linux
 
-<p>Over the summer of 2013 <a href="http://www.orukayak.com/">several</a> <a href="http://www.youtube.com/watch?v=-QqcVKEy3i4">very</a>
-<a href="http://www.youtube.com/watch?v=K0P-zJDn8ho">well</a> made corrugated plastic boats were featured on DIY sites and on
-<a href="http://reddit.com/r/buildaboat">r/buildaboat</a>. It all seemed very simple to do and I&rsquo;d always wanted my own boat to
-fool around with so I thought why not! Corrugated plastic in large sheets were easy to come by once a little research
-had been done and the only other materials which were required were reusable zip-ties and some kind of propulsion
-device: a paddle or a small trolling motor. Much credit is owed to the pioneers of this strange art!</p>
+</code></pre>
 
-<h3 id="materials">Materials</h3>
-
-<p>Corrugated plastic (AKA Coroplast) was the material of choice for forming the hull in all of the previous examples of
-these foldable boats. Mine would be no exception to this pattern, and so I set out to source the largest readily
-available sheet of corrugated plastic I could find. The <a href="http://www.discountbuilderssupplysf.com">Discount Builders Supply</a>
-store in the Mission provided these boards in generous sizes. Purchasing two sheets, I slowly walked home with them,
-catching all sorts of cross winds with my planks of white plastic. A better way to transport these things is highly
-recommended.</p>
-
-<p>The first sheet was to be used as the hull and the second was for the furniture that could line the interior of my
-watercraft (seat, bracing, internal hull).</p>
-
-<p>This boat also had to be as simple as possible since that was only way it could end without abject failure. With
-regard to this, I decided against any means of moving the boat which was not a paddle. Luckily, I found
-<a href="http://www.amazon.com/gp/product/B00BIZ2QPI/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00BIZ2QPI&amp;linkCode=as2&amp;tag=jc04a-20">a nice paddle</a>
-on Amazon for the wallet-pleasing price of $20 taxes included!</p>
-
-<hr />
-
-<h3 id="scale-models">Scale Models</h3>
-
-<p>The first thing in creating any sort of product is figuring out how things will come together in a way which satisfies
-all your needs. With a foldable boat this means creating a scale model that has a contour which is simple and reasonably
-easy enough to fold manually. Here are two of the better folds I tried:</p>
-
-<p><img src="/images/foldable-rowboat/boat-models.jpg" alt="" /></p>
-
-<p>The style on the left was chosen as the keel fold would be hard enough to cease once, let alone twice as on the
-kayak-like right model. The keel was folded in a way which minimized any seam contact with the water line. A
-<em>&ldquo;milk-carton&rdquo;</em> style fold was used for the back to make it easier to refold.</p>
-
-<hr />
-
-<h3 id="initial-folding">Initial Folding</h3>
-
-<p>With the combined effort of a small dog and two zesty humans, the boat slowly came together according to the
-pattern that was tested in the scale model. Below you can see the progress:</p>
-
-<h3 id="fold-photos">Fold photos</h3>
-
-<p>
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/fold//boat-fold1.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat fold1</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/fold//boat-fold1.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/fold//boat-fold2.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat fold2</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/fold//boat-fold2.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/fold//boat-fold3.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat fold3</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/fold//boat-fold3.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-</p>
-
-<hr />
-
-<h3 id="maiden-voyage-and-success">Maiden voyage and success!</h3>
-
-<p>My lovely friends were convinced I was going to drown in my newly crafted vessel once it had been unfolded to stow away for
-transport and refolded for use. Survival was fairly certain in my opinion, so we decided to call the wager by launching
-the Coroplast boat at Lake Merced, about 20 minutes south of SF.</p>
-
-<p>Curiosity brought a fellow water-sport enthusiast over to help us with the launch, I was especially thankful as the
-winds were strong that day.</p>
-
-<p>Without further ado, these follow photos prove that I didn&rsquo;t drown!</p>
-
-<h3 id="launch-photos">Launch photos</h3>
-
-
-
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch0.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch0</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch0.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch1.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch1</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch1.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch2.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch2</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch2.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch3.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch3</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch3.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch4.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch4</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch4.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('http://jsyang.ca//images/foldable-rowboat/launch//boat-launch5.jpg');" >
-				      
-				    </div>
-			      <figcaption>
-		          <p>Boat launch5</p>
-			      </figcaption>
-				    <a href="http://jsyang.ca//images/foldable-rowboat/launch//boat-launch5.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-<p>The project was a great success and now we have experience building a simple boat! Paddling was tough
-exercise though so I might just stick to designing and launching them. Very much looking forward to the next boat build!</p>
+<p>Tried to update with <code>force_board_rev=0x9000c1</code> in <code>config.txt</code> but to no avail.
+I had to return my board to the seller, who promptly confirmed it was a faulty board.
+<strong>If you can reproduce these signs for your board, it is likely faulty.</strong></p>
 
 
     
     
           
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 
 
 <script>

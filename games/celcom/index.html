@@ -64,6 +64,26 @@
             <li data-nav-id="/" class="dd-item">
             <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
+    <li data-nav-id="/guides/" class="dd-item">
+      <a href="/guides/">
+        <span>
+          Guides
+          (2)
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/guides/mocute-bluetooth-gamepad/" class="dd-item">
+        <a href="/guides/mocute-bluetooth-gamepad/">
+          <span>Mocute Bluetooth Gamepads</span>
+        </a>
+    </li>
+      <li data-nav-id="/guides/faulty-rpi0w/" class="dd-item">
+        <a href="/guides/faulty-rpi0w/">
+          <span>Faulty Raspberry Pi Zero W</span>
+        </a>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/games/" class="dd-item parent">
       <a href="/games/">
         <span>
@@ -383,7 +403,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#font-color-red-active-work-in-progress-font"><font color=red>Active work in progress!</font></a></li>
+<li><a href="#font-color-red-development-in-progress-font"><font color=red>Development in progress!</font></a></li>
+<li><a href="#excerpt-from-how-to-play-http-jsyang-ca-celestial-how-to-play">Excerpt from <a href="http://jsyang.ca/celestial/how-to-play">&ldquo;How to play&rdquo;</a></a></li>
+<li><a href="#gameplay">Gameplay</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -411,23 +433,40 @@
     
     
 
-<h4 id="font-color-red-active-work-in-progress-font"><font color=red>Active work in progress!</font></h4>
+<h4 id="font-color-red-development-in-progress-font"><font color=red>Development in progress!</font></h4>
+
+<p>Originally written as a way to experiment with vector graphics in <a href="http://www.pixijs.com/">PixiJS</a>.
+It has since formed into a complete game. Celestial Combat is a game of galactic trade, colonization, and conquest.</p>
+
+<p><img src="/images/celcom/title.png"></p>
+
+<h4 id="excerpt-from-how-to-play-http-jsyang-ca-celestial-how-to-play">Excerpt from <a href="http://jsyang.ca/celestial/how-to-play">&ldquo;How to play&rdquo;</a></h4>
+
+<blockquote>
+<p>You begin with either an invasion fleet (1 x Fighter + 4 invasion Freighters) or
+ a single occupied planet.</p>
+
+<p>To colonize planets, you must land on them when they are unoccupied with your
+ Fighter. The landing will plant a beacon, starting the flow of Freighters
+ and raw materials sent to construct facilities on the planet.</p>
+
+<p>To win, you need to destroy all enemy production, combat facilities, and spacecraft.</p>
+</blockquote>
+
+<p>It fully supports gamepads and has its own game assets packing / loading system.</p>
+
+<ul>
+<li><a href="http://jsyang.ca/celestial">Play Celestial Combat</a></li>
+<li><a href="http://jsyang.ca/celestial?gamepad">Play Celestial Combat with Gamepad support</a></li>
+</ul>
+
+<h4 id="gameplay">Gameplay</h4>
 
 
 <div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
   <iframe src="//www.youtube.com/embed/C8LYTUkKWOQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
  </div>
 
-
-<p>Celestial Combat is an expanded port of a Windows 3.1 era space game called <a href="https://archive.org/details/GWELL35">Gravity Well</a>. Originally written as
-a way to experiment with vector graphics in <a href="http://www.pixijs.com/">PixiJS</a>. It has since formed into a complete game.</p>
-
-<p>Supports bluetooth gamepads and has its own game assets packing / loading system.</p>
-
-<ul>
-<li><a href="http://jsyang.ca/celestial">Play Celestial Combat</a></li>
-<li><a href="http://jsyang.ca/celestial?gamepad">Play Celestial Combat with Gamepad support</a>`</li>
-</ul>
 
 
     

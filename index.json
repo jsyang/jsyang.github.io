@@ -7,6 +7,13 @@
 	"content": ""
 },
 {
+	"uri": "http://jsyang.ca/guides/",
+	"title": "Guides",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://jsyang.ca/cycling/",
 	"title": "Cycling",
 	"tags": [],
@@ -54,6 +61,20 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "http://jsyang.ca/guides/mocute-bluetooth-gamepad/",
+	"title": "Mocute Bluetooth Gamepads",
+	"tags": [],
+	"description": "",
+	"content": " These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.\nDepending on the seller, the gamepads can be found under different branding, though functionally they are all the same device. What you get is a bluetooth controller with an analog stick, 4 buttons, and a micro-USB port for charging its built-in LiPo battery (manufacturer claim: 20 hours of usage).\nAs far as I can tell, the cheaper listings are just as good as the listings from sellers that try to mark up the price of the device; usually $12 or £8.\nHow to use  Holding the I/O button for 3 seconds will power the device on/off.\n The GAME \u0026lt;--\u0026gt; KEY toggle will work differently depending on what device it\u0026rsquo;s paired with:\n On OSX, the GAME mode, the analog stick will send movement control keystrokes along with some characters for each direction (up, down, left, right).\niOS seems to send \u0026ldquo;yt\u0026rdquo;\ntriangle sends \u0026ldquo;jn\u0026rdquo;\na sends \u0026ldquo;uf\u0026rdquo;\nx sends \u0026ldquo;hr\u0026rdquo;\nThis mode is good to use for game keymappings.\n On OSX, the KEY mode, the analog stick won\u0026rsquo;t send anything to a textfield.\niOS seems to send Volume Up\nx sends Volume Down\ntriangle doesn\u0026rsquo;t send anything\na sends Mute Volume\nThis mode appears to be used for media control.\n   Compatibility I\u0026rsquo;ve manage to use these controllers (in GAME mode) with the HTML5 GamePad API as well as for GameBoy and NES (Famicom) emulation with OpenEmu.\nInitially, the controller may register in your Bluetooth listing with its MAC address. Once paired, these are typical device names:\nCelestial Combat I\u0026rsquo;ve been able to write a game that fully supports this type of gamepad, which makes it perfectly serviceable for mobile game play: Celestial Combat.\nFull instructions leaflet scan You can find a scan of the full instructions here\n"
+},
+{
+	"uri": "http://jsyang.ca/guides/faulty-rpi0w/",
+	"title": "Faulty Raspberry Pi Zero W",
+	"tags": [],
+	"description": "",
+	"content": " If you\u0026rsquo;ve done everything you\u0026rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can\u0026rsquo;t get it to boot up and recognize the Wifi, there\u0026rsquo;s a chance you may have a defective board.\n  Setup After purchasing you should have been able to do this to get it working:\n https://gist.github.com/gbaman/50b6cca61dd1c3f88f41 https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a https://www.youtube.com/watch?v=xj3MPmJhAPU  Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W\n https://github.com/raspberrypi/firmware/issues/758 https://www.raspberrypi.org/forums/viewtopic.php?t=178362 https://forum.core-electronics.com.au/t/pi-zero-w-firmware-showing-pi-model-b/1076/11 https://www.raspberrypi.org/forums/viewtopic.php?t=177652\u0026amp;p=1132791  Running rpi-update updated the firmware but hardware was still reporting bad results.\ncat /sys/firmware/devicetree/base/model Raspberry Pi Model B Rev 2 cat /proc/cpuinfo processor\t: 0 model name\t: ARMv6-compatible processor rev 7 (v6l) BogoMIPS\t: 697.95 Features\t: half thumb fastmult vfp edsp java tls CPU implementer\t: 0x41 CPU architecture: 7 CPU variant\t: 0x0 CPU part\t: 0xb76 CPU revision\t: 7 Hardware\t: BCM2835 Revision\t: 000f Serial\t: 00000000dbe19693 uname -a Linux raspberrypi 4.9.50+ #1035 Wed Sep 13 22:53:09 BST 2017 armv6l GNU/Linux  Tried to update with force_board_rev=0x9000c1 in config.txt but to no avail. I had to return my board to the seller, who promptly confirmed it was a faulty board. If you can reproduce these signs for your board, it is likely faulty.\n"
 },
 {
 	"uri": "http://jsyang.ca/cycling/moulton-automatic/",
@@ -116,7 +137,7 @@
 	"title": "Celestial Combat",
 	"tags": [],
 	"description": "",
-	"content": " Active work in progress!   Celestial Combat is an expanded port of a Windows 3.1 era space game called Gravity Well. Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game.\nSupports bluetooth gamepads and has its own game assets packing / loading system.\n Play Celestial Combat Play Celestial Combat with Gamepad support`  "
+	"content": " Development in progress! Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic trade, colonization, and conquest.\nExcerpt from \u0026ldquo;How to play\u0026rdquo;  You begin with either an invasion fleet (1 x Fighter + 4 invasion Freighters) or a single occupied planet.\nTo colonize planets, you must land on them when they are unoccupied with your Fighter. The landing will plant a beacon, starting the flow of Freighters and raw materials sent to construct facilities on the planet.\nTo win, you need to destroy all enemy production, combat facilities, and spacecraft.\n It fully supports gamepads and has its own game assets packing / loading system.\n Play Celestial Combat Play Celestial Combat with Gamepad support  Gameplay   "
 },
 {
 	"uri": "http://jsyang.ca/art/particle-tracks/",
