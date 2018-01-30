@@ -400,7 +400,8 @@
 <li>
 <ul>
 <li><a href="#how-to-use">How to use</a></li>
-<li><a href="#compatibility">Compatibility</a></li>
+<li><a href="#mtk-and-android-modes">MTK and Android Modes</a></li>
+<li><a href="#compatibility-with-openemu">Compatibility with OpenEmu</a></li>
 <li><a href="#celestial-combat">Celestial Combat</a></li>
 <li><a href="#full-instructions-leaflet-scan">Full instructions leaflet scan</a></li>
 </ul></li>
@@ -468,10 +469,26 @@ direction (up, down, left, right).<br><br>
 </ul></li>
 </ul>
 
-<h2 id="compatibility">Compatibility</h2>
+<h2 id="mtk-and-android-modes">MTK and Android Modes</h2>
+
+<p>You can set the controller to emit different kinds of input by putting it
+in either &ldquo;MTK&rdquo; or &ldquo;Android&rdquo; mode. Start by powerin off the controller.</p>
+
+<ul>
+<li><p>Holding down the <code>triangle button</code> + <code>power button</code> will set it to MTK mode (red LED, when powered on in this mode)</p></li>
+
+<li><p>Holding down the <code>a button</code> + <code>power button</code> will set it to Android mode (blue LED, when powered on in this mode)</p></li>
+</ul>
+
+<p>I use the MTK mode when paired with OSX to play games in OpenEmu.</p>
+
+<h2 id="compatibility-with-openemu">Compatibility with OpenEmu</h2>
 
 <p>I&rsquo;ve manage to use these controllers (in GAME mode) with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API">HTML5 GamePad API</a>
 as well as for GameBoy and NES (Famicom) emulation with <a href="http://openemu.org">OpenEmu</a>.</p>
+
+<p><strong>If you&rsquo;re attempting to use OpenEmu, ensure you have closed Chrome as leaving Chrome running is known
+to <a href="https://github.com/OpenEmu/OpenEmu/issues/798#issuecomment-31160017">capture input states based on how it implements the HTML Gamepad API</a>.</strong></p>
 
 <p>Initially, the controller may register in your Bluetooth listing with its MAC address. Once paired, these are typical
 device names:</p>
