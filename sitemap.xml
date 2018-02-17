@@ -19,7 +19,7 @@
   
   <url>
     <loc>http://jsyang.ca/guides/</loc>
-    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -44,6 +44,11 @@
   
   <url>
     <loc>http://jsyang.ca/cv/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/guides/gear-360-workflow/</loc>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -257,7 +262,7 @@
   
   <url>
     <loc>http://jsyang.ca/</loc>
-    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

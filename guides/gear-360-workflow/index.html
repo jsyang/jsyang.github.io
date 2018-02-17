@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>Translucify :: jsyang.ca</title>
+<title>Samsung Gear 360 (SM-200) image and video workflow on MacOS :: jsyang.ca</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/tools/translucify/">
+  <body data-url="/guides/gear-360-workflow/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -169,15 +169,16 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/guides/" class="dd-item">
+    <li data-nav-id="/guides/" class="dd-item parent">
       <a href="/guides/">
         <span>
           Guides
           (3)
-        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        </span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/guides/gear-360-workflow/" class="dd-item">
+      <li data-nav-id="/guides/gear-360-workflow/" class="dd-item active">
         <a href="/guides/gear-360-workflow/">
           <span>Samsung Gear 360 (SM-200) image and video workflow on MacOS</span>
         </a>
@@ -244,13 +245,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/tools/" class="dd-item parent">
+    <li data-nav-id="/tools/" class="dd-item">
       <a href="/tools/">
         <span>
           Tools
           (7)
-        </span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/tools/gpx-mapfactor/" class="dd-item">
@@ -263,7 +263,7 @@
           <span>Slackson bot</span>
         </a>
     </li>
-      <li data-nav-id="/tools/translucify/" class="dd-item active">
+      <li data-nav-id="/tools/translucify/" class="dd-item">
         <a href="/tools/translucify/">
           <span>Translucify</span>
         </a>
@@ -387,7 +387,7 @@
 
 
 
- <a href='/'>jsyang.ca</a> > <a href='/tools/'>Tools</a> > Translucify
+ <a href='/'>jsyang.ca</a> > <a href='/guides/'>Guides</a> > Samsung Gear 360 (SM-200) image and video workflow on MacOS
 
  
 
@@ -404,9 +404,21 @@
 <ul>
 <li>
 <ul>
-<li><a href="#highlights">Highlights</a></li>
-<li><a href="#the-why">The Why</a></li>
-<li><a href="#diamond-in-the-rough">Diamond in the rough</a></li>
+<li><a href="#images">Images</a>
+<ul>
+<li>
+<ul>
+<li><a href="#uploading-to-facebook">Uploading to Facebook</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#video">Video</a>
+<ul>
+<li>
+<ul>
+<li><a href="#uploading-to-youtube">Uploading to YouTube</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#useful-code-apps">Useful code + apps</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -419,9 +431,9 @@
 
 <div id="body-inner">
   
-    <h1>Translucify</h1>
+    <h1>Samsung Gear 360 (SM-200) image and video workflow on MacOS</h1>
     
-    <div style="font-size: 0.8em; text-align:right">2015-05-01</div>
+    <div style="font-size: 0.8em; text-align:right">2018-02-17</div>
     
   
 
@@ -432,61 +444,72 @@
     
     
 
-<p><em>Originally posted to <a href="https://medium.com/this-place/translucify-374ec3f621c5">https://medium.com/this-place/translucify-374ec3f621c5</a></em></p>
+<p>I&rsquo;ve long been interested in 360 panoramic photos and videos and being a patient tech consumer, I was fortunate to get the 2016 Gear 360 camera for the low price of £80 shipped; 22% of the original launch price of £350.</p>
 
-<hr />
+<p><img src="/images/gear360/gear360.png" alt="image of the SM-200" /></p>
 
-<p>Translucify is a <a href="https://www.npmjs.com/package/translucify">drop-in solution</a> for mismatched background colors between a web page and its images.</p>
+<p>Additionally, I wrote a <a href="https://github.com/jsyang/360viewer">simple 360 web viewer</a>, so I can use any image host (e.g. Imgur, Dropbox, etc.) and not be tied to a specific online platform like Kuula.</p>
 
-<h2 id="highlights">Highlights</h2>
+<iframe width="100%" height="400px" src="http://jsyang.ca/360viewer/#https://i.imgur.com/iPhSNLL.jpg"></iframe>
+
+<h2 id="images">Images</h2>
+
+<p>You will have to install Hugin manually rather than via <code>brew cask install hugin</code> as the cask formula usually is out of date with the official releases. Go here to find the  latest binaries: <a href="https://sourceforge.net/projects/hugin/files/latest/download">https://sourceforge.net/projects/hugin/files/latest/download</a></p>
+
+<p>Once installed, clone this project <a href="https://github.com/ultramango/gear360pano">https://github.com/ultramango/gear360pano</a>. Now you can use the HuginStitchProject tool installed as part of the Hugin package to use the template files <code>gear360sm-c200.pto</code> (if using the Gear 360 SM-C200 camera) to stitch your dual fish eye photos together to form a spherical 360 photo.</p>
+
+<ol>
+<li>Open the HuginStitchProject app</li>
+<li>Select the PTO file</li>
+<li>You will be prompted to enter the name of the output JPEG file.</li>
+</ol>
+
+<p>Note: You can either edit the PTO file and change references to &ldquo;dummy.jpg&rdquo; to &ldquo;your_input_filename.jpg&rdquo; or simply rename your input file to &ldquo;dummy.jpg&rdquo;.</p>
+
+<h4 id="uploading-to-facebook">Uploading to Facebook</h4>
+
+<p>You can use <code>exiftool</code> to add metadata so Facebook (and possibly more social media in the future) can <a href="https://www.facebook.com/notes/eric-cheng/editing-360-photos-injecting-metadata/10156930564975277/">recognize the image</a> and use the appropriate viewer on the platform.</p>
+
+<pre><code># Install exiftool
+brew install exiftool
+
+exiftool -ProjectionType=&quot;equirectangular&quot; photo.jpg
+# 'photo.jpg' is the photo you want to tag
+</code></pre>
+
+<h2 id="video">Video</h2>
+
+<p>Haven&rsquo;t figure out a way to get multiblend to compile on OSX so we&rsquo;ll have to use an alternative projection tool.</p>
+
+<p>We can use this tool to roughly convert a 360 video
+<a href="https://github.com/raboof/dualfisheye2equirectangular">https://github.com/raboof/dualfisheye2equirectangular</a></p>
+
+<p>Follow the instructions to compile
+<code>gcc -o projection projection.c -lm</code> and then ensure that the command to generate the mapping file is taking the correct dimensions of the video input.</p>
+
+<p>e.g. If the MP4 files are in total 2560x1280 then the command would be <code>./projection -x xmap_dokicam_video.pgm -y ymap_dokicam_video.pgm -h 1280 -w 2560 -r 1280 -c 2560 -b 35 -m samsung_gear_360</code> vs the example given in the project instructions</p>
+
+<p>Use ffmpeg (install via <code>brew install ffmpeg</code>) to convert your video file:
+<code>ffmpeg -i movie.mp4 -i xmap_dokicam_video.pgm -i ymap_dokicam_video.pgm -filter_complex remap out.mp4</code></p>
+
+<h4 id="uploading-to-youtube">Uploading to YouTube</h4>
+
+<p>If uploading to YouTube, use Google&rsquo;s SpatialMedia metadata injector tool to allow YT to identify the upload as a spherical (equirectangular) 360 video.
+<a href="https://github.com/google/spatial-media/releases">https://github.com/google/spatial-media/releases</a></p>
+
+<h2 id="useful-code-apps">Useful code + apps</h2>
 
 <ul>
-<li>Approximately 230 SLOC (source lines of code)</li>
-<li>No dependencies</li>
+<li><p><a href="https://forum.xda-developers.com/android/software/mod-samsung-gear-360-manager-device-t3400383">Modified Samsung Gear 360 Manager APK to work on all Android devices</a></p></li>
+
+<li><p><a href="https://github.com/ultramango/gear360reveng">Reverse engineering project for the SM-200</a></p></li>
+
+<li><p>The Gear 360 uses the <a href="http://developer.samsung.com/html/techdoc/ProgrammingGuide_Accessory.pdf">Accessory Devices Bluetooth protocol</a> to talk to paired phones</p></li>
+
+<li><p><a href="https://www.reddit.com/r/Gear360/comments/4q99ee/underwater_housing_test_self_made/">Homemade underwater housing</a></p></li>
+
+<li><p><a href="https://www.reddit.com/r/Gear360/comments/5lvmgm/i_think_i_fixed_the_overheating_on_my_gear_360/">Fix for overheating issue</a></p></li>
 </ul>
-
-<h2 id="the-why">The Why</h2>
-
-<p>A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?</p>
-
-<p><img src="/images/translucify/1.png" alt="" /></p>
-
-<p>If there are only 3 different images and our prototype hard-codes the links to them then there’s an easy solution: go into Photoshop and delete the backgrounds. But what if we didn’t know where the images came from and if their format even supports transparency? JPEG, for instance, doesn’t save transparency data.</p>
-
-<p>We can’t just go into Photoshop and manually delete the backgrounds ourselves, especially if there are potentially 2000 different images and they are served off a site we lack full access to. It was such an obvious UX issue to us that we felt it was something that had to be addressed immediately.</p>
-
-<p>We thought it such a common problem people would’ve run into that there must already be a solution someone else wrote, right?</p>
-
-<blockquote>
-<p>“I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.”
-— Abraham Maslow, The Psychology of Science, 1966</p>
-</blockquote>
-
-<p>If we could do it client-side, it would be an easy win for UX, rather than chase the image providers down and getting them to change every single image we could possibly use in this way. The only snagging point we could see was <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-Origin Resource Sharing (CORS) headers</a>. These are settings which control how a web browser uses images that come from a different domain than the page requesting the image (index.html on thisplace.com vs cheese.jpg on wikimedia.org). As long as the domain hosting the image (wikimedia.org) has correctly setup CORS header on images (which is to say it’s enabled for thisplace.com), it shouldn’t be a big deal.</p>
-
-<p>StackOverflow threads were our first legit results in our quest to find an existing solution to this problem. <a href="http://stackoverflow.com/questions/11472273/how-to-edit-pixels-and-remove-white-background-in-a-canvas-image-in-html5-and-ja">This one</a> was especially relevant to the task of manipulating image data client-side. It’s pretty clear the end result should be a canvas tag that has the same image content as the original only with the background color removed.</p>
-
-<p>The scope of the solution was clear now: create a one off, single purpose <a href="http://microjs.com/">micro-library</a>, using the code from the StackOverflow answer as a starting point. The background color has to be deleted, the resulting element should behave like a regular image element as much as possible (in-line element, easy to style with CSS and retain the ability for users to save that image). We’d also want to stick it in a micro-library module (that is CommonJS, AMD and plain <code>&lt;script&gt;</code> tag compatible) because we don’t mind how it’s used as long as it’s helpful to someone later.</p>
-
-<p>We couldn’t find any existing libraries that worked like this, which is why we wrote our own.</p>
-
-<h2 id="diamond-in-the-rough">Diamond in the rough</h2>
-
-<p>This naive method had a problem though. There could be many false positives inside the image of a shiny item since the code was using a high pass filter on all the pixels.</p>
-
-<p><img src="/images/translucify/2.png" alt="" /></p>
-
-<p>The solution to this was to add a flood-fill method that works like the magic wand in Photoshop and replaces all the pixels starting from X:0, Y:0. The flood-fill method worked like a charm.</p>
-
-<p>Implementation-wise, the library uses no bleeding-edge APIs or features. The only thing we needed to do was <a href="https://github.com/ariya/phantomjs/issues/10522">shim Function.bind()</a> (an issue well known with PhantomJS &lt;2) for our screenshot image diff tests.</p>
-
-<p>Going further, we wanted to gauge how well either of these methods performed across browsers and devices. We wrote a <a href="http://jsperf.com/floodfill-vs-highpass">jsPerf test case</a>: this actually showed us something we didn’t expect but made perfect sense. The simpler high pass filter method of translucifying images was slower than the flood-fill method by a factor of more than 10!</p>
-
-<p><img src="/images/translucify/3.png" alt="" /></p>
-
-<p>The takeaway from this exercise was an immediate change to remove the high-pass method from the code since it was both slower and less useful.</p>
-
-<p>You can find translucify <a href="https://www.npmjs.com/package/translucify">on npm</a> and <a href="https://github.com/jsyang/translucify">on GitHub</a>.</p>
 
 
     
