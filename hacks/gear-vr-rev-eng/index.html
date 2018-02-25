@@ -411,6 +411,7 @@
 <ul>
 <li>
 <ul>
+<li><a href="#the-result-so-far">The result so far</a></li>
 <li><a href="#background">Background</a></li>
 <li><a href="#unboxing-and-rtfm">Unboxing and RTFM</a></li>
 <li><a href="#initial-survey">Initial survey</a></li>
@@ -516,6 +517,18 @@
 </div>
 
 
+<h3 id="the-result-so-far">The result so far</h3>
+
+<p>Here&rsquo;s a video demo of I was able to achieve with this reverse engineering effort:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/QGb5cKL8kZ4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+ </div>
+
+
+<p><a href="#demo">Click here</a> if you&rsquo;re interested in running this yourself.</p>
+
 <h3 id="background">Background</h3>
 
 <p>About a week ago I was having a look at some new input devices to use for my game experiments that were a little more
@@ -564,16 +577,28 @@ any attempt to pair with it again would cause it to toggle rapidly between being
 <p>The only solution I found for this was to manually remove the device profile from the Bluetooth device list every time this
 happened so it could formally pair again.</p>
 
-<p>With little prior experience working with Bluetooth devices on lower level, I had to read up on how the whole BTLE tech stack
-was meant to work. Essentially, every BTLE client device talks to a BTLE host device via a <strong>GATT (Generic Attributes)</strong> profile.</p>
+<p>I had little prior experience using Bluetooth devices at this level so I had to read up on how the whole BTLE tech stack
+is meant to work.</p>
 
-<p>On a low-level, this profile tells the host what the client can do (GATT SERVICES, e.g. read the current temperature) and
-groups them together (GATT CHARACTERISTICS, e.g. humidity device profile &gt; <em>environment sensing</em> &gt; read the current temperature).
-This was simple to understand and I didn&rsquo;t have to go any deeper than that.</p>
+<p>Essentially, every BTLE client device talks to a BTLE host device via a <strong>GATT (Generic Attributes)</strong> profile.</p>
 
-<p>The goal was simple: use controller device without using any of the custom made Gear VR Android apps or other hardware.</p>
+<p>This profile tells the host what the client can do (GATT SERVICES, e.g. read the current temperature) and
+groups them together (GATT CHARACTERISTICS, e.g. environment sensing &gt; read the current temperature).</p>
+
+<p>For each service:</p>
+
+<ul>
+<li>You can <strong>read</strong> its value</li>
+<li>You can <strong>write</strong> a value to it</li>
+<li>You can <strong>subscribe/unsubscribe</strong> to notifications for when values change</li>
+</ul>
+
+<p><strong>My goal was simple: use the Gear VR controller outside of the Gear VR apps and without other hardware.</strong></p>
 
 <h3 id="initial-survey">Initial survey</h3>
+
+<p>I was able to map out all of the services and characteristics of the controller very quickly. The next step was
+trying to figure out what they did and how to use them.</p>
 
 <pre><code class="language-text">Services
 	Characteristic
@@ -615,33 +640,33 @@ FEF5
 	B7DE1EEA-823D-43BB-A3AF-C4903DFCE23C
 </code></pre>
 
-<p>I was able to map out all of the services and characteristics of the controller very quickly. The next step was
-trying to figure out what they did and how to use them. Using LightBlue and a little bit of help from <a href="https://www.bluetooth.com/specifications/gatt/services"><code>bluetooth.com</code></a>,
+<p>Using LightBlue and a little bit of help from <a href="https://www.bluetooth.com/specifications/gatt/services">bluetooth.com</a>,
 we can see that services 180F and 180A are the <a href="https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.battery_service.xml">Battery Service</a>
 and <a href="https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml">Device Information Service</a>, respectively.</p>
 
-<p>The other services were non-standard, and a search for the UUIDs (ex: <code>4F63756C-7573-2054-6872-65656D6F7465</code>) turned up very little. I did try
-searching for other reverse engineering efforts on GitHub and found a wiki page indicating that <a href="https://github.com/numinit/porygon/wiki/protocol"><code>FEF5</code></a>
-was possibly a service used for firmware updates. Maybe someone with more interest in this area will figure that out.</p>
+<p>The other services were non-standard, and a search for those UUIDs (e.g. 4F63756C-7573-2054-6872-65656D6F7465) turned up very little.
+I did try searching for other reverse engineering efforts on GitHub and found a wiki page indicating that <a href="https://github.com/numinit/porygon/wiki/protocol">FEF5</a>
+was possibly a service used for firmware updates. No doubt a skilled person with more interest in this area will figure it.</p>
 
-<p>That leaves <code>1879</code> and <code>4F63756C-7573-2054-6872-65656D6F7465</code> the only services that were still unknown.</p>
+<p>This leaves <code>1879</code> and <code>4F63756C-7573-2054-6872-65656D6F7465</code> the only services still unknown.</p>
 
 <h3 id="gear-vr-input-service-apk">Gear VR Input Service APK</h3>
 
-<p>The controller is meant to work with the Gear VR stack on Android. Since there is a well supported and documented
-ecosystem on Android for retrieving, debugging, and decompiling APK (Android Package Kit) files, it&rsquo;s made sense to look
-in that direction next.</p>
+<p>Thankfully, retrieving, decompiling, and debugging APK (Android Package Kit) files are all tasks that are
+well supported and documented within the Android ecosystem. It was sensible to look in that direction next.</p>
 
-<p>Gear VR games make use of the controller&rsquo;s data through something that translates raw data sent and received
-over BTLE and turns it into something that a game developer is more likely to use, like orientation and which key presses are happening.
-For normal input devices like keyboards and mice, this is usually handled by the OS. The Gear VR controller, however, is custom
-hardware and we can assume the Samsung Gear VR platform developers had to write their own service.</p>
+<p>Gear VR games make use of the controller&rsquo;s readings through a service that translates raw Inertial Measurement Unit
+(<a href="http://www.starlino.com/imu_guide.html">IMU</a>) data into something that a game developer is more likely to use:
+orientation, touchpad position, and which key presses are happening at any given moment.
+For common input devices like keyboards and mice, this step is handled by the OS, usually using the HID protocol.
+The Gear VR controller, however, is custom hardware and we can assume the Samsung Gear VR platform developers
+had to write their own service.</p>
 
 <p><img src="/images/gear-vr-rev-eng/apk-icon.png" alt="apk-icon" /></p>
 
 <p>If we peek inside this service, we might be able to figure out how they talk to the Gear VR controller over BTLE and
 re-implement this mechanism wherever we want! I found <a href="https://www.apkmirror.com/apk/samsung-electronics-co-ltd/gear-vr-inputservice/gear-vr-inputservice-1-0-44-release/gear-vr-inputservice-1-0-44-android-apk-download/">the APK for the input service</a>
-after reading through some Gear VR threads on <code>forums.xda-developers.com</code>.</p>
+after scanning through some Gear VR threads on <a href="forums.xda-developers.com">forums.xda-developers.com</a>.</p>
 
 <p>The input service package name is <code>com.samsung.android.app.vr.input.service</code>.</p>
 
@@ -656,23 +681,28 @@ The resulting output are SMALI files which is Dalvik human-readable bytecode. Co
 <li>Use <a href="https://github.com/google/android-classyshark">ClassyShark</a> or other tools to directly open an APK and view the internal structure</li>
 </ul>
 
-<p>You can also extract strings from some of the files inside the APK and if you see particularly helpful debug strings, it may
-be an indication that the decompiled code you will be looking at is relevant.</p>
+<p>You can also extract strings from some of the files inside the APK. This is a great way to scout for particularly helpful debug
+messages; doing that can quickly tell you if the package has relevant functionality.</p>
 
 <p>For instance, I found the string <code>com.samsung.android.hmt.vrsystem</code> to be particularly interesting:
 what does HMT stand for? Thanks to a sharp-eyed fellow Redditor, we now know it is <a href="https://www.reddit.com/r/GearVR/comments/7vovax/does_anyone_know_what_hmt_stands_for/">Samsung&rsquo;s internal codename
-for the Gear VR</a>: <strong>H</strong>ead <strong>M</strong>ounted <strong>T</strong>heater.</p>
+for the Gear VR system</a>: <strong>H</strong>ead <strong>M</strong>ounted <strong>T</strong>heater.</p>
 
-<p>What I chose to do was to extract the APK as a ZIP (first option) and then use <code>classes.dex</code> file inside the APK with <a href="https://github.com/pxb1988/dex2jar">dex2jar</a>
-to convert it into a ZIP file of all the classes inside <code>com.samsung.android.app.vr.input.service</code>. Doing this lets allows me
-to use a Java decompiler (<a href="https://github.com/java-decompiler/jd-gui">JD-GUI</a>) to drill deeper into code that is a little more human-readable.</p>
+<p>What was more interesting were strings like the one below, which confirmed this is where we should look for further
+progress toward the goal.</p>
+
+<pre><code>&quot;Accel: %+05.1f, %+05.1f, %+05.1f \n (%+05.1f, %+05.1f, %+05.1f)&quot;
+</code></pre>
+
+<p>Next, I extracted the APK as a ZIP (first option) and then used the <code>classes.dex</code> file (contains all the compiled Java classes) within the APK with
+<a href="https://github.com/pxb1988/dex2jar">dex2jar</a>. Doing this lets allows me to use a Java class decompiler (<a href="https://github.com/java-decompiler/jd-gui">JD-GUI</a>)
+to drill deeper into code that&rsquo;s a little more human-readable.</p>
 
 <p>This is what it looks like:</p>
 
 <p><img src="/images/gear-vr-rev-eng/jd-gui.png" alt="jd-gui" /></p>
 
-<p>Now, with the door open to deeper investigation, we can then take our time and go through everything to understand what the classes do and
-how they all fit together.</p>
+<p>This is starting to look more intelligible! We can go through everything to understand what the classes do and how they all fit together.</p>
 
 <h3 id="identify-modules">Identify modules</h3>
 
@@ -720,24 +750,35 @@ openssl x509 -inform DER -text -noout -in certs/oculus.crt
 
 <p><code>com.samsung.android.app.vr.input.service &gt; package &quot;c&quot;</code></p>
 
-<p>Its overall purpose is inferred from &ldquo;MSM&rdquo;, which may be &ldquo;Media State Machine&rdquo;. It decodes byte arrays received as data from the controller
-and provides the interface defined by <code>com.samsung.android.app.vr.input.service/unknown/com/samsung/android/app/vr/input/service/IRemoteInterface.aidl</code>.</p>
+<p>Its overall purpose may be inferred from &ldquo;MSM&rdquo;, which could be &ldquo;Media State Machine&rdquo;?
+It decodes byte arrays received as data from the controller and provides the interface defined by</p>
+
+<pre><code>com.samsung.android.app.vr.input.service/unknown/com/samsung/android/app/vr/input/service/IRemoteInterface.aidl
+</code></pre>
 
 <h4 id="4-protocol">4. Protocol</h4>
 
 <p><code>com.samsung.android.app.vr.input.service &gt; package &quot;protocol&quot;</code></p>
 
-<p>Finally, we find the package that controls the part we&rsquo;re most interested in re-implementing: definition of the BTLE protocol for
-the Gear VR controller. Nearly all the pertinent details will be found in here. Firstly, the little-endian hex strings
-within <code>com.samsung.android.app.vr.input.service &gt; package &quot;protocol&quot; &gt; package &quot;a&quot;</code> are of special note since these are
-the commands sent to the controller.</p>
+<p>Firstly, the little-endian hex strings within <code>package &quot;a&quot;</code> are of
+special note since these are the commands sent to the controller.</p>
 
-<p>Using code search in JD-GUI for &ldquo;4F63756C&rdquo; (one of the unknown services) and &ldquo;C8C51726&rdquo; (the service&rsquo;s unknown characteristics)
-showed that this service was the <code>CUSTOM_SERVICE</code> and the characteristics were <code>COMMAND SEND</code> and <code>DATA RECEIVE</code>. Bingo!</p>
+<p>Next, we find that <code>a.class</code> shows</p>
 
-<p>In the meantime, I also found <a href="https://github.com/gb2111/Access-GearVR-Controller-from-PC">another reverse engineering attempt for the Gear VR controller</a>
-which used <a href="https://github.com/gb2111/Access-GearVR-Controller-from-PC/blob/master/src/GearVRLib/GearVrDevice.cs#L316">exactly one of these commands on the <code>COMMAND SEND</code> characteristic to tell the controller to begin sending data</a>.
-I tried sending these commands with LightBlue and it worked great!</p>
+<pre><code>static
+  {
+    e.put(&quot;4f63756c-7573-2054-6872-65656d6f7465&quot;, &quot;CUSTOM SERVICE&quot;);
+    e.put(&quot;c8c51726-81bc-483b-a052-f7a14ea3d282&quot;, &quot;COMMAND SEND&quot;);
+    e.put(&quot;c8c51726-81bc-483b-a052-f7a14ea3d281&quot;, &quot;DATA RECEIVE&quot;);
+  }
+</code></pre>
+
+<p>This is full annotation of one of the unknown services and along with its characteristics. It tells us we should send commands to
+<code>c8c51726-81bc-483b-a052-f7a14ea3d282</code> and expect to receive data from <code>c8c51726-81bc-483b-a052-f7a14ea3d281</code>. Bingo!</p>
+
+<p>In the meantime, I found <a href="https://github.com/gb2111/Access-GearVR-Controller-from-PC">another reverse engineering attempt for the Gear VR controller</a>
+which used exactly <a href="https://github.com/gb2111/Access-GearVR-Controller-from-PC/blob/master/src/GearVRLib/GearVrDevice.cs#L316">one of these commands</a>
+on the <code>COMMAND SEND</code> characteristic to tell the controller to begin sending data. I tried sending these commands with LightBlue and it worked great!</p>
 
 <p>Here are all the commands:</p>
 
@@ -770,23 +811,30 @@ I tried sending these commands with LightBlue and it worked great!</p>
          protocol &gt; a &gt; l.class
 </code></pre>
 
-<p>At this point, I began writing <a href="https://github.com/jsyang/gluetooth/blob/master/gear-vr-controller.bluetooth.js">a Web Bluetooth script</a> to make the data inspection easier and
+<p>At this point, I started writing <a href="https://github.com/jsyang/gluetooth/blob/master/gear-vr-controller.bluetooth.js">a Web Bluetooth script</a> to make the data inspection easier and
 more fine-tuned to the information I should be expecting to get back from the device.</p>
 
 <h3 id="jackpot">Jackpot</h3>
 
-<p><code>com.samsung.android.app.vr.input.service &gt; package &quot;protocol&quot; &gt; package &quot;ui&quot; &gt; c.class</code></p>
+<pre><code>com.samsung.android.app.vr.input.service 
+    &gt; package &quot;ui&quot; 
+        &gt; c.class
+</code></pre>
 
-<p>This class had a lot of debug strings in it. It was a matter of simple translation to re-implement the decompiled code in JS
-using Web Bluetooth to send data and parse the received data. As I was playing more and more with the data, I found it necessary
-to write a histogram for the accumulated entropy of the bytes that were coming back to see where in the byte arrays I should be
-looking.</p>
+<p>This class had a lot of debug strings in it, include the previously scouted accelerometer debug string. It contained nearly all the
+bit-masks and logic needed to get the correct controller event data. Being cautious of little-endian byte order and the
+<code>float</code>, <code>short</code>, and <code>int</code> size differences (and associated typecasts) between Java and Javascript, it was a matter of simple translation to re-implement
+the decompiled code in JS using Web Bluetooth to send data and parse the received data.</p>
+
+<p>As I was playing more with the data, I found it helpful to write a histogram for the accumulated entropy of
+the bytes that were coming back to see where in the byte arrays I should be looking to verify that each byte was being
+read from the correct index.</p>
 
 <p><img src="/images/gear-vr-rev-eng/script1.png" alt="script1" /></p>
 
-<p>As you can see, the troughs in the graph clearly delineate the structure of the bytes as the controller is waved around. Having this
-extra tool while I was playing with the byte arrays made life so much easier. Eventually, I figured out enough of the data
-for an attempt at using it in a 3D context.</p>
+<p>As you can see, the troughs in the graph clearly delineate the order and structure of the bytes when the controller is
+waved around. Having this extra tool while I was playing with the byte arrays made life so much easier.
+Eventually, I figured out enough of the data to attempt using it in a 3D context.</p>
 
 <h3 id="sensor-fusion-and-drift">Sensor fusion and drift</h3>
 
@@ -797,26 +845,22 @@ in some algorithms, magnetometer (compass readings) readings to reliably output 
 itself, which means we have to do it in software in order to get the actual orientation values (e.g. pitch, yaw, roll or other rotations)
 that we care about as game developers.</p>
 
-<p>There are two main open-source sensor fusion algorithms: Mahony and Madgwick. Each has its own biases and characteristics. To my
-knowledge the key difference is that the Madgwick sensor fusion algorithm will use magnetometer readings to compensate for drift.
-Therefore it is extra-important to calibrate the magnetometer.</p>
+<p>There are two major open-source sensor fusion filter for IMUs that people seem to be using: <a href="http://folk.ntnu.no/skoge/prost/proceedings/ifac2014/media/files/1173.pdf">Mahony and Madgwick</a>.
+Each has its own biases and characteristics. To my knowledge the key difference is that the Madgwick sensor fusion algorithm
+will use magnetometer readings to compensate for drift. Therefore it is extra-important to calibrate the magnetometer.</p>
 
-<p>
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/QGb5cKL8kZ4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
- </div>
-</p>
-
-<p>I&rsquo;ve made a rough attempt at tweaking the values for sensor fusion. Of course it&rsquo;s still far from perfect. Perhaps
-others who are interested in this controller will be able to take that one step further. There is a calibration mode that
-I still haven&rsquo;t explored. The answer may yet lie in there.</p>
+<p>I made a rough attempt at tweaking the values for sensor fusion; it&rsquo;s still far from perfect. Perhaps
+I&rsquo;ll be able to take that further in a later attempt. There is a calibration mode that I still haven&rsquo;t explored.
+The answer may yet lie in there.</p>
 
 <h3 id="takeaways">Takeaways</h3>
 
-<p>This project taught me a lot about how IMUs work, how the Bluetooth stack works, and gave me a basic level of understanding of how sensor fusion works.
-As for pre-existing reverse engineering efforts, I learned how critical it is to always use primary sources (such as the decompiled code)
-as the first step for figuring something out. <em>If using shortcuts is indeed helpful, verify the shortcut is fully reproducible and
-comprehensible rather than assuming somebody else&rsquo;s understanding is correct.</em></p>
+<p>This project gave me a cursory understanding of how sensor fusion and IMUs work and how the Bluetooth stack works.
+In regards to pre-existing reverse engineering efforts, I learned how critical it is to always use primary sources
+(such as the decompiled code) as the first step for figuring something out.</p>
+
+<p>If you have to use shortcuts, verify you understand what the shortcut is doing fully and verify that it&rsquo;s making all the
+correct assumptions. Assuming somebody else&rsquo;s work is correct is an expensive risk time-wise.</p>
 
 <p><strong>Reverse engineering is FUN!</strong></p>
 
@@ -830,9 +874,9 @@ comprehensible rather than assuming somebody else&rsquo;s understanding is corre
 
 <h2 id="teardown-photos">Teardown photos</h2>
 
-<p>I couldn&rsquo;t resist a teardown of the hardware. So here are some photos:</p>
+<p>I couldn&rsquo;t resist a teardown of the hardware.</p>
 
-
+<p>
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 
 <div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
@@ -903,7 +947,7 @@ comprehensible rather than assuming somebody else&rsquo;s understanding is corre
 				  </figure>
 				</div>
 </div>
-
+</p>
 
 
     
