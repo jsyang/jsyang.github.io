@@ -412,7 +412,7 @@
 <li>
 <ul>
 <li><a href="#background">Background</a></li>
-<li><a href="#rtfm-reading-the-freakin-manual">RTFM: Reading The Freakin&rsquo; Manual</a></li>
+<li><a href="#unboxing-and-rtfm">Unboxing and RTFM</a></li>
 <li><a href="#initial-survey">Initial survey</a></li>
 <li><a href="#gear-vr-input-service-apk">Gear VR Input Service APK</a></li>
 <li><a href="#quickly-glancing-inside">Quickly glancing inside</a></li>
@@ -519,38 +519,50 @@
 <h3 id="background">Background</h3>
 
 <p>About a week ago I was having a look at some new input devices to use for my game experiments that were a little more
-interesting than a simple USB or Bluetooth Gamepad. Having had a bit of a previous dive into VR earlier, in 2017, it
-occurred to me that many of the devices released in the past year now had been in the hands of consumers for at least a
-few months now. Google Daydream had been out since November 2016, and the Gear VR received a similar controller.</p>
+interesting than a simple USB or Bluetooth Gamepad. As I kept a close eye on consumer VR technology in <sup>2016</sup>&frasl;<sub>2017</sub>, it
+occurred to me now that many of the devices released in the past year have been updated and on the market for at least a few months.
+Google Daydream had been out since November 2016, sold with a packed-in controller, and the Gear VR received a similar 3 degrees of
+freedom (3DOF) controller in April 2017.</p>
 
-<p>The Daydream controller was <a href="https://hackernoon.com/how-i-hacked-google-daydream-controller-c4619ef318e4">already</a> (1)
-<a href="https://stackoverflow.com/a/40753551/7216921">reverse</a> (2) <a href="https://github.com/mrdoob/daydream-controller.js/">engineered</a> (3),
-so I could use it within my web games as an input if I wanted.</p>
+<p>Being the first to market, the Daydream controller was <a href="https://hackernoon.com/how-i-hacked-google-daydream-controller-c4619ef318e4">already</a> (1)
+<a href="https://stackoverflow.com/a/40753551/7216921">reverse</a> (2) <a href="https://github.com/mrdoob/daydream-controller.js/">engineered</a> (3).
+It wouldn&rsquo;t take much to use it as an input for my game ideas.</p>
 
-<p>But there were clear hardware design disadvantages versus the Gear VR controller that I disliked: a non-removable built-in
-battery with USB-C as the only means of charging it, lack of a trigger button, and there were claims that the Gear VR
-controller was less affected by drift than its Daydream counterpart as well as achieving significantly longer battery life.</p>
+<p>However, there were clear hardware design disadvantages versus the Gear VR controller:</p>
 
-<p>The Gear VR Controller used standard AAA batteries and was better designed ergonomically; £20 later and a specimen was on its way.
-Shipped to me from an Amazon Warehouse Deals listing, it arrived in less than a week. Praise modern logistics!</p>
+<ol>
+<li>A non-removable built-in battery with USB-C as the only means of charging it.</li>
+<li>Users reported much shorter battery life than the Gear VR version.</li>
+<li>It lacked a trigger button.</li>
+<li>It was much more prone to sensor drift than its Gear VR counterpart.</li>
+</ol>
+
+<p>Moreover, it was not sold separately, which meant a seller on Amazon, eBay, or other marketplace would be incentivized
+to sell the headset and the controller together as a whole package rather than split the devices.</p>
+
+<p>The Gear VR Controller used standard AAA batteries and was better designed ergonomically; I found an Amazon Warehouse Deals
+listing that sold the controller only for £20. Shipped the same day, it arrived in less than a week. Praise modern logistics!</p>
 
 <p><img src="/images/gear-vr-rev-eng/gvc-side.png" alt="controller-side-view" /></p>
 
-<h3 id="rtfm-reading-the-freakin-manual">RTFM: Reading The Freakin&rsquo; Manual</h3>
+<h3 id="unboxing-and-rtfm">Unboxing and RTFM</h3>
 
-<p>After unboxing the device, the first thing I tried was to pair it with my laptop. No dice. The device didn&rsquo;t even show up
-in the Bluetooth menu in the macOS System Preferences. We&rsquo;re going to have to try something else.
-I sought out several freeware Bluetooth LE (<strong>BTLE</strong>) explorer apps and in the end <a href="https://itunes.apple.com/us/app/lightblue/id639944780?mt=12">LightBlue Bluetooth Device Discovery</a> since
-was the easiest to install and use.</p>
+<p>After unboxing the device, the first thing I tried doing was pairing it with my laptop. No dice. The device didn&rsquo;t even
+show up in the macOS Bluetooth menu in System Preferences. Have to try something else.</p>
+
+<p>I sought out several freeware Bluetooth LE (<strong>BTLE</strong>) explorer apps and ended up using <a href="https://itunes.apple.com/us/app/lightblue/id639944780?mt=12">LightBlue Bluetooth Device Discovery</a>.
+This app picked it up straight away.</p>
 
 <p><img src="/images/gear-vr-rev-eng/pair-request.png" alt="pair-request" /></p>
 
 <p><img src="/images/gear-vr-rev-eng/lightblue.png" alt="lightblue" /></p>
 
-<p>The app picked it up and we&rsquo;re on our way. There was an unusual quirks however, which I didn&rsquo;t manage to fully figure
-out. <em>Sometimes the controller would break the Bluetooth connection as it entered its sleep mode. Upon re-awakening,
-it would toggle rapidly between being paired and unpaired.</em> <strong>The only solution I found for this was to manually remove the device
-profile from the Bluetooth device list so it could formally pair again.</strong> All fine after that.</p>
+<p>There was an unusual quirk, however, the cause of which I didn&rsquo;t manage to fully figure
+out. Occasionally, the controller would break the Bluetooth connection as it entered its sleep mode. Once re-awakened,
+any attempt to pair with it again would cause it to toggle rapidly between being paired and unpaired.</p>
+
+<p>The only solution I found for this was to manually remove the device profile from the Bluetooth device list every time this
+happened so it could formally pair again.</p>
 
 <p>With little prior experience working with Bluetooth devices on lower level, I had to read up on how the whole BTLE tech stack
 was meant to work. Essentially, every BTLE client device talks to a BTLE host device via a <strong>GATT (Generic Attributes)</strong> profile.</p>
