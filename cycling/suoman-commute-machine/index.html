@@ -528,7 +528,7 @@
 </ul>
 
 <p>
-
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 
 <div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
 				<div class="box">
@@ -698,7 +698,7 @@
 <p>She likes it, brilliant!</p>
 
 
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
 
 <div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
 				<div class="box">
@@ -729,7 +729,26 @@
 
     
     
-          
+          <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = window.location.href;  
+        this.page.identifier = window.location.pathname.replace(
+            window.location.protocol + '//' + window.location.host + '/',
+            ''
+        ) || 'homepage';
+    };
+
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jsyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
