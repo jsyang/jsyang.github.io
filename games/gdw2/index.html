@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>Textured 3D tunnel :: jsyang.ca</title>
+<title>Gamedev Weekend 2 :: jsyang.ca</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/art/tunnel/">
+  <body data-url="/games/gdw2/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -64,12 +64,13 @@
             <li data-nav-id="/" class="dd-item">
             <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="/games/" class="dd-item">
+    <li data-nav-id="/games/" class="dd-item parent">
       <a href="/games/">
         <span>
           Games
           (5)
-        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        </span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/games/celcom/" class="dd-item">
@@ -77,7 +78,7 @@
           <span>Celestial Combat</span>
         </a>
     </li>
-      <li data-nav-id="/games/gdw2/" class="dd-item">
+      <li data-nav-id="/games/gdw2/" class="dd-item active">
         <a href="/games/gdw2/">
           <span>Gamedev Weekend 2</span>
         </a>
@@ -199,13 +200,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/art/" class="dd-item parent">
+    <li data-nav-id="/art/" class="dd-item">
       <a href="/art/">
         <span>
           Art
           (8)
-        </span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/art/polymer-clay-2017/" class="dd-item">
@@ -243,7 +243,7 @@
           <span>Sculpting in 2012, 2013</span>
         </a>
     </li>
-      <li data-nav-id="/art/tunnel/" class="dd-item active">
+      <li data-nav-id="/art/tunnel/" class="dd-item">
         <a href="/art/tunnel/">
           <span>Textured 3D tunnel</span>
         </a>
@@ -397,7 +397,7 @@
 
 
 
- <a href='/'>jsyang.ca</a> > <a href='/art/'>Art</a> > Textured 3D tunnel
+ <a href='/'>jsyang.ca</a> > <a href='/games/'>Games</a> > Gamedev Weekend 2
 
  
 
@@ -414,9 +414,15 @@
 <ul>
 <li>
 <ul>
+<li><a href="#play-it-now">Play it now</a></li>
+<li><a href="#how-to-play">How to play</a>
+<ul>
 <li>
 <ul>
-<li><a href="#source-code">Source code</a></li>
+<li><a href="#construct-board-layout">Construct board layout</a></li>
+<li><a href="#game-rules">Game rules</a></li>
+<li><a href="#end-game">End game</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -430,9 +436,9 @@
 
 <div id="body-inner">
   
-    <h1>Textured 3D tunnel</h1>
+    <h1>Gamedev Weekend 2</h1>
     
-    <div style="font-size: 0.8em; text-align:right">2011-03-01</div>
+    <div style="font-size: 0.8em; text-align:right">2013-05-30</div>
     
   
 
@@ -443,26 +449,55 @@
     
     
 
-<p>I spent a weekend night implementing an old demoscene 3D tunnel rendering trick in HTML5, here are the results:</p>
+<p>My second gamedev weekend project, this time I attempted to create a web version
+of a popular board game: <a href="https://boardgamegeek.com/boardgame/108831/kulami">Kulami</a>.</p>
 
-<pre><code class="language-text">Textured, shaded, ray casting rendering of a tunnel.
-Camera is free to rotate, pan and change focal length.
+<p>Development finished on 30/05/2013. Current version has been patched to
+run in modern browsers (WebAudio API was changed since 2013).</p>
 
-Controls:
+<p>Original features:
+- an intermediate skill-level AI player with taunts (filthy meatbag!)
+- RANDOM or a completely user-defined board layout
+- final score breakdown</p>
 
-    W     +   mouse look
-  A S D
-</code></pre>
+<h2 id="play-it-now">Play it now</h2>
 
+<iframe style="margin: auto; display:block" src="http://jsyang.ca/gdw2" width="800" height="480"></iframe>
 
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/je6MyWjs7aU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
- </div>
+<h2 id="how-to-play">How to play</h2>
 
+<h4 id="construct-board-layout">Construct board layout</h4>
 
-<h3 id="source-code">Source code</h3>
+<p>Drag the tiles to form a board of non-overlapping tiles. Overlapped tiles are shown in red.
+Double click a tile to change its rotation. Or click on the RANDOM button to generate a random
+valid game layout.</p>
 
-<p><a href="https://github.com/jsyang/RayCaster">See code on Github</a></p>
+<h4 id="game-rules">Game rules</h4>
+
+<p>This game is won by scoring.</p>
+
+<ul>
+<li><p>The player who owns the most cells wins.</p></li>
+
+<li><p>On each turn, a player places a marble on an empty spot on a tile.</p></li>
+
+<li><p>Players take turns placing one marble per turn in an empty cell on a tile that
+doesn&rsquo;t contain the last move.</p></li>
+
+<li><p>A move is legal only if it lies on the same row or column as the last
+marble played.</p></li>
+
+<li><p>A player owns a tile when his marbles take up a majority of the cells
+on the tile.</p></li>
+
+<li><p>A player&rsquo;s score is the sum of the cells in owned tiles.</p></li>
+</ul>
+
+<h4 id="end-game">End game</h4>
+
+<p>The game ends when a player has no legal moves left on their turn. A tile per tile breakdown of the final score is revealed when the game ends.</p>
+
+<p>Source code can be found <a href="http://github.com/jsyang/gdw2">here</a></p>
 
 
     
