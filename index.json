@@ -49,11 +49,11 @@
 	"content": " an inelegant but effective solution to a problem\n "
 },
 {
-	"uri": "http://jsyang.ca/hikes/",
-	"title": "Hikes",
+	"uri": "http://jsyang.ca/hacks/random-sound-tin/",
+	"title": "Random Sound Tin",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " My daughter is approaching the 6 month mark. This is a time when kids start to develop gross motor skills and begin to express themselves through play. In anticipation, I jumped at the chance to make some dynamic toys for her in addition to the mostly rigid ones she\u0026rsquo;s collected so far.\n  Ended up doing a Friday late night build. Since I didn\u0026rsquo;t have a collection of sounds ready, I just dumped all the sound effects from the DOS game Blood as a test.\nHardware A few items were at my disposal for this project:\n 1 x Raspberry Pi model B+ 1 x JBL Clip with an aged battery (3.7v 600mAh) 1 x cheap USB numpad 1 x microUSB power pack \u0026ndash; free conference knick-knack 1 x 2GB microSD card 1 x Chinese green tea tin  The primary component for this sound tin is the JBL Clip. After all, you can\u0026rsquo;t hear anything without a decent speaker! Disassembling it revealed a PCB with a footprint just the right size to fit on the floor of the tin.\nA few holes drilled in a hexagonal pattern on one side of the tin serve as the speaker grill. The JBL Clip battery was losing capacity due to age but is still functional.\nAfter the guts of the JBL Clip were mounted inside, the USB numpad needed a similar treatment; the only difference was that the keys were mounted on the outside.\nSoftware The SD card was loaded with the latest version of Raspbian Lite, leaving a little over 600MB free for sound files and everything else. I turned on console auto-login via raspi-config and created two bash scripts:\n1. playRandom.sh Used to randomly select a single WAV file within a folder and play it back with aplay.\n#!/bin/sh ls *.wav |sort -R |tail -$N |while read file; do aplay $file exit 0 done  2. randomSoundPlayer.sh Used to continuously listen for key presses so it can either execute playRandom.sh or quit to the shell.\n#!/bin/sh echo Press Q to exit, any other key to play a random sound while true; do read -t 0.3 -N 1 input if [[ $input = \u0026quot;q\u0026quot; ]] || [[ $input = \u0026quot;Q\u0026quot; ]]; then echo break elif [[ -n $input ]]; then ./sfx/playRandom.sh \u0026amp; fi done  All that was needed to finish this was to add a line at the end of ~/.bash_profile to run randomSoundPlayer.sh on login. This ensures the final step of any boot sequence on the device will start the sound player loop.\n"
 },
 {
 	"uri": "http://jsyang.ca/cycling/iow-2018/",
@@ -243,13 +243,6 @@
 	"tags": [],
 	"description": "",
 	"content": " Mazes have always fasincated me. They can be generated via some simple rules and take beautiful, myriad forms.\nNew Year\u0026rsquo;s Eve 2014 Maze Maze generator remixed! New years message written for friends for 2014.\n source code  Maze generator using the \u0026lt;table\u0026gt; element  Maze generator toy that draws mazes with tables and CSS-borders instead of canvas: runs in IE and also quite well on the Kindle experimental browser.\nUses the basic recursive backtracker algorithm to carve a maze out of untouched cells in the grid. Also implemented in mazegen.html is a basic editor to create a logo array: mark cells as visited before the maze carving begins- the logo will remain unmolested as the carving proceeds.\nmaze.html A single carver maze. mazegen.html 4 carver maze. steve.html For my friend Steve Pearce's 25th birthday. :)   source code  "
-},
-{
-	"uri": "http://jsyang.ca/hikes/alice-holt-forest/",
-	"title": "Alice Holt Forest (30km)",
-	"tags": [],
-	"description": "",
-	"content": "From Bentley station we join a footpath which takes us parallel with the railway before joining a trackway which takes us in to the Alice Holts Ancient Forest a forest, which used to provide oak to build ships for the Royal Navy, the trail winds through the forest to tiny settlement of Bucks Corner.\nLeaving the forest we cross heather covered heathland to reach Frensham Great Pond which along with the little pond was originally created by the Bishop of Winchester to provide fish to his court and now an important wetland habitat managed by the National Trust.\nWe cross Frensham Common with its mosaic of colourful heathers gorse and oaks to climb up the Devil\u0026rsquo;s Jumps a series of three jumps (hills) where according to local folklore the Devil used to amuse himself by jumping from one to another. From the jumps we will have panoramic views over the Surrey Hills.\nDescending from the jumps the path crosses heathland to pass Frensham little pond and join the River Wey, the trail now passes through woodland and pastures to join the Greensand Way which leads us into Farnham for our train home.\n  1st\n      2nd\n      3rd\n      4th\n      5th\n      6th\n      Map\n     "
 },
 {
 	"uri": "http://jsyang.ca/cycling/london-to-brighton/",

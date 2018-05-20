@@ -34,12 +34,12 @@
   
   <url>
     <loc>http://jsyang.ca/hacks/</loc>
-    <lastmod>2018-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://jsyang.ca/hikes/</loc>
-    <lastmod>2014-09-13T00:00:00+00:00</lastmod>
+    <loc>http://jsyang.ca/hacks/random-sound-tin/</loc>
+    <lastmod>2018-05-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -178,11 +178,6 @@
   </url>
   
   <url>
-    <loc>http://jsyang.ca/hikes/alice-holt-forest/</loc>
-    <lastmod>2014-09-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://jsyang.ca/cycling/london-to-brighton/</loc>
     <lastmod>2014-05-31T00:00:00+00:00</lastmod>
   </url>
@@ -278,7 +273,7 @@
   
   <url>
     <loc>http://jsyang.ca/</loc>
-    <lastmod>2018-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-19T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

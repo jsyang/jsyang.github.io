@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>TechShop notes :: jsyang.ca</title>
+<title>Random Sound Tin :: jsyang.ca</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/repairs/notes/">
+  <body data-url="/hacks/random-sound-tin/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -304,16 +304,15 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/repairs/" class="dd-item parent">
+    <li data-nav-id="/repairs/" class="dd-item">
       <a href="/repairs/">
         <span>
           Repairs
           (2)
-        </span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/repairs/notes/" class="dd-item active">
+      <li data-nav-id="/repairs/notes/" class="dd-item">
         <a href="/repairs/notes/">
           <span>TechShop notes</span>
         </a>
@@ -325,15 +324,16 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/hacks/" class="dd-item">
+    <li data-nav-id="/hacks/" class="dd-item parent">
       <a href="/hacks/">
         <span>
           Hacks
           (4)
-        </span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        </span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/hacks/random-sound-tin/" class="dd-item">
+      <li data-nav-id="/hacks/random-sound-tin/" class="dd-item active">
         <a href="/hacks/random-sound-tin/">
           <span>Random Sound Tin</span>
         </a>
@@ -397,7 +397,7 @@
 
 
 
- <a href='/'>jsyang.ca</a> > <a href='/repairs/'>Repairs</a> > TechShop notes
+ <a href='/'>jsyang.ca</a> > <a href='/hacks/'>Hacks</a> > Random Sound Tin
 
  
 
@@ -414,16 +414,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#various-tidbits-learned-from-sf-techshop-classes">Various tidbits learned from SF TechShop classes</a>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#software">Software</a>
 <ul>
-<li><a href="#oxy-acetylene-torch">Oxy-Acetylene Torch</a></li>
-<li><a href="#basic-metal-shop">Basic Metal Shop</a></li>
-<li><a href="#mig-welding">MIG Welding</a></li>
-<li><a href="#mig-welding-2-make-better-welds">MIG Welding 2 - Make Better Welds</a></li>
-<li><a href="#laser-cutting-and-etching">Laser Cutting and Etching</a></li>
-<li><a href="#metal-lathe">Metal Lathe</a></li>
-<li><a href="#nextengine-3d-scanning">NextEngine 3D Scanning</a></li>
-<li><a href="#tig-welding">TIG Welding</a></li>
+<li>
+<ul>
+<li><a href="#1-playrandom-sh">1. <code>playRandom.sh</code></a></li>
+<li><a href="#2-randomsoundplayer-sh">2. <code>randomSoundPlayer.sh</code></a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -437,9 +435,9 @@
 
 <div id="body-inner">
   
-    <h1>TechShop notes</h1>
+    <h1>Random Sound Tin</h1>
     
-    <div style="font-size: 0.8em; text-align:right">2012-12-01</div>
+    <div style="font-size: 0.8em; text-align:right">2018-05-19</div>
     
   
 
@@ -450,82 +448,92 @@
     
     
 
-<h2 id="various-tidbits-learned-from-sf-techshop-classes">Various tidbits learned from SF TechShop classes</h2>
-
-<h3 id="oxy-acetylene-torch">Oxy-Acetylene Torch</h3>
-
-<p>Starting: Open the acetylene valve to the torch first, then the oxygen valve.<br />
-Stopping: Close the oxygen valve, then the acetylene.<br />
-Gas valve open/close order mnemonic: POOP &mdash; Propane, Oxygen, Oxygen, Propane.</p>
-
-<p>Oxygen blown by the cutting head of the torch actually burns the steel / iron which is being cut.
-The extra oxygen combusts the material which turns into slag (~oxide) falling off onto the floor.</p>
-
-<p>Acetylene pressure in the hose needs special attention: acetylene detonates above 15 PSI.
-The explosive velocity is ~2270 m/s which puts it nearly in range with low-end high explosives.
-For comparison, TNT detonates at 6900 m/s, while RDX (C4) detonates at 8750 m/s. More info <a href="http://www.msha.gov/alerts/hazardsofacetylene.htm">here</a>.</p>
+<p>My daughter is approaching the 6 month mark. This is a time when
+kids start to develop gross motor skills and begin to express
+themselves through play. In anticipation, I jumped at the chance
+to make some dynamic toys for her in addition to the mostly
+rigid ones she&rsquo;s collected so far.</p>
 
 
 <div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/G-lxLxNU5Dw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/RyK6yyjOrXY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
  </div>
 
 
-<p>Flashback is when the gas flame disappears into the hose, which may end up igniting the tank. Sometimes there
-might be safety features within the welding set that prevent such a catastrophic failure. Though one cannot rely on these.
-A loud whistling noise coming from your welding equipment is usually a sign that this has happened. Shut all valves off
-immediately. Panicking is useless as you will not be able to outrun such an explosion.</p>
+<p>Ended up doing a Friday late night build. Since I didn&rsquo;t have a
+collection of sounds ready, I just dumped all the sound effects
+from the DOS game Blood as a test.</p>
 
-<h3 id="basic-metal-shop">Basic Metal Shop</h3>
+<h2 id="hardware">Hardware</h2>
 
-<p>Bandsaw blades should be installed correctly. How to tell if it&rsquo;s not the right blade for the material? Multiple teeth
-should always engage along the cut of the workpiece. If fewer than 3 teeth on the bandsaw blade are simultaneously touching the
-stock material, you will have difficulty cutting it. Using the wrong blade also wears the blade out much faster due to the fact that there
-are less teeth per cut to uniformly absorb cutting forces. An individual tooth would needlessly bear more force.</p>
+<p>A few items were at my disposal for this project:</p>
 
-<p>Coolant valve on the horizontal bandsaw should be adjusted to completely coat the blade while it&rsquo;s cutting.</p>
+<ul>
+<li>1 x Raspberry Pi model B+</li>
+<li>1 x JBL Clip with an aged battery (3.7v 600mAh)</li>
+<li>1 x cheap USB numpad</li>
+<li>1 x microUSB power pack &ndash; free conference knick-knack</li>
+<li>1 x 2GB microSD card</li>
+<li>1 x Chinese green tea tin</li>
+</ul>
 
-<p>Disk sander is most safely used on its right side; it spins clockwise so if the workpiece slips out of your grip,
-the table should stop it from flying off. Outer edge of the disk has a higher velocity, meaning material placed there will be
-ground down faster than at a spot towards the center. Never lean into your workpieces on this machine.</p>
+<p>The primary component for this sound tin is the JBL Clip. After all,
+you can&rsquo;t hear anything without a decent speaker! Disassembling it
+revealed a PCB with a footprint just the right size to fit on the floor
+of the tin.</p>
 
-<h3 id="mig-welding">MIG Welding</h3>
+<p>A few holes drilled in a hexagonal pattern on one side of the tin serve
+as the speaker grill. The JBL Clip battery was losing capacity due to age
+ but is still functional.</p>
 
-<p>To burn hotter, increase the wire feed speed. Voltage only determines the arc length, not the energy delivered to the torch tip.</p>
+<p><img src="/images/random-sound-tin/sound-tin.jpg" alt="" /></p>
 
-<h3 id="mig-welding-2-make-better-welds">MIG Welding 2 - Make Better Welds</h3>
+<p>After the guts of the JBL Clip were mounted inside, the USB numpad needed
+a similar treatment; the only difference was that the keys were mounted on
+the outside.</p>
 
-<p>As with soldering, welding is about heat transfer. The key is knowing which work pieces to deliver sufficient heat to,
-for creating a balanced and uniform weld. Weld should comprise enough of each work piece for maximum strength. Thus, the
-tip angle you point should be directing the heat into the piece which most requires it; larger piece means more bias for
-that area in the welding top angle.</p>
+<h2 id="software">Software</h2>
 
-<h3 id="laser-cutting-and-etching">Laser Cutting and Etching</h3>
+<p>The SD card was loaded with the latest version of Raspbian Lite, leaving
+a little over 600MB free for sound files and everything else. I turned on
+console auto-login via <code>raspi-config</code> and created two bash scripts:</p>
 
-<p>Laser cuts are always an exercise in pointilism. Raster prints on the laser translate to dithered cuts, much like an inkjet printer.<br />
-Cutting chloride polymers will release (gasp) chlorine gas. Never do this unless the goal is to poison yourself.</p>
+<h4 id="1-playrandom-sh">1. <code>playRandom.sh</code></h4>
 
-<h3 id="metal-lathe">Metal Lathe</h3>
+<p>Used to randomly select a single <code>WAV</code> file within a folder and play it back with <code>aplay</code>.</p>
 
-<p>Align work piece mounts, 3 tooth chuck holds and centers cylindrical objects like poles, etc, while 4 piece can hold things
-of arbitrary shape.</p>
+<pre><code class="language-bash">#!/bin/sh
 
-<p>Safety is a big concern with using the metal lathe, it can pull things into the spindle and tear them apart very easily
-if anything happens to be caught.</p>
+ls *.wav |sort -R |tail -$N |while read file; do
+    aplay $file
+    exit 0
+done
+</code></pre>
 
-<p>Gears and speed are adjusted according to material being cut, much like with drill press or other cutting tools.</p>
+<h4 id="2-randomsoundplayer-sh">2. <code>randomSoundPlayer.sh</code></h4>
 
-<h3 id="nextengine-3d-scanning">NextEngine 3D Scanning</h3>
+<p>Used to continuously listen for key presses so it can either execute <code>playRandom.sh</code>
+or quit to the shell.</p>
 
-<p>Occluded surfaces need to be mapped correctly, adjust the axis of rotation to minimize number of occluded surfaces.</p>
+<pre><code class="language-bash">#!/bin/sh
 
-<p>&hellip;</p>
+echo Press Q to exit, any other key to play a random sound
 
-<h3 id="tig-welding">TIG Welding</h3>
+while true; do
+    read -t 0.3 -N 1 input
+    if [[ $input = &quot;q&quot; ]] || [[ $input = &quot;Q&quot; ]]; then
+        echo
+        break
+    elif [[ -n $input ]]; then
+        ./sfx/playRandom.sh &amp;
+    fi
+done
+</code></pre>
 
-<p>TIG welding is much like gas welding where the torch merely heats up the workpiece to form a puddle for the filler
-metal to weld with. Gasket and tungsten tip should stick out about half the radius of the gas cup. Tungsten should
-be sharp, though ball-tipped to make sure the cone of where the arc will form is predictable.</p>
+<p>All that was needed to finish this was to add
+a line at the end of <code>~/.bash_profile</code> to run
+<code>randomSoundPlayer.sh</code> on login. This ensures the final step of
+any boot sequence on the device will start the sound player loop.</p>
 
 
     
