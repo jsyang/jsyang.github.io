@@ -423,6 +423,13 @@
 <li><a href="#2-randomsoundplayer-sh">2. <code>randomSoundPlayer.sh</code></a></li>
 </ul></li>
 </ul></li>
+<li><a href="#getting-sounds">Getting sounds</a>
+<ul>
+<li>
+<ul>
+<li><a href="#normalizing-the-audio-loudness">Normalizing the audio loudness</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -534,6 +541,34 @@ done
 a line at the end of <code>~/.bash_profile</code> to run
 <code>randomSoundPlayer.sh</code> on login. This ensures the final step of
 any boot sequence on the device will start the sound player loop.</p>
+
+<h2 id="getting-sounds">Getting sounds</h2>
+
+<p>There are lots of nice sound libraries and sound effects banks on the internet, but one
+particularly good example was &ldquo;soundsnap.com&rdquo;. I chose this one since it had an exceptionally
+simple filtering and searching mechanism (e.g. search all sounds for &ldquo;animal&rdquo; tag and duration of &lt; 2 seconds).</p>
+
+<p>Needed a few other pieces of glue code to turn this site into an easy to download source of sound effects:</p>
+
+<ul>
+<li>puppeteer (headless Chromium API)</li>
+<li>ffmpeg (optionally convert MP3 into PCM-WAV)</li>
+<li>ffmpeg-normalize (normalize audio loudness)</li>
+</ul>
+
+<p>I&rsquo;ve put all the code together for this into a <a href="https://github.com/jsyang/soundscraper">soundscraper</a>.
+Just follow the readme instructions and you should have some scraped sounds for personal use in no time.</p>
+
+<h4 id="normalizing-the-audio-loudness">Normalizing the audio loudness</h4>
+
+<p>The downloaded sound files can be all over the place in terms of loudness. To ensure
+sounds are never too quite nor too loud, we have to <em>normalize</em> them: for this,
+I&rsquo;ve selected the <a href="https://tech.ebu.ch/loudness">EBU R128 normalization preset</a> in <code>ffmpeg</code>. This is a broadcasting
+standard norm that should be good enough for our purposes.</p>
+
+<p>Using <code>yarn normalize</code>, we can run an <code>ffmpeg-normalize</code> in batch mode to convert
+all our non-normalized MP3s into MP2s. They end up in a <code>mp3/normalized</code> folder within our
+tool.</p>
 
 
     
