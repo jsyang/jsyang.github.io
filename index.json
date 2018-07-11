@@ -49,6 +49,13 @@
 	"content": " an inelegant but effective solution to a problem\n "
 },
 {
+	"uri": "http://jsyang.ca/hacks/brompton-veloplugs/",
+	"title": "Brompton Wheel Veloplugs",
+	"tags": [],
+	"description": "",
+	"content": "                             I\u0026rsquo;ve used veloplugs in 3 separate bike builds and they have been fairly worthwhile as a rim tape / strip alternative.\nEssentially, they are drawing pin sized bits of plastic that have a tub instead of a solid rod which you insert into the spoke holes (drilled into the wheel rim) from the inside of the wheel.\nTheir purpose is to protect inner tubes (squishy rubber thing that holds air) from the inside of the rim bed; the rim bed contains spoke holes drilled by a wheel rim factory that have rough edges, which may puncture the inner tube.\nVeloplugs light, low maintenance, and are likely the safest option for lining a wheel. There are only 2 problems:\n very expensive (~£10 average for a pack of 72, not including ship) made specifically for rims of certain sizes (smaller wheels will have some trouble fitting normal veloplugs)  DIY-CAD for exact fit Front wheel braking on the Moulton Mk 2 commuter bike was beginning to be a little loose due to rim wear. I already bought a replacement wheel (Brompton-size 16\u0026rdquo; - 37x249), and needed to plug the spoke holes. Previous attempts at using normal veloplugs were a little troublesome since the trim around the veloplug was larger than the width of the rim bed.\n3D printing would solve the issue of fit as well as reduce cost to 0, and introduce an ever so small amount of weight savings, even over conventional veloplugs.\n   1 cura print preview\n      2 freshly printed\n      3 veloplugs installed\n     Whipping up a quick design and adjusting tolerances, I was able to get an exact fit within 2 iterations of design. Although PLA plastic begins to deform at 60 degrees C, I wasn\u0026rsquo;t too worried about that possibility since the rim itself is a heatsink and PLA is generally a heat insulator. Additionally, PLA\u0026rsquo;s UV sensitivity does not factor much in this application since the plugs will be completely sealed inside the wheel.\nTesting period The wheel has so far survived a few days worth of commutes with the front tire inflated to 90 PSI and a total distance of about 18km a day. I shall continue to note my findings here during the lifetime of these parts.\nOpenSCAD source code for the design can be found here.\n"
+},
+{
 	"uri": "http://jsyang.ca/hacks/bike-light-phone-mount/",
 	"title": "Bike Light Phone Mount",
 	"tags": [],
