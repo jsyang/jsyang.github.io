@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on jsyang.ca</title>
+    <link>http://jsyang.ca/guides/</link>
+    <description>Recent content in Guides on jsyang.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Samsung Gear 360 (SM-200) image and video workflow on MacOS</title>
+      <link>http://jsyang.ca/guides/gear-360-workflow/</link>
+      <pubDate>Sat, 17 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/gear-360-workflow/</guid>
+      <description>I&amp;rsquo;ve long been interested in 360 panoramic photos and videos and being a patient tech consumer, I was fortunate to get the 2016 Gear 360 camera for the low price of £80 shipped; 22% of the original launch price of £350.
+Additionally, I wrote a simple 360 web viewer, so I can use any image host (e.g. Imgur, Dropbox, etc.) and not be tied to a specific online platform like Kuula.</description>
+    </item>
+    
+    <item>
+      <title>Mocute Bluetooth Gamepads</title>
+      <link>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</guid>
+      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.</description>
+    </item>
+    
+    <item>
+      <title>Faulty Raspberry Pi Zero W</title>
+      <link>http://jsyang.ca/guides/faulty-rpi0w/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/faulty-rpi0w/</guid>
+      <description>If you&amp;rsquo;ve done everything you&amp;rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can&amp;rsquo;t get it to boot up and recognize the Wifi, there&amp;rsquo;s a chance you may have a defective board.
+  Setup After purchasing you should have been able to do this to get it working:
+ https://gist.github.com/gbaman/50b6cca61dd1c3f88f41 https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a https://www.youtube.com/watch?v=xj3MPmJhAPU  Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W</description>
+    </item>
+    
+  </channel>
+</rss>

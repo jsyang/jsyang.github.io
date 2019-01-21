@@ -66,6 +66,7 @@ figure {
     right: 5px;
     top: 5px;
     bottom: 5px;
+    margin: 0;
 }
 .gallery.hover-effect-grow figure:hover {
     transform: scale(1.05);

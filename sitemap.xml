@@ -3,41 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://jsyang.ca/games/</loc>
-    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/cycling/</loc>
-    <lastmod>2018-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/art/</loc>
-    <lastmod>2017-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/guides/</loc>
-    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/tools/</loc>
-    <lastmod>2016-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/repairs/</loc>
-    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/hacks/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://jsyang.ca/hacks/brompton-veloplugs/</loc>
     <lastmod>2018-07-11T00:00:00+00:00</lastmod>
   </url>
@@ -268,11 +233,48 @@
   </url>
   
   <url>
-    <loc>http://jsyang.ca/_header/</loc>
+    <loc>http://jsyang.ca/about/</loc>
+    <lastmod>1000-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/art/</loc>
+    <lastmod>2017-03-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jsyang.ca/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/cycling/</loc>
+    <lastmod>2018-05-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/games/</loc>
+    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/guides/</loc>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/hacks/</loc>
+    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/repairs/</loc>
+    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -282,8 +284,15 @@
   </url>
   
   <url>
+    <loc>http://jsyang.ca/tools/</loc>
+    <lastmod>2016-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/</loc>
     <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
