@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.53" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/tools/gpx-mapfactor/" />
+  <link rel="canonical" href="http://jsyang.ca/tools/gpx-mapfactor/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http://jsyang.ca/"
+      },
+      "articleSection" : "tools",
+      "name" : "GPXMapFactor",
+      "headline" : "GPXMapFactor",
+      "description" : "Route-Importer for MapFactor doesn&#39;t work :( Have to write my own...
+&mdash; Jim (@spacefishing) June 30, 2016  
+Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
+MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-07-01 00:00:00 &#43;0000 UTC",
+      "dateModified" : "2016-07-01 00:00:00 &#43;0000 UTC",
+      "url" : "http://jsyang.ca/tools/gpx-mapfactor/",
+      "keywords" : [  ]
+  }
+</script>
+<title>GPXMapFactor - jsyang.ca</title>
+  <meta property="og:title" content="GPXMapFactor - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Route-Importer for MapFactor doesn&#39;t work :( Have to write my own...
+&mdash; Jim (@spacefishing) June 30, 2016  
+Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
+MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">GPXMapFactor</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2016-07-01 00:00:00 UTC">
+                            01 Jul 2016
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                
+
+<p><center></p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Route-Importer for MapFactor doesn&#39;t work :( Have to write my own...</p>&mdash; Jim (@spacefishing) <a href="https://twitter.com/spacefishing/status/748624897165905920?ref_src=twsrc%5Etfw">June 30, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p></center></p>
+
+<p>Wrote a small tool to convert and insert waypoints from a GPX route into a <a href="https://play.google.com/store/apps/details?id=com.mapfactor.navigator&amp;hl=en_GB">MapFactor Navigator</a> route.</p>
+
+<p>MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program.</p>
+
+<p>It&rsquo;s good for planning long cycle routes (I do it through Brouter, but you can use Googly maps) and then loading them into the navigator so you&rsquo;re covered in case you miss a turn and need to re-route in an area with a bad / non-existant cell signal.</p>
+
+<p>As <a href="https://play.google.com/store/apps/details?id=org.kadiba.routeimporter&amp;hl=en_GB">Route-Importer for MapFactor</a>
+failed to work on my Android Marshmellow device, I had to resort to writing my own GPX convertor for long cycle rides.</p>
+
+<ul>
+<li><a href="https://github.com/jsyang/gpxMapFactor">https://github.com/jsyang/gpxMapFactor</a></li>
+</ul>
+
+<h3 id="routing-issues">Routing issues</h3>
+
+<p>This was the original route planned by <a href="http://brouter.de/brouter-web">Brouter</a> using OpenCycleMap data: around 232 km.</p>
+
+<p><img src="/images/gpxmapfactor/lei-cdf.jpg" alt="" /></p>
+
+<p>Inserting a route with 5000 waypoints crashed Navigator so I decimated the down to 900 waypoints. Was able to show them on the map but crashed any time it tried to calculate a route.</p>
+
+<p><img src="/images/gpxmapfactor/900waypoints.png" alt="" /></p>
+
+<p>Trimming down to 250 waypoints it could more easily handle the load.</p>
+
+<p><img src="/images/gpxmapfactor/250waypoints.png" alt="" /></p>
+
+<h3 id="leicester-coventry-gloucester-cardiff-on-01-07-2016">Leicester-Coventry-Gloucester-Cardiff on 01/07/2016</h3>
+
+<p>This ride, which I&rsquo;d planned earlier in the week, didn&rsquo;t end up happening due to sickness that weekend. Maybe later&hellip;</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="http://www.statcounter.com/counter/counter_xhtml.js" async></script>
+<noscript><img src="http://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>
