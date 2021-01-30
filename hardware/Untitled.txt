@@ -10,11 +10,21 @@ set nocompatible
 
 then restarted the terminal emulator (jackpal.androidterm)
 
-Setup is:
+## Apps installed
+
 - Syncthing (com.nutomic.syncthingandroid)
+  Wifi, location based automatic syncing
+
 - Editor (org.billthefarmer.editor)
+  Simple text editor with auto-save
+
 - ConnectBot (org.connectbot)
+  For quickly accessing hosts via SSH
+
 - Terminal Emulator (jackpal.androidterm)
+  What every programmer needs
+
+- https://github.com/EXALAB/AxGit (for Android `git` CLI executable)
 
 I also uninstalled all Google related apps and disabled / reverted them to
 their factory defaults:
@@ -37,3 +47,22 @@ the home directory:
 cd ~
 ```
 
+## Git installation
+
+If you have Bash set as your shell, just edit your `~/.bashrc` file to include the PATH addition as per the installation
+app.
+
+You will need to either give all users permission to execute the `git` file or move the directory to where your usual user
+in Android has permission. Usually this is `/sdcard/`.
+
+If you want to go the `root` user way, just do
+```
+su
+# Replace this path with wherever the installer placed them
+cd /data/user/0/exa.free.ag/files
+chmod +rx *
+```
+
+## Termux installation for Android < 7
+
+Download the legacy builds from here: https://archive.org/download/termux-repositories-legacy/termux-app-git-debug.apk
