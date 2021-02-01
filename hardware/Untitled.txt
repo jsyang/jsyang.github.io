@@ -66,3 +66,13 @@ chmod +rx *
 ## Termux installation for Android < 7
 
 Download the legacy builds from here: https://archive.org/download/termux-repositories-legacy/termux-app-git-debug.apk
+
+## Allow rotate home screen (always landscape)
+
+You must have root access to do this on Android 6+.
+
+```
+mount -o rw,remount /system
+echo log.tag.launcher_force_rotate=VERBOSE >> /system/build.prop
+mount -o ro,remount /system
+```
