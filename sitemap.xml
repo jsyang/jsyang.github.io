@@ -31,6 +31,17 @@
   </url>
   
   <url>
+    <loc>http://jsyang.ca/art/</loc>
+    <lastmod>2020-12-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/art/wormform/</loc>
+    <lastmod>2020-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/cycling/</loc>
     <lastmod>2020-03-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -214,12 +225,6 @@
   <url>
     <loc>http://jsyang.ca/cycling/suoman-commute-machine/</loc>
     <lastmod>2017-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/art/</loc>
-    <lastmod>2017-03-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
