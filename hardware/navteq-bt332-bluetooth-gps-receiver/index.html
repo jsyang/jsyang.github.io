@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/hardware/navteq-bt332-bluetooth-gps-receiver/" />
+  <link rel="canonical" href="http://jsyang.ca/hardware/navteq-bt332-bluetooth-gps-receiver/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "hardware",
+      "name" : "Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]",
+      "headline" : "Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]",
+      "description" : "2021-02-13: This is a work in progress!  As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I\u0026rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).\nBefore phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-02-11 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-02-11 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/hardware\/navteq-bt332-bluetooth-gps-receiver\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP] - jsyang.ca</title>
+  <meta property="og:title" content="Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP] - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="2021-02-13: This is a work in progress!  As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I&rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).
+Before phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2021-02-11 00:00:00 UTC">
+                            11 Feb 2021
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <div style="border-radius: 2em; padding: 0.5em; background: palegoldenrod; text-align: center; margin-bottom: 2em">
+<b>2021-02-13</b>: This is a work in progress!
+</div>
+<p>As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver
+that I&rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).</p>
+<p>Before phones and other devices integrated location sensors the common setup was having an external GPS receiver that
+would process and relay location data via Bluetooth or physically connected serial (RS-232) port. Many manufacturers
+created devices in this space and this market was prolific in the early to mid 2000s.</p>
+<h2 id="queries-to-a-bluetooth-serial-port-device">Queries to a Bluetooth Serial Port device</h2>
+<pre><code># Find all TTY devices on MacOS
+ls -l /dev/tty.*
+
+# Our specific Dell Navteq device
+ls -l /dev/tty.BT-GPS-33BA81-BT-GPSCOM
+
+# Use a terminal emulator to read TTY messages from the device file
+screen /dev/tty.BT-GPS-33BA81-BT-GPSCOM 38400
+</code></pre><h2 id="device-output-data-details">Device output data details</h2>
+<ul>
+<li>This GPS receiver uses the <a href="https://en.wikipedia.org/wiki/NMEA_0183">NMEA-0183HS protocol</a>. Meaning that:
+<ul>
+<li>We need to connect at 38400 baud</li>
+<li>All data lines are CSV</li>
+<li>Every data line comes with a checksum to ensure data integrity</li>
+</ul>
+</li>
+<li><a href="/bin/bt332-user-manual.pdf">BT-332 User Manual PDF</a></li>
+</ul>
+<h2 id="message-formats-and-types">Message formats and types</h2>
+<ul>
+<li><a href="https://www.trimble.com/OEM_ReceiverHelp/V4.44/en/NMEA-0183messages_RMC.html"><code>$GPRMC</code></a>
+<ul>
+<li>V = void means that a GPS fix has not been established (not enough GPS satellites to get a location)</li>
+<li>Lat = ddmm.mmm (0-90 deg)</li>
+<li>Lng = dddmm.mmm  (0-180 deg)</li>
+<li>Ground speed in knots (1 knot = 1.852 km/h)</li>
+</ul>
+</li>
+<li><a href="https://www.trimble.com/OEM_ReceiverHelp/V4.44/en/NMEA-0183messages_GSV.html"><code>$GPGSV</code></a>
+<ul>
+<li>SV Satellite information</li>
+</ul>
+</li>
+<li><a href="https://www.trimble.com/OEM_ReceiverHelp/V4.44/en/NMEA-0183messages_GGA.html"><code>$GPGGA</code></a>
+<ul>
+<li>GPS time, position, and fix related data</li>
+</ul>
+</li>
+</ul>
+<h2 id="sample-data-from-screen">Sample data from <code>screen</code></h2>
+<pre><code>$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPGSV,3,1,12,20,00,000,,10,00,000,,25,00,000,,27,00,000,*79
+$GPGSV,3,2,12,03,00,000,,31,00,000,,24,00,000,,15,00,000,*78
+$GPGSV,3,3,12,16,00,000,,05,00,000,,01,00,000,,26,00,000,*7D
+$GPRMC,000617.061,V,,,,,,,110905,,*24                           &lt;&lt;&lt;&lt; indicates a GPS fix was not yet found 
+$GPGGA,000618.061,,,,,0,00,,,M,0.0,M,,0000*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPRMC,000618.061,V,,,,,,,110905,,*2B
+$GPGGA,000619.072,,,,,0,00,,,M,0.0,M,,0000*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPRMC,000619.072,V,,,,,,,110905,,*28
+$GPGGA,000620.061,,,,,0,00,,,M,0.0,M,,0000*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPRMC,000620.061,V,,,,,,,110905,,*20
+$GPGGA,000621.061,,,,,0,00,,,M,0.0,M,,0000*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPRMC,000621.061,V,,,,,,,110905,,*21
+$GPGGA,000622.073,,,,,0,00,,,M,0.0,M,,0000*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+</code></pre><h2 id="further-dev-resources-for-bt-spp">Further dev resources for BT-SPP</h2>
+<ul>
+<li><a href="https://github.com/rusel1989/react-native-bluetooth-serial/issues/16">React Native Bluetooth Serial Port wrapper library</a></li>
+<li><a href="https://forum.arduino.cc/index.php?topic=487187.0">Arduino library for working with NMEA messages</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

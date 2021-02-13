@@ -6,7 +6,17 @@
     <description>Recent content in Hardwares on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]</title>
+      <link>http://jsyang.ca/hardware/navteq-bt332-bluetooth-gps-receiver/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hardware/navteq-bt332-bluetooth-gps-receiver/</guid>
+      <description>2021-02-13: This is a work in progress!  As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I&amp;rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).
+Before phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port.</description>
+    </item>
+    
     <item>
       <title>Think Outside Bluetooth Folding Keyboard</title>
       <link>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</link>
