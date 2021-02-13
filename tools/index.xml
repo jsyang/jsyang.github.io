@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on jsyang.ca</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Tools on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/tools/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KeyDings</title>
       <link>http://jsyang.ca/tools/keydings/</link>
@@ -28,7 +24,7 @@ To my complete surprise I was able to get a functional app working within an aft
       
       <guid>http://jsyang.ca/tools/tabular-vertical-alignment/</guid>
       <description>While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or &amp;ldquo;vertical&amp;rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:
-// (1) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; };  The code in (2) is much clearer in tabular form.</description>
+// (1) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; The code in (2) is much clearer in tabular form.</description>
     </item>
     
     <item>
@@ -38,8 +34,7 @@ To my complete surprise I was able to get a functional app working within an aft
       
       <guid>http://jsyang.ca/tools/gpx-mapfactor/</guid>
       <description>Route-Importer for MapFactor doesn&amp;#39;t work :( Have to write my own...
-&amp;mdash; Jim (@spacefishing) June 30, 2016  
-Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
+&amp;mdash; Jim (@spacefishing) June 30, 2016   Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
 MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program.</description>
     </item>
     
@@ -59,8 +54,8 @@ MapFactor Navigator is an offline turn-by-turn navigation program you can stick 
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/tools/translucify/</guid>
-      <description>Originally posted to https://medium.com/this-place/translucify-374ec3f621c5
-Translucify is a drop-in solution for mismatched background colors between a web page and its images.
+      <description>_Originally posted to https://medium.com/this-place/translucify-374ec3f621c5_
+ Translucify is a drop-in solution for mismatched background colors between a web page and its images.
 Highlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?</description>
     </item>
     

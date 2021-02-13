@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "tools",
       "name" : "Slackson bot",
       "headline" : "Slackson bot",
-      "description" : "I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.\n jim [5:35 PM] whats playing sonosbot BOT [5:35 PM] `The Avener \x26amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework` jim [5:35 PM] pause sonosbot BOT [5:35 PM] `jim requested to pause this track.",
+      "description" : "I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.\n jim [5:35 PM] whats playing sonosbot BOT [5:35 PM] `The Avener \u0026amp; Phoebe Killdeer - Fade Out Lines - The Avener Rework` jim [5:35 PM] pause sonosbot BOT [5:35 PM] `jim requested to pause this track.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2015",
-      "datePublished": "2015-09-22 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2015-09-22 00:00:00 \x2b0000 UTC",
+      "datePublished": "2015-09-22 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2015-09-22 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/slackson\/",
       "keywords" : [  ]
   }
@@ -91,12 +91,8 @@
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><img src="/images/slackson/slackson_360.png" alt="slackson" /></p>
-
+                <p><img src="/images/slackson/slackson_360.png" alt="slackson"></p>
 <p>I wrote a Slack bot that controls and reacts to the state of Sonos controllers on your network. It can send GIPHYs to the channel as well as analyze the sentiment of the lyrics of the current song.</p>
-
 <pre><code>
 jim [5:35 PM]
 whats playing
@@ -117,19 +113,12 @@ sonosbot BOT [5:35 PM]
 `jim requested to continue playing music.`
 
 
-</code></pre>
-
-<h2 id="running">Running</h2>
-
+</code></pre><h2 id="running">Running</h2>
 <p>You will need to provide your own credentials within <code>config.js</code>, a <code>sample-config.js</code> is provided as an example.
 The bot server must run on the same network that hosts your Sonos devices.</p>
-
-<pre><code class="language-bash">npm install
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install
 node bot.js
-</code></pre>
-
-<h2 id="source-code">Source code</h2>
-
+</code></pre></div><h2 id="source-code">Source code</h2>
 <p>You can find the <a href="https://github.com/jim-thisplace/slackson">latest version on GitHub</a>.</p>
 
             </div>

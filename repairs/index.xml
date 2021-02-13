@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Repairs on jsyang.ca</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Repairs on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Dec 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/repairs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 01 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/repairs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TechShop notes</title>
       <link>http://jsyang.ca/repairs/notes/</link>
@@ -19,7 +15,7 @@
       <guid>http://jsyang.ca/repairs/notes/</guid>
       <description>Various tidbits learned from SF TechShop classes Oxy-Acetylene Torch Starting: Open the acetylene valve to the torch first, then the oxygen valve.
 Stopping: Close the oxygen valve, then the acetylene.
-Gas valve open/close order mnemonic: POOP &amp;mdash; Propane, Oxygen, Oxygen, Propane.
+Gas valve open/close order mnemonic: POOP — Propane, Oxygen, Oxygen, Propane.
 Oxygen blown by the cutting head of the torch actually burns the steel / iron which is being cut. The extra oxygen combusts the material which turns into slag (~oxide) falling off onto the floor.</description>
     </item>
     
@@ -29,8 +25,7 @@ Oxygen blown by the cutting head of the torch actually burns the steel / iron wh
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/repairs/m2kb/</guid>
-      <description>These particular model M buckling spring (B-S) or &amp;ldquo;clicky&amp;rdquo; keyboards were paired and sold with IBM PS/1 and some PS/2 systems circa 1990. As of writing, my M2 keyboard is about 18 years old. Old age brings about hardware failures of all sorts and the M2 is no exception. The most common, non-mechanical, failure people have encountered have been dead keyboard controller boards.
-When plugged into a PS/2 keyboard port, the M2 shows CapsLock and Scroll Lock lights on but is irresponsive after POST (Power On System Test).</description>
+      <description>These particular model M buckling spring (B-S) or &amp;ldquo;clicky&amp;rdquo; keyboards were paired and sold with IBM PS/1 and some PS/2 systems circa 1990. As of writing, my M2 keyboard is about 18 years old. Old age brings about hardware failures of all sorts and the M2 is no exception.</description>
     </item>
     
   </channel>

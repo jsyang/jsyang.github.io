@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-01-02 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-01-02 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-01-02 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-01-02 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/celcom\/hud-indicators\/",
       "keywords" : [  ]
   }
@@ -91,106 +91,74 @@ Game design is essentially UX design. Bad experience design is more than jarring
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/hud-indicators.md">here</a>.</em></p>
-
+                <p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/hud-indicators.md">here</a>.</em></p>
 <p>Game design is essentially UX design. Bad experience design is more than jarring: it drives beginner players
 away. CelCom previously had an example of bad experience design in one of it core gameplay mechanics:
 landing spaceships was awkward and difficult. First you needed to be able to find the planet you want to land on,
 then you had to move to it, possibly avoiding other planets and stars en route.</p>
-
 <h2 id="landing-fighters">Landing fighters</h2>
-
 <p>Landing a fighter spaceship is a basic action that the player has to do in order to lay claim to planets,
 re-arm weapons with ammo supplies, and repair their ship. This skill is one of the core mechanics
 of the game.</p>
-
 <p>Parking up on a planet is the successful outcome of a landing, the alternative is certain death.
 Two factors decide if you make it or not:</p>
-
 <ol>
 <li>You have to orient the ship so that it faces outward from center of the planet</li>
 <li>Your speed at the moment of contact with the planet&rsquo;s surface needs to be low enough to survive the landing</li>
 </ol>
-
 <h2 id="previous-design">Previous design</h2>
-
 <p>Previously the UI used a dial indicator. Colored arcs would rotate within two concentric
 circular tracks to visualize the angle from the ship to the nearest star and the nearest planet.</p>
-
-<p><img src="/images/celcom/old-indicator.jpg" alt="old indicator design" /></p>
-
+<p><img src="/images/celcom/old-indicator.jpg" alt="old indicator design"></p>
 <p>The main problem with this display was its skeuomorphism: in a real spacecraft you may have dials and controls
 that you may have to look at in order to ascertain information about your vessel. At best, bearing indicators
 may be visible via a HUD but this is fundamentally different from the perspective of the player in the game.</p>
-
-<p><img src="/images/celcom/a380.jpg" alt="A380 cockpit" /></p>
-
+<p><img src="/images/celcom/a380.jpg" alt="A380 cockpit"></p>
 <p>Additionally, the player had to land fighters without a speed indicator, purely using the
 movement of the background star field and relative motion of the stars as their speedometer. General feedback
 from players was that these conditions would often result in very few successful landings and not much fun.</p>
-
 <p>Landing was supposed to be hard, but not that hard.</p>
-
 <h2 id="improved-design">Improved design</h2>
-
 <p>Top-down perspective is a 3rd-person view, while dials and meters are usually 1st-person UI elements; two distinct
 ways to show vital information. Maybe we could borrow a concept for a heading indicator from other games with this
 perspective?</p>
-
-<p><img src="/images/celcom/gta-indicator.png" alt="GTA mission indicator" /></p>
-
+<p><img src="/images/celcom/gta-indicator.png" alt="GTA mission indicator"></p>
 <ul>
 <li>GTA1 uses a yellow arrow that follows the player sprite around and points to the next objective. This
 was a good start, but was too limiting for Celestial Combat. Due to the sparsity of the graphics,
 putting a set of always visible dials near center of the screen would probably obscure visual focus and annoy the player.
 We can&rsquo;t use this design as is.</li>
 </ul>
-
-<p><img src="/images/celcom/xevil-indicator.gif" alt="XEvil enemy indicator" /></p>
-
+<p><img src="/images/celcom/xevil-indicator.gif" alt="XEvil enemy indicator"></p>
 <ul>
 <li><a href="https://www.xevil.com">XEvil</a> uses an enemy indicator that follows the enemy around the edges of
 the game screen if the enemy is out of view and disappears when the enemy is in view. This was
 a much better design to replace the old dials in Celestial Combat.</li>
 </ul>
-
 <p>A new landing speed indicator was set to be shown only when the fighter ship was within
 a certain distance of a planet, following the &ldquo;get-out-of-the-way&rdquo; philosophy. Crashing speed was also set a little higher.
 The game would allow for rougher landings to avoid discouraging players.</p>
-
-<p><img src="/images/celcom/landing-speed.png" alt="landing speed gauge" /></p>
-
+<p><img src="/images/celcom/landing-speed.png" alt="landing speed gauge"></p>
 <p>This is what it looks like in action:</p>
-
-<p><img src="/images/celcom/new-indicators.gif" alt="new-indicators" /></p>
-
+<p><img src="/images/celcom/new-indicators.gif" alt="new-indicators"></p>
 <h2 id="coding-the-new-design-for-the-indicators">Coding the new design for the indicators</h2>
-
 <p>We ended up coding 4 distinct indicators for this UI component:</p>
-
 <ol>
 <li>Nearest planet (green diamond)</li>
 <li>Nearest star (yellow diamond)</li>
 <li>Targeted object (red crosshair)</li>
 <li>Checkpoint (blue letter &ldquo;N&rdquo;)</li>
 </ol>
-
 <p>The indicators only appear at the edges of the viewport. The most complicated part of implementing this UI was
 projecting the various positions (in game space) to the border of the viewport (in HUD space).</p>
-
 <p>But since the viewport is a rectangle there are only 4 cases we need to consider. Indicator should be shown:</p>
-
 <ol>
 <li>At the TOP border: Y value is known, just need to calculate X</li>
 <li>At the BOTTOM border: Y value is known, just need to calculate X</li>
 <li>At the LEFT border: X value is known, just need to calculate Y</li>
 <li>At the RIGHT border: X value is known, just need to calculate Y</li>
 </ol>
-
 <p>Pseudocode for the function <code>drawPointerFor()</code> which is responsible for this:</p>
-
 <pre><code>    if target is outside viewport
         show pointer
     
@@ -220,9 +188,7 @@ projecting the various positions (in game space) to the border of the viewport (
             pointer X = target aspect ratio * pointer Y         
     else 
         hide pointer
-</code></pre>
-
-<p>Full source code for the pointer UI resides in <a href="https://github.com/jsyang/celestial/blob/master/src/client/GameScreen/HUD/Pointers.ts"><code>src/client/GameScreen/HUD/Pointers.ts</code></a>.
+</code></pre><p>Full source code for the pointer UI resides in <a href="https://github.com/jsyang/celestial/blob/master/src/client/GameScreen/HUD/Pointers.ts"><code>src/client/GameScreen/HUD/Pointers.ts</code></a>.
 Feedback for these changes was definitely positive. We can expect to implement more UX design improvements in the future!</p>
 
             </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "tools",
       "name" : "Translucify",
       "headline" : "Translucify",
-      "description" : "Originally posted to https:\/\/medium.com\/this-place\/translucify-374ec3f621c5\nTranslucify is a drop-in solution for mismatched background colors between a web page and its images.\nHighlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?",
+      "description" : "_Originally posted to https:\/\/medium.com\/this-place\/translucify-374ec3f621c5_\n Translucify is a drop-in solution for mismatched background colors between a web page and its images.\nHighlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2015",
-      "datePublished": "2015-05-01 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2015-05-01 00:00:00 \x2b0000 UTC",
+      "datePublished": "2015-05-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2015-05-01 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/translucify\/",
       "keywords" : [  ]
   }
@@ -36,8 +36,8 @@
 <title>Translucify - jsyang.ca</title>
   <meta property="og:title" content="Translucify - jsyang.ca" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="Originally posted to https://medium.com/this-place/translucify-374ec3f621c5
-Translucify is a drop-in solution for mismatched background colors between a web page and its images.
+  <meta name="description" content="_Originally posted to https://medium.com/this-place/translucify-374ec3f621c5_
+ Translucify is a drop-in solution for mismatched background colors between a web page and its images.
 Highlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?" />
 
   <link
@@ -92,62 +92,36 @@ Highlights  Approximately 230 SLOC (source lines of code) No dependencies  The W
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><em>Originally posted to <a href="https://medium.com/this-place/translucify-374ec3f621c5">https://medium.com/this-place/translucify-374ec3f621c5</a></em></p>
-
-<hr />
-
+                <p>_Originally posted to <a href="https://medium.com/this-place/translucify-374ec3f621c5_">https://medium.com/this-place/translucify-374ec3f621c5_</a></p>
+<hr>
 <p>Translucify is a <a href="https://www.npmjs.com/package/translucify">drop-in solution</a> for mismatched background colors between a web page and its images.</p>
-
 <h2 id="highlights">Highlights</h2>
-
 <ul>
 <li>Approximately 230 SLOC (source lines of code)</li>
 <li>No dependencies</li>
 </ul>
-
 <h2 id="the-why">The Why</h2>
-
 <p>A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?</p>
-
-<p><img src="/images/translucify/1.png" alt="" /></p>
-
+<p><img src="/images/translucify/1.png" alt=""></p>
 <p>If there are only 3 different images and our prototype hard-codes the links to them then there’s an easy solution: go into Photoshop and delete the backgrounds. But what if we didn’t know where the images came from and if their format even supports transparency? JPEG, for instance, doesn’t save transparency data.</p>
-
 <p>We can’t just go into Photoshop and manually delete the backgrounds ourselves, especially if there are potentially 2000 different images and they are served off a site we lack full access to. It was such an obvious UX issue to us that we felt it was something that had to be addressed immediately.</p>
-
 <p>We thought it such a common problem people would’ve run into that there must already be a solution someone else wrote, right?</p>
-
 <blockquote>
 <p>“I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.”
 — Abraham Maslow, The Psychology of Science, 1966</p>
 </blockquote>
-
 <p>If we could do it client-side, it would be an easy win for UX, rather than chase the image providers down and getting them to change every single image we could possibly use in this way. The only snagging point we could see was <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-Origin Resource Sharing (CORS) headers</a>. These are settings which control how a web browser uses images that come from a different domain than the page requesting the image (index.html on thisplace.com vs cheese.jpg on wikimedia.org). As long as the domain hosting the image (wikimedia.org) has correctly setup CORS header on images (which is to say it’s enabled for thisplace.com), it shouldn’t be a big deal.</p>
-
 <p>StackOverflow threads were our first legit results in our quest to find an existing solution to this problem. <a href="http://stackoverflow.com/questions/11472273/how-to-edit-pixels-and-remove-white-background-in-a-canvas-image-in-html5-and-ja">This one</a> was especially relevant to the task of manipulating image data client-side. It’s pretty clear the end result should be a canvas tag that has the same image content as the original only with the background color removed.</p>
-
 <p>The scope of the solution was clear now: create a one off, single purpose <a href="http://microjs.com/">micro-library</a>, using the code from the StackOverflow answer as a starting point. The background color has to be deleted, the resulting element should behave like a regular image element as much as possible (in-line element, easy to style with CSS and retain the ability for users to save that image). We’d also want to stick it in a micro-library module (that is CommonJS, AMD and plain <code>&lt;script&gt;</code> tag compatible) because we don’t mind how it’s used as long as it’s helpful to someone later.</p>
-
 <p>We couldn’t find any existing libraries that worked like this, which is why we wrote our own.</p>
-
 <h2 id="diamond-in-the-rough">Diamond in the rough</h2>
-
 <p>This naive method had a problem though. There could be many false positives inside the image of a shiny item since the code was using a high pass filter on all the pixels.</p>
-
-<p><img src="/images/translucify/2.png" alt="" /></p>
-
+<p><img src="/images/translucify/2.png" alt=""></p>
 <p>The solution to this was to add a flood-fill method that works like the magic wand in Photoshop and replaces all the pixels starting from X:0, Y:0. The flood-fill method worked like a charm.</p>
-
 <p>Implementation-wise, the library uses no bleeding-edge APIs or features. The only thing we needed to do was <a href="https://github.com/ariya/phantomjs/issues/10522">shim Function.bind()</a> (an issue well known with PhantomJS &lt;2) for our screenshot image diff tests.</p>
-
 <p>Going further, we wanted to gauge how well either of these methods performed across browsers and devices. We wrote a <a href="http://jsperf.com/floodfill-vs-highpass">jsPerf test case</a>: this actually showed us something we didn’t expect but made perfect sense. The simpler high pass filter method of translucifying images was slower than the flood-fill method by a factor of more than 10!</p>
-
-<p><img src="/images/translucify/3.png" alt="" /></p>
-
+<p><img src="/images/translucify/3.png" alt=""></p>
 <p>The takeaway from this exercise was an immediate change to remove the high-pass method from the code since it was both slower and less useful.</p>
-
 <p>You can find translucify <a href="https://www.npmjs.com/package/translucify">on npm</a> and <a href="https://github.com/jsyang/translucify">on GitHub</a>.</p>
 
             </div>

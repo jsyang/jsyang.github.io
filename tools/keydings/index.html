@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "tools",
       "name" : "KeyDings",
       "headline" : "KeyDings",
-      "description" : "As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app that would provide IBM Model M \x26ldquo;clicky\x26rdquo; keyboard sound effects whenever the OS detected a key up or down event.\nTo my complete surprise I was able to get a functional app working within an afternoon, which goes to prove that the ecosystem for writing MacOS apps is well designed and mature.",
+      "description" : "As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app that would provide IBM Model M \u0026ldquo;clicky\u0026rdquo; keyboard sound effects whenever the OS detected a key up or down event.\nTo my complete surprise I was able to get a functional app working within an afternoon, which goes to prove that the ecosystem for writing MacOS apps is well designed and mature.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-02-18 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-02-18 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-02-18 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-02-18 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/keydings\/",
       "keywords" : [  ]
   }
@@ -91,37 +91,28 @@ To my complete surprise I was able to get a functional app working within an aft
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p>As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app
+                <p>As a way to learn the MacOS Cocoa API and Swift, I set out to write a MacOS system tray app
 that would provide IBM Model M &ldquo;clicky&rdquo; keyboard sound effects whenever the OS detected a key up or down event.</p>
-
 <p>To my complete surprise I was able to get a functional app working within an afternoon, which
 goes to prove that the ecosystem for writing MacOS apps is well designed and mature.</p>
-
 <h3 id="demo">Demo</h3>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/sQEByBpCZ0Q" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/sQEByBpCZ0Q" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h3 id="functionality">Functionality</h3>
-
 <p>Version 1.0 of the app is a system tray app, meaning that it runs in the background once started
-and does not appear in the Dock. There are 3 distinct sound effect libraries:
-- IBM Model M sounds
-- iOS button sound
-- generic mechanical typewriter sounds</p>
-
+and does not appear in the Dock. There are 3 distinct sound effect libraries:</p>
+<ul>
+<li>IBM Model M sounds</li>
+<li>iOS button sound</li>
+<li>generic mechanical typewriter sounds</li>
+</ul>
 <p>These can be chosen from the system tray menu.</p>
-
-<p><img src="/images/keydings/options.png" alt="options" /></p>
-
+<p><img src="/images/keydings/options.png" alt="options"></p>
 <h3 id="how-to-download-and-use">How to download and use</h3>
-
-<ol>
+<ol start="0">
 <li>Download the <code>keydings.app.zip</code> file from <a href="https://github.com/jsyang/keydings/releases/tag/1.0">https://github.com/jsyang/keydings/releases/tag/1.0</a></li>
 <li>Extract and move <code>keydings.app</code> file somewhere, like in <code>/Applications</code>.</li>
 <li>Open &ldquo;Security &amp; Privacy&rdquo; panel in System Preferences (Cmd+Space, then type &ldquo;Security &amp; Privacy&rdquo;)</li>
@@ -130,11 +121,8 @@ and does not appear in the Dock. There are 3 distinct sound effect libraries:
 <li>Drag the <code>keydings.app</code> file into this list, this will enable the app to listen for keyDown and keyUp events across the OS.</li>
 <li>Then double click the <code>keydings.app</code> file in <code>/Applications</code> to run it. You should see a music note icon in the MacOS system tray.</li>
 </ol>
-
 <h3 id="source-code">Source code</h3>
-
 <p>The source code for the app can be found here: <a href="https://github.com/jsyang/keydings">https://github.com/jsyang/keydings</a></p>
-
 <p>You will need an up to date version of XCode to open the project.</p>
 
             </div>

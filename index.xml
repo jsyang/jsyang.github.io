@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jsyang.ca</title>
@@ -6,19 +6,14 @@
     <description>Recent content on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Think Outside Bluetooth Folding Keyboard</title>
       <link>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</guid>
-      <description>When the local coronavirus restrictions were enacted early on this year, I was determined not to let this time go to waste. The idea: read more and improve my writing by removing distractions where possible. Distraction-free writing (post coming soon) and other activities of this sort require a lot of forethought and set-up to have a chance at consistent success.
-With respect to that, one area I started to consider was the hardware: what would I use to write?</description>
+      <description>When the local coronavirus restrictions were enacted early on this year, I was determined not to let this time go to waste. The idea: read more and improve my writing by removing distractions where possible. Distraction-free writing (post coming soon) and other activities of this sort require a lot of forethought and set-up to have a chance at consistent success.</description>
     </item>
     
     <item>
@@ -30,7 +25,7 @@ With respect to that, one area I started to consider was the hardware: what woul
       <description>The end of year winter season is a time when many of my family and friends celebrate their birthdays. This year I came across a Cantonese birthday song beyond the basic &amp;ldquo;happy birthday&amp;rdquo; / 生日快樂 that made me ponder whether other such &amp;ldquo;folk&amp;rdquo; birthday songs existed.
 What are people singing about when they sing a common happy birthday song in their own language?
 Let&amp;rsquo;s start with the baseline:
-English Happy birthday to you Happy birthday to you Happy birthday dear &amp;lt;NAME&amp;gt; Happy birthday to you  Origin: an American children&amp;rsquo;s 1911 songbook derived from various earlier works going back to 1850s, possibly further.</description>
+English Happy birthday to you Happy birthday to you Happy birthday dear &amp;lt;NAME&amp;gt; Happy birthday to you Origin: an American children&amp;rsquo;s 1911 songbook derived from various earlier works going back to 1850s, possibly further.</description>
     </item>
     
     <item>
@@ -45,15 +40,21 @@ I knew I had to put something together to play with this system that laid out as
     </item>
     
     <item>
+      <title>Sinclair Research A-Bike Mk1 6-inch</title>
+      <link>http://jsyang.ca/cycling/sinclair-research-a-bike/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/cycling/sinclair-research-a-bike/</guid>
+      <description>Over the summer, my obsession with micro-folding bikes came to a head when an auction alert notified me that an original Sinclair Research A-Bike Mk1 was listed. Package looked to be in OK condition and at a fairly good price as far as these discontinued niche products go.</description>
+    </item>
+    
+    <item>
       <title>Dahon PrestoLite - The Lightest 16&#34; Wheeler Yet</title>
       <link>http://jsyang.ca/cycling/dahon-prestolite/</link>
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/dahon-prestolite/</guid>
-      <description>The Dahon PrestoLite is a 16&amp;rdquo; (ETRTO 305mm) wheeled folding bike with the geometry of a Moulton Mk3 constructed mainly out of aluminium. I&amp;rsquo;ve lusted after a Moulton Mk3 for a while but the small apartment where we live didn&amp;rsquo;t have the storage space for yet another non-folding bike; regardless of how small the wheels were.
-  0th
-      1st
-      2nd</description>
+      <description>The Dahon PrestoLite is a 16&amp;quot; (ETRTO 305mm) wheeled folding bike with the geometry of a Moulton Mk3 constructed mainly out of aluminium. I&amp;rsquo;ve lusted after a Moulton Mk3 for a while but the small apartment where we live didn&amp;rsquo;t have the storage space for yet another non-folding bike; regardless of how small the wheels were.</description>
     </item>
     
     <item>
@@ -62,8 +63,7 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</guid>
-      <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these. Manufactured by TCL, it retains the &amp;ldquo;Palm&amp;rdquo; brand that people remember from the by-gone PDA days.
-Originally the concept of the phone was as a kind of &amp;ldquo;gig&amp;rdquo; device where you would install a SIM card that kept the same phone number as your main phone but was small enough to take with you to an event where you could use a compact version of your main phone (with the majority of its features) in a pinch.</description>
+      <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these.</description>
     </item>
     
     <item>
@@ -72,8 +72,7 @@ Originally the concept of the phone was as a kind of &amp;ldquo;gig&amp;rdquo; d
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/hacks/ghliveble/</guid>
-      <description>Ever since we visited the National Videogame Museum, my wife and I got more and more into Guitar Hero style rhythm games. Late last year, I did some research and found a great open source project called Clone Hero which aims to vastly improve upon games of this genre.
-For her birthday, I got an XBox360 version of the Guitar Hero Live controller which is meant to work with Windows PCs though with a steps of complicated set up before we could play.</description>
+      <description>Ever since we visited the National Videogame Museum, my wife and I got more and more into Guitar Hero style rhythm games. Late last year, I did some research and found a great open source project called Clone Hero which aims to vastly improve upon games of this genre.</description>
     </item>
     
     <item>
@@ -82,7 +81,7 @@ For her birthday, I got an XBox360 version of the Guitar Hero Live controller wh
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/jersey-on-a-pacific-carryme/</guid>
-      <description>Jersey the Channel Island Jersey is the largest of the Channel Islands, located in the English Channel between England and France (but closer to France). As a dependency, but not formally a part of the United Kingdom, it has a mix of British and French cultures. With both English, and French being official languages, it was the only place outside of Canada I&amp;rsquo;ve travelled to with this specific combination of dual language road signage!</description>
+      <description>Jersey the Channel Island Jersey is the largest of the Channel Islands, located in the English Channel between England and France (but closer to France). As a dependency, but not formally a part of the United Kingdom, it has a mix of British and French cultures.</description>
     </item>
     
     <item>
@@ -91,8 +90,7 @@ For her birthday, I got an XBox360 version of the Guitar Hero Live controller wh
       <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/pacific-carryme-shakedown-cruise/</guid>
-      <description>The Chorlton Wanderers are a local social cycling group riding out of Chorlton Water Park, who do a social ride once a month. Given that the August 2019 ride was relatively flat and short (~60km), I decided to attempt it on the Pacific CarryMe to see what riding it for more than 10km was like in terms of pacing, fit, and to generally gauge the fun level.
-It was the first shakedown cruise of the Pacific CarryMe.</description>
+      <description>The Chorlton Wanderers are a local social cycling group riding out of Chorlton Water Park, who do a social ride once a month. Given that the August 2019 ride was relatively flat and short (~60km), I decided to attempt it on the Pacific CarryMe to see what riding it for more than 10km was like in terms of pacing, fit, and to generally gauge the fun level.</description>
     </item>
     
     <item>
@@ -102,7 +100,7 @@ It was the first shakedown cruise of the Pacific CarryMe.</description>
       
       <guid>http://jsyang.ca/3dprinting/ender-3-mods/</guid>
       <description>What follows is a collection of notes I compiled for setting up my current (as of 2019) 3D printer. Table of contents for major sections as follows:
-1. Costs 2. Subtractive modifications 3. Printable mods 4. Octoprint 5. `mjpg-streamer` tweaks 6. Raspbian tweaks 7. G-Code tweaks  1. Costs 1 x Ender 3: £176
+1. Costs 2. Subtractive modifications 3. Printable mods 4. Octoprint 5. `mjpg-streamer` tweaks 6. Raspbian tweaks 7. G-Code tweaks 1. Costs 1 x Ender 3: £176
  50% cheaper vs previous 3D printer (Wanhao Duplicator i3 plus): £339  1 x Raspberry Pi Zero W: £18</description>
     </item>
     
@@ -112,8 +110,7 @@ It was the first shakedown cruise of the Pacific CarryMe.</description>
       <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/pacific-carryme/</guid>
-      <description>The CarryMe is a folding bike with an incredibly small wheel size of 8 inches manufactured by Pacific Cycles. The main advantage is its folding style which seeks to balance a stick-shaped fold while maintaining the ergonomics of a regular bike.
-I&amp;rsquo;ve been dreaming of owning this bike for many years, and when the chance presented itself I bit the bullet and bought one from a previous owner on eBay.</description>
+      <description>The CarryMe is a folding bike with an incredibly small wheel size of 8 inches manufactured by Pacific Cycles. The main advantage is its folding style which seeks to balance a stick-shaped fold while maintaining the ergonomics of a regular bike.</description>
     </item>
     
     <item>
@@ -133,8 +130,7 @@ Recipe Like all &amp;ldquo;fancy&amp;rdquo; foods, pho comes from a humble origi
       <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/3dprinting/3d-printers/</guid>
-      <description>During 2012, I had access to TechShop SF, a makerspace in San Francisco which is sadly now defunct, I took several courses that taught FDM 3D printing basics. This got me hooked on the idea of owning my own 3D printers. However, this wasn&amp;rsquo;t reasonable until around 2017 owing to market forces driving down the prices to less than £300 or $400 for a decent entry-level printer.
-As of this writing, I&amp;rsquo;ve had the opportunity of owning and operating 3 different 3D printers.</description>
+      <description>During 2012, I had access to TechShop SF, a makerspace in San Francisco which is sadly now defunct, I took several courses that taught FDM 3D printing basics. This got me hooked on the idea of owning my own 3D printers. However, this wasn&amp;rsquo;t reasonable until around 2017 owing to market forces driving down the prices to less than £300 or $400 for a decent entry-level printer.</description>
     </item>
     
     <item>
@@ -166,7 +162,7 @@ To my complete surprise I was able to get a functional app working within an aft
       
       <guid>http://jsyang.ca/tools/tabular-vertical-alignment/</guid>
       <description>While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or &amp;ldquo;vertical&amp;rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:
-// (1) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; };  The code in (2) is much clearer in tabular form.</description>
+// (1) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&amp;lt;string|number&amp;gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; The code in (2) is much clearer in tabular form.</description>
     </item>
     
     <item>
@@ -229,8 +225,7 @@ As the gameplay solidified, finding a way to persist player progress grew more i
       
       <guid>http://jsyang.ca/hacks/brompton-veloplugs/</guid>
       <description>I&amp;rsquo;ve used rim plugs (&amp;ldquo;Veloplug&amp;rdquo; is a brand of rim plug) in 3 separate bike builds and they have been worthwhile as a rim tape / strip alternative.
-Essentially, rim plugs are drawing pin sized bits of plastic that have a tub instead of a solid rod which you insert into the spoke holes from the inside of the wheel.
-Their purpose is to protect inner tubes (squishy rubber things that hold air) from the inside of the rim bed; the rim bed contains spoke holes drilled by a wheel rim factory that have rough edges, which may puncture inner tubes.</description>
+Essentially, rim plugs are drawing pin sized bits of plastic that have a tub instead of a solid rod which you insert into the spoke holes from the inside of the wheel.</description>
     </item>
     
     <item>
@@ -239,7 +234,7 @@ Their purpose is to protect inner tubes (squishy rubber things that hold air) fr
       <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/hacks/bike-light-phone-mount/</guid>
-      <description>Broken LED lights 2 years ago I bought two inexpensive LED bike lights which both ended up broken after some use. Since they were cheap but contained some salvageable parts I disassembled them to see what was wrong: power leads to the Li-ion cells had disconnected owing to a shoddy soldering job at the factory. However, after resoldering the leads, further testing showed that the cells had nearly completely died.</description>
+      <description>Broken LED lights 2 years ago I bought two inexpensive LED bike lights which both ended up broken after some use. Since they were cheap but contained some salvageable parts I disassembled them to see what was wrong: power leads to the Li-ion cells had disconnected owing to a shoddy soldering job at the factory.</description>
     </item>
     
     <item>
@@ -260,10 +255,7 @@ Their purpose is to protect inner tubes (squishy rubber things that hold air) fr
       <guid>http://jsyang.ca/cycling/iow-2018/</guid>
       <description>The IOW Randonnee was fantastic this year. I rode down from Euston again, but this time heading from Euston to Farnham and then bearing south towards Petersfield and finally to Portsmouth, rather than Southampton.
 Euston to Portsmouth  https://www.strava.com/activities/1551615269
-
-Cycle Island 2018  https://www.strava.com/activities/1554338241
-
-Highlights  riding down to the coast to meet Brett shadowing the London Brompton Club riders pit-stop at the Sun Inn where I bit into venison sausage that still had buckshot in it the many hellos and morsels of conversations exchanged with random cyclists throughout the ride  The pacing was really good.</description>
+ Cycle Island 2018  https://www.</description>
     </item>
     
     <item>
@@ -294,7 +286,7 @@ Additionally, I wrote a simple 360 web viewer, so I can use any image host (e.g.
       <guid>http://jsyang.ca/hacks/gear-vr-rev-eng/</guid>
       <description>The result so far Here&amp;rsquo;s a video demo of I was able to achieve with this reverse engineering effort:
   Click here if you&amp;rsquo;re interested in running this yourself.
-Background About a week ago I was having a look at some new input devices to use for my game experiments that were a little more interesting than a simple USB or Bluetooth Gamepad. As I kept a close eye on consumer VR technology in 2016&amp;frasl;2017, it occurred to me now that many of the devices released in the past year have been updated and on the market for at least a few months.</description>
+Background About a week ago I was having a look at some new input devices to use for my game experiments that were a little more interesting than a simple USB or Bluetooth Gamepad.</description>
     </item>
     
     <item>
@@ -303,7 +295,8 @@ Background About a week ago I was having a look at some new input devices to use
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</guid>
-      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.</description>
+      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.
+Depending on the seller, the gamepads can be found under different branding, though functionally they are all the same device.</description>
     </item>
     
     <item>
@@ -323,8 +316,7 @@ Background About a week ago I was having a look at some new input devices to use
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/moulton-automatic/</guid>
-      <description>I&amp;rsquo;ve been obsessed with the design lineage of the Moulton bicycle ever since I got my first small wheeled folding bike: Bessie the Brompton. In mid-April 2017, a Moulton automatic appeared on eBay for 150 GBP with no bids and I decided I had to have it. I was the only bidder and minus another 60 GBP in shipping fees, it arrived at my doorstep from Stotfold, Bedfordshire.
-When the courier arrived with it the first thing I noticed was that it was quite long.</description>
+      <description>I&amp;rsquo;ve been obsessed with the design lineage of the Moulton bicycle ever since I got my first small wheeled folding bike: Bessie the Brompton. In mid-April 2017, a Moulton automatic appeared on eBay for 150 GBP with no bids and I decided I had to have it.</description>
     </item>
     
     <item>
@@ -333,7 +325,7 @@ When the courier arrived with it the first thing I noticed was that it was quite
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/shrimpy-bike/</guid>
-      <description>The base frame The foundation of the build was a tiny clown bike manufactured some time in the early 2000s under the name &amp;ldquo;Mikro-bike&amp;rdquo;. The marketing website from 2002, archived via WayBack Machine is available here. My particular bike came with a new seatpost and a worn rear wheel (solid rubber!) following years of enjoyment under its previous owner. It also had a coaster brake. The whole package was had for 30 GBP delivered.</description>
+      <description>The base frame The foundation of the build was a tiny clown bike manufactured some time in the early 2000s under the name &amp;ldquo;Mikro-bike&amp;rdquo;. The marketing website from 2002, archived via WayBack Machine is available here. My particular bike came with a new seatpost and a worn rear wheel (solid rubber!</description>
     </item>
     
     <item>
@@ -342,7 +334,7 @@ When the courier arrived with it the first thing I noticed was that it was quite
       <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/iow-2017/</guid>
-      <description>London Euston to Southampton, Cycle Island Tour Every year, the Isle of Wight hosts a cycling event which circumnavigates the island. As many of my friends in the various cycling groups I belong to were taking part in this event this year, it was only natural to join them on this unique free event. There were two routes: a 55 km and 100 km route. I thought I would do the longer route since I was still in the early stages of being acclimatized to long distances in the saddle.</description>
+      <description>London Euston to Southampton, Cycle Island Tour Every year, the Isle of Wight hosts a cycling event which circumnavigates the island. As many of my friends in the various cycling groups I belong to were taking part in this event this year, it was only natural to join them on this unique free event.</description>
     </item>
     
     <item>
@@ -352,7 +344,7 @@ When the courier arrived with it the first thing I noticed was that it was quite
       
       <guid>http://jsyang.ca/cycling/suoman-commute-machine/</guid>
       <description>A Budget single-speed build @suoman was having real issues with her 100 quid department store bike so I decided to chip in and get her something better especially after hearing how nice it would be to own a racing-style-not-so-heavy-bike.
-I had a think and came up with a budget (&amp;lt; 120 GBP total) for her new ride. In addition to being as cheap as possible while being a decent bike, this new bike need to: - have better brakes than current bike - be more easily maintainable than current bike - be more lightweight than current bike - mount a rack for carrying panniers - look cooler - be more fun to ride</description>
+I had a think and came up with a budget (&amp;lt; 120 GBP total) for her new ride.</description>
     </item>
     
     <item>
@@ -361,7 +353,7 @@ I had a think and came up with a budget (&amp;lt; 120 GBP total) for her new rid
       <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/polymer-clay-2017/</guid>
-      <description>Petite Little Red Riding Hood After building Del a red mini-velo (named Little Red Riding Hood) last year, I thought I&amp;rsquo;d follow it up with a smaller version of the small bike as a gift during our first clay session. Having purchased a heat gun recently, I experimented with baking the pieces individually on a low heat setting, then joining them with industrial strength cyanoacrylate super glue. Here&amp;rsquo;s how it turned out:</description>
+      <description>Petite Little Red Riding Hood After building Del a red mini-velo (named Little Red Riding Hood) last year, I thought I&amp;rsquo;d follow it up with a smaller version of the small bike as a gift during our first clay session. Having purchased a heat gun recently, I experimented with baking the pieces individually on a low heat setting, then joining them with industrial strength cyanoacrylate super glue.</description>
     </item>
     
     <item>
@@ -370,9 +362,7 @@ I had a think and came up with a budget (&amp;lt; 120 GBP total) for her new rid
       <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/norfolk-nobbler/</guid>
-      <description>London to Cambridge to Hunstanton to King’s Lynn The first long ride of the year was done with the London Beer and Bike Group; leaving from Bernie Spains Gardens in Southwark, the route was to take us to Cambridge via the canal towpaths in the east end of London and through Ely onward to King’s Lynn and to the beach at Hunstanton.
- https://www.strava.com/activities/905771639 
-New options for storage: Carradice SQR Trax A new piece of kit was mounted onto Bessie the Brompton for this route to see whether it was worthwhile having the extra carry capacity: the Carradice SQR Trax bag with SQR mount.</description>
+      <description>London to Cambridge to Hunstanton to King’s Lynn The first long ride of the year was done with the London Beer and Bike Group; leaving from Bernie Spains Gardens in Southwark, the route was to take us to Cambridge via the canal towpaths in the east end of London and through Ely onward to King’s Lynn and to the beach at Hunstanton.</description>
     </item>
     
     <item>
@@ -392,7 +382,7 @@ The steel strap which comes with it, leaves a large gap and owing to that, the b
       
       <guid>http://jsyang.ca/cycling/mcr-critmass/</guid>
       <description>I hadn&amp;rsquo;t been in town to join critical mass since moving to Manchester in Sept 2016. Finally free of obligations in London for the last Friday of the month, I decided to join fellow cyclists for Critical Mass.
-I ordered some of these 10 meter LED fairy lights (7 GBP) off Amazon a while back for our flat and they were conveniently USB powered. This was perfect for wrapping Bessie the Brompton up in and for pooting around town (with many happy onlookers!</description>
+I ordered some of these 10 meter LED fairy lights (7 GBP) off Amazon a while back for our flat and they were conveniently USB powered.</description>
     </item>
     
     <item>
@@ -403,7 +393,7 @@ I ordered some of these 10 meter LED fairy lights (7 GBP) off Amazon a while bac
       <guid>http://jsyang.ca/games/celcom/</guid>
       <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.
 Excerpt from &amp;ldquo;How to play&amp;rdquo;  You begin with either an invasion fleet (1 x Fighter + 4 invasion Freighters) or a single occupied planet.
-To colonize planets, you must land on them when they are unoccupied with your Fighter.</description>
+To colonize planets, you must land on them when they are unoccupied with your Fighter. The landing will plant a beacon, starting the flow of Freighters and raw materials sent to construct facilities on the planet.</description>
     </item>
     
     <item>
@@ -412,7 +402,7 @@ To colonize planets, you must land on them when they are unoccupied with your Fi
       <pubDate>Mon, 19 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/particle-tracks/</guid>
-      <description> Wrote a little procedural art widget drawing inspiration from bubble / cloud chambers used to study particle trajectories. This toy makes use of the excellent scrubbing dat.GUI library to change initial values.
+      <description>Wrote a little procedural art widget drawing inspiration from bubble / cloud chambers used to study particle trajectories. This toy makes use of the excellent scrubbing dat.GUI library to change initial values.
   Live play  Source code </description>
     </item>
     
@@ -422,7 +412,7 @@ To colonize planets, you must land on them when they are unoccupied with your Fi
       <pubDate>Mon, 19 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/pewpew/</guid>
-      <description> I wrote this toy during a particularly long and unproductive meeting that I couldn&amp;rsquo;t leave. Turn almost any web page into a shooting gallery with a click of a button.
+      <description>I wrote this toy during a particularly long and unproductive meeting that I couldn&amp;rsquo;t leave. Turn almost any web page into a shooting gallery with a click of a button.
   Source code </description>
     </item>
     
@@ -432,8 +422,7 @@ To colonize planets, you must land on them when they are unoccupied with your Fi
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/cellular-automata/</guid>
-      <description>This is a toy script that generates a random 2D celluar automata ruleset and applies it to a randomly generated world with each run of the web page. You can click on the viewport to reset it with a completely different universe, starting population and rules for the universe.
- Some universes are more stable than others, which may last for only a few cycles before all the cells die off.</description>
+      <description>This is a toy script that generates a random 2D celluar automata ruleset and applies it to a randomly generated world with each run of the web page. You can click on the viewport to reset it with a completely different universe, starting population and rules for the universe.</description>
     </item>
     
     <item>
@@ -442,8 +431,7 @@ To colonize planets, you must land on them when they are unoccupied with your Fi
       <pubDate>Sun, 31 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/free-spirit-single-speed/</guid>
-      <description>My parents purchased a pair of old road bikes from the mid/late 70s in relatively good condition for their age before the family moved to Toronto (around 2011). The bikes were both &amp;ldquo;Free Spirit&amp;rdquo; branded machines that were apparently sold as lower-end bike shop bikes rather than department store bikes: they were relatively well built and had good components fitted to them.
-I believe my mom got them both for $50 CAD at the time, which is quite a bargain!</description>
+      <description>My parents purchased a pair of old road bikes from the mid/late 70s in relatively good condition for their age before the family moved to Toronto (around 2011). The bikes were both &amp;ldquo;Free Spirit&amp;rdquo; branded machines that were apparently sold as lower-end bike shop bikes rather than department store bikes: they were relatively well built and had good components fitted to them.</description>
     </item>
     
     <item>
@@ -452,10 +440,7 @@ I believe my mom got them both for $50 CAD at the time, which is quite a bargain
       <pubDate>Tue, 26 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/dahon-classic-v/</guid>
-      <description>First released to the public in 1982, it came in single-speed, 3-speed internal gear hub (IGH), and 5-speed derailleur options. Having the smallest fold in a production bike at affordable prices, it became an instant consumer hit. The original design itself lived on for a number of years into the 90s.
-  Before 1
-      Before 2
-      Chainring size</description>
+      <description>First released to the public in 1982, it came in single-speed, 3-speed internal gear hub (IGH), and 5-speed derailleur options. Having the smallest fold in a production bike at affordable prices, it became an instant consumer hit. The original design itself lived on for a number of years into the 90s.</description>
     </item>
     
     <item>
@@ -465,8 +450,7 @@ I believe my mom got them both for $50 CAD at the time, which is quite a bargain
       
       <guid>http://jsyang.ca/tools/gpx-mapfactor/</guid>
       <description>Route-Importer for MapFactor doesn&amp;#39;t work :( Have to write my own...
-&amp;mdash; Jim (@spacefishing) June 30, 2016  
-Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
+&amp;mdash; Jim (@spacefishing) June 30, 2016   Wrote a small tool to convert and insert waypoints from a GPX route into a MapFactor Navigator route.
 MapFactor Navigator is an offline turn-by-turn navigation program you can stick on your phone. Was going to cycle from Leicester to Cardiff on Friday but instead got really sick and wrote this program.</description>
     </item>
     
@@ -486,7 +470,7 @@ MapFactor Navigator is an offline turn-by-turn navigation program you can stick 
       
       <guid>http://jsyang.ca/cycling/equipment-upgrades-2/</guid>
       <description>Upgrades to Bessie the Brompton Getting a Brompton brought me into whole new level of cycling. When I first got Bessie (the Brompton), the first thing I noticed was how little bike there was compared to how fast it could pick up speed. It was the next best thing to having a personal jetpack.
-You see less of the bike in the cockpit. You feel less of the bike because a Brompton&amp;rsquo;s center of mass is lower, and you accelerate much much faster owing to the interplay between its smaller wheel size (16&amp;rdquo; x 3&amp;frasl;8&amp;rdquo;) and a higher gear ratio.</description>
+You see less of the bike in the cockpit. You feel less of the bike because a Brompton&amp;rsquo;s center of mass is lower, and you accelerate much much faster owing to the interplay between its smaller wheel size (16&amp;quot; x 3/8&amp;quot;) and a higher gear ratio.</description>
     </item>
     
     <item>
@@ -495,8 +479,7 @@ You see less of the bike in the cockpit. You feel less of the bike because a Bro
       <pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/dels-red-minivelo/</guid>
-      <description>A minivelo is a type of small wheeled bike with a standard road bike geometry and smaller sized wheels. Typically, they are non-folding and fill a niche in between full-sized road / city bikes and folding bikes. Simplicity is the order of the day with most minivelo designs.
-I spent some time back in Canada in spring of 2016 and wanted a bike project with which I could surprise my wife (then girlfriend).</description>
+      <description>A minivelo is a type of small wheeled bike with a standard road bike geometry and smaller sized wheels. Typically, they are non-folding and fill a niche in between full-sized road / city bikes and folding bikes. Simplicity is the order of the day with most minivelo designs.</description>
     </item>
     
     <item>
@@ -515,8 +498,7 @@ I spent some time back in Canada in spring of 2016 and wanted a bike project wit
       <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/cycling-2015/</guid>
-      <description>Biking since moving to London UK Cycling has always been a way for me to get around and explore places nearby but out of walking distance. After I moved to London, the first few weeks were fairly boring in spite of the extensive means of public transit offered by the city. City-hire bikes were available but they are not exactly enjoyable to ride.
-I held off from buying a bike straight away because it was quite expensive to purchase a cycle in London.</description>
+      <description>Biking since moving to London UK Cycling has always been a way for me to get around and explore places nearby but out of walking distance. After I moved to London, the first few weeks were fairly boring in spite of the extensive means of public transit offered by the city.</description>
     </item>
     
     <item>
@@ -525,8 +507,8 @@ I held off from buying a bike straight away because it was quite expensive to pu
       <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/tools/translucify/</guid>
-      <description>Originally posted to https://medium.com/this-place/translucify-374ec3f621c5
-Translucify is a drop-in solution for mismatched background colors between a web page and its images.
+      <description>_Originally posted to https://medium.com/this-place/translucify-374ec3f621c5_
+ Translucify is a drop-in solution for mismatched background colors between a web page and its images.
 Highlights  Approximately 230 SLOC (source lines of code) No dependencies  The Why A classic way of improving the readability of a table with lots of rows is to set slightly different background colors for alternating rows. This all works nicely when you’re in control of the content that lives inside a row but what happens when the row has to show a thumbnail in one of its cells?</description>
     </item>
     
@@ -557,8 +539,7 @@ New Year&amp;rsquo;s Eve 2014 Maze Maze generator remixed! New years message wri
       <pubDate>Sat, 31 May 2014 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/cycling/london-to-brighton/</guid>
-      <description>First long ride (~100 km) from London to Brighton after getting the 100GBP Argos &amp;ldquo;crusader&amp;rdquo; bike. We tried following a basic Google mapped route but weren&amp;rsquo;t used to the roundabouts. Almost ended up on an M series highway for one of the turns. And I learned the importance of continuously eating on a long distance bike ride. Felt a bit faint before Ditchling; blood sugar was low.
-  Brighton 1</description>
+      <description>First long ride (~100 km) from London to Brighton after getting the 100GBP Argos &amp;ldquo;crusader&amp;rdquo; bike. We tried following a basic Google mapped route but weren&amp;rsquo;t used to the roundabouts. Almost ended up on an M series highway for one of the turns.</description>
     </item>
     
     <item>
@@ -567,7 +548,7 @@ New Year&amp;rsquo;s Eve 2014 Maze Maze generator remixed! New years message wri
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/hacks/foldable-boat/</guid>
-      <description>Over the summer of 2013 several very well made corrugated plastic boats were featured on DIY sites and on r/buildaboat. It all seemed very simple to do and I&amp;rsquo;d always wanted my own boat to fool around with so I thought why not! Corrugated plastic in large sheets were easy to come by once a little research had been done and the only other materials which were required were reusable zip-ties and some kind of propulsion device: a paddle or a small trolling motor.</description>
+      <description>Over the summer of 2013 several very well made corrugated plastic boats were featured on DIY sites and on r/buildaboat. It all seemed very simple to do and I&amp;rsquo;d always wanted my own boat to fool around with so I thought why not!</description>
     </item>
     
     <item>
@@ -588,8 +569,8 @@ I had grandiose visions for this game, but sadly the scope of that meant it woul
       <guid>http://jsyang.ca/games/gdw2/</guid>
       <description>My second gamedev weekend project, this time I attempted to create a web version of a popular board game: Kulami.
 Development finished on 30/05/2013. Current version has been patched to run in modern browsers (WebAudio API was changed since 2013).
-Original features: - an intermediate skill-level AI player with taunts (filthy meatbag!) - RANDOM or a completely user-defined board layout - final score breakdown
-Play it now  How to play Construct board layout Drag the tiles to form a board of non-overlapping tiles.</description>
+Original features:
+ an intermediate skill-level AI player with taunts (filthy meatbag!) RANDOM or a completely user-defined board layout final score breakdown  Play it now  How to play Construct board layout Drag the tiles to form a board of non-overlapping tiles.</description>
     </item>
     
     <item>
@@ -610,7 +591,7 @@ Finding people was easy enough: I scrounged 30 seconds of my day and put up a Fa
       <guid>http://jsyang.ca/repairs/notes/</guid>
       <description>Various tidbits learned from SF TechShop classes Oxy-Acetylene Torch Starting: Open the acetylene valve to the torch first, then the oxygen valve.
 Stopping: Close the oxygen valve, then the acetylene.
-Gas valve open/close order mnemonic: POOP &amp;mdash; Propane, Oxygen, Oxygen, Propane.
+Gas valve open/close order mnemonic: POOP — Propane, Oxygen, Oxygen, Propane.
 Oxygen blown by the cutting head of the torch actually burns the steel / iron which is being cut. The extra oxygen combusts the material which turns into slag (~oxide) falling off onto the floor.</description>
     </item>
     
@@ -620,8 +601,7 @@ Oxygen blown by the cutting head of the torch actually burns the steel / iron wh
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/raygun/</guid>
-      <description>Laser shooting prop gun After finishing a few basic machining courses, I was very much tempted to explore inventing and making something which was not a test weld or a simple bottle opener from 18 gauge mild steel. Enter the raygun shooting saloon. Initial morsels of the idea were inspired by a few prior instances of this laser toy that are scattered throughout the Internet.
-As most of the actual complexity lay in the programming of the microcontroller to poll for laser hits on the target, it was only natural to use this as my first actual machined project.</description>
+      <description>Laser shooting prop gun After finishing a few basic machining courses, I was very much tempted to explore inventing and making something which was not a test weld or a simple bottle opener from 18 gauge mild steel. Enter the raygun shooting saloon.</description>
     </item>
     
     <item>
@@ -634,10 +614,7 @@ As most of the actual complexity lay in the programming of the microcontroller t
   Starman1
       Starman2
       Starman3
-     A ceramic homage to Earthbound created as part of a ceramics course. The starman&amp;rsquo;s insignia is glazed in black. Its outer coat is spray painted with silver metallic paint.
-Instamorph T-Rex Skull August 2013
-  Trex1
-      Trex2</description>
+     A ceramic homage to Earthbound created as part of a ceramics course. The starman&amp;rsquo;s insignia is glazed in black.</description>
     </item>
     
     <item>
@@ -686,8 +663,7 @@ Originally this was written as a fast and dirty way to get lots of map data for 
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/repairs/m2kb/</guid>
-      <description>These particular model M buckling spring (B-S) or &amp;ldquo;clicky&amp;rdquo; keyboards were paired and sold with IBM PS/1 and some PS/2 systems circa 1990. As of writing, my M2 keyboard is about 18 years old. Old age brings about hardware failures of all sorts and the M2 is no exception. The most common, non-mechanical, failure people have encountered have been dead keyboard controller boards.
-When plugged into a PS/2 keyboard port, the M2 shows CapsLock and Scroll Lock lights on but is irresponsive after POST (Power On System Test).</description>
+      <description>These particular model M buckling spring (B-S) or &amp;ldquo;clicky&amp;rdquo; keyboards were paired and sold with IBM PS/1 and some PS/2 systems circa 1990. As of writing, my M2 keyboard is about 18 years old. Old age brings about hardware failures of all sorts and the M2 is no exception.</description>
     </item>
     
     <item>
@@ -698,10 +674,7 @@ When plugged into a PS/2 keyboard port, the M2 shows CapsLock and Scroll Lock li
       <guid>http://jsyang.ca/games/jscc/</guid>
       <description>A Command and Conquer engine in JS Update Nov. 2011:
 Aditya Ravi Shankar created a version that uses canvas blitting instead of DOM manipulation.
- Your unfinished C&amp;amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.
-  http://www.adityaravishankar.com/projects/games/command-and-conquer/
- http://www.adityaravishankar.com/2011/11/command-and-conquer-programming-an-rts-game-in-html5-and-javascript/
-  This was a very ambitious project to fully recreate the first C&amp;amp;C game and introduce in-game objects for expansion by user scripting.</description>
+ Your unfinished C&amp;amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.</description>
     </item>
     
     <item>
@@ -712,7 +685,7 @@ Aditya Ravi Shankar created a version that uses canvas blitting instead of DOM m
       <guid>http://jsyang.ca/games/flash-games/</guid>
       <description>Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.
 Defend 2 - Super Tank (2004) 
-Controls  WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver.</description>
+Controls  WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver. Two armies (white vs black) fight each other.</description>
     </item>
     
     <item>

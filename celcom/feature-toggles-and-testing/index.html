@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-01-20 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-01-20 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-01-20 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-01-20 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/celcom\/feature-toggles-and-testing\/",
       "keywords" : [  ]
   }
@@ -92,80 +92,62 @@ Feature toggles You have the option of toggling game functionality via the URL y
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/feature-toggles-and-testing.md">here</a>.</em></p>
-
+                <p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/feature-toggles-and-testing.md">here</a>.</em></p>
 <p>Some of the code for Celestial Combat has been structured to provide a easy facility for
 switching major subsystems of the game on/off. Additionally, unit testing is not time-efficient
 given the benefits vs effort involved: we offer a cheaper solution in the form of scenario tests.</p>
-
 <h2 id="feature-toggles">Feature toggles</h2>
-
 <p>You have the option of toggling game functionality via the URL you use to access the game.
 The toggles are activated by the presence / absence of URL query strings: for instance,
 to turn off all game audio:</p>
-
 <ul>
-<li><a href="http://localhost:3000/?mute">http://localhost:3000/?mute</a></li>
+<li>http://localhost:3000/?mute</li>
 </ul>
-
 <p>or if you want to turn off all audio AND skip the title screen:</p>
-
 <ul>
-<li><a href="http://localhost:3000/?mute&amp;game">http://localhost:3000/?mute&amp;game</a></li>
+<li>http://localhost:3000/?mute&amp;game</li>
 </ul>
-
 <p>See <code>src/client/startupOptions.ts</code> for a full list of feature toggles.</p>
-
 <pre><code>    AudioMuted          = 'mute',
     GamePadInUse        = 'gamepad',
     SkipTitleScreen     = 'game',
     GeometryEditorInUse = 'editor',
     TestSectorInUse     = 'test'
-</code></pre>
-
-<h4 id="scenario-tests">Scenario tests</h4>
-
+</code></pre><h4 id="scenario-tests">Scenario tests</h4>
 <p>Using the scenario feature toggle, you can establish a controlled environment
 where you can set exactly what the starting state is and see the emergent behaviors of
 your system unfold.</p>
-
 <ul>
 <li><code>yarn watch</code></li>
 <li>Edit <code>src/client/TestScreen/ScenarioSystem.ts</code> to create the scenario&rsquo;s initial conditions</li>
 </ul>
-
 <p>For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init() {</span>
+    <span style="color:#75715e">// Create enemy solar system with 1 star and 1 unpopulated planet
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">star</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Entity</span>.<span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#39;Star&#39;</span>, {<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">5000</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">5000</span>});
 
-<pre><code class="language-typescript">function init() {
-    // Create enemy solar system with 1 star and 1 unpopulated planet
-    const star = Entity.create('Star', {x: 5000, y: 5000});
-
-    const planet = Entity.create('Planet', {
-        star,
-        orbitDistance: 1600 + 2 * 800,
-        orbitRotation: 0
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">planet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Entity</span>.<span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#39;Planet&#39;</span>, {
+        <span style="color:#a6e22e">star</span>,
+        <span style="color:#a6e22e">orbitDistance</span>: <span style="color:#66d9ef">1600</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">800</span>,
+        <span style="color:#a6e22e">orbitRotation</span>: <span style="color:#66d9ef">0</span>
     });
 
-    planet.team = enemyTeam;
-    planet.updateFlagColor();
+    <span style="color:#a6e22e">planet</span>.<span style="color:#a6e22e">team</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">enemyTeam</span>;
+    <span style="color:#a6e22e">planet</span>.<span style="color:#a6e22e">updateFlagColor</span>();
 
-    // Create an attacker that targets this planet and will attempt to land
-    // to lay claim to it
-    const fighter = Entity.create('Fighter', {
-        x:                        15000,
-        y:                        15000,
-        isFighterAutoAccelerated: true,
-        team:                     focusTeam,
-        attackTarget:             planet
+    <span style="color:#75715e">// Create an attacker that targets this planet and will attempt to land
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// to lay claim to it
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fighter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Entity</span>.<span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#39;Fighter&#39;</span>, {
+        <span style="color:#a6e22e">x</span>:                        <span style="color:#66d9ef">15000</span>,
+        <span style="color:#a6e22e">y</span>:                        <span style="color:#66d9ef">15000</span>,
+        <span style="color:#a6e22e">isFighterAutoAccelerated</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">team</span>:                     <span style="color:#66d9ef">focusTeam</span>,
+        <span style="color:#a6e22e">attackTarget</span>:             <span style="color:#66d9ef">planet</span>
     });
 
-    Focus.setFocus(fighter);
+    <span style="color:#a6e22e">Focus</span>.<span style="color:#a6e22e">setFocus</span>(<span style="color:#a6e22e">fighter</span>);
 }
-</code></pre>
-
-<p>You may then observe the scenario unfold at: <a href="http://localhost:3000/?test&amp;game">http://localhost:3000/?test&amp;game</a> , and
+</code></pre></div><p>You may then observe the scenario unfold at: http://localhost:3000/?test&amp;game , and
 tweak entity / component values and logic accordingly until the desired behaviors are achieved.</p>
 
             </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2018",
-      "datePublished": "2018-04-27 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2018-04-27 00:00:00 \x2b0000 UTC",
+      "datePublished": "2018-04-27 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2018-04-27 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/guides\/try-before-you-buy-fonts\/",
       "keywords" : [  ]
   }
@@ -91,46 +91,36 @@ I was pretty happy with Iosevka already but was curious to see if Dank Mono was 
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p>A coding font called <a href="https://dank.sh">Dank Mono</a> showed up in my programming feed recently.
+                <p>A coding font called <a href="https://dank.sh">Dank Mono</a> showed up in my programming feed recently.
 As someone who is always looking for ways to improve my coding environment, changing the
 default IDE font seemed like something worth investigating.</p>
-
-<p><img src="/images/try-before-you-buy-fonts/dankmono-sample.png" alt="dankmono-sample" /></p>
-
+<p><img src="/images/try-before-you-buy-fonts/dankmono-sample.png" alt="dankmono-sample"></p>
 <p>I was pretty happy with <a href="https://github.com/be5invis/Iosevka">Iosevka</a> already but was curious to
 see if Dank Mono was worth the social media hype; setting it as the IDE font would be the best way to
 judge its merits. The landing page had a live-text sample of the font, though the designer wanted £40
 for a license to use it!</p>
-
 <p>I don&rsquo;t condone piracy especially with regards to independent artists and creators; if the font met my
 needs I was prepared to pay to use it! Nonetheless, this is what I did to get a usable font file
 extracted out of the landing page to use in my IDE:</p>
-
 <h2 id="convert-a-woff-font-to-macos-native-font">Convert a WOFF font to macOS native font</h2>
-
 <ol>
 <li>Download the WOFF file from the site by inspecting the Network tab inside DevTools and filtering for &ldquo;font&rdquo; requests.
 In this case, the font is given as a base64 string: right click the request and then click on &ldquo;Open in new tab&rdquo; to download
 the response as a file.
 <br>
-<img src="/images/try-before-you-buy-fonts/download-woff.png" alt="download woff" /><br><br></li>
-<li>Convert the WOFF file to an OTF or TTF file with <a href=" https://andrewsun.com/tools/woffer-woff-font-converter">any online converter</a>
+<img src="/images/try-before-you-buy-fonts/download-woff.png" alt="download woff"><br><br></li>
+<li>Convert the WOFF file to an OTF or TTF file with <a href="%E2%80%A8https://andrewsun.com/tools/woffer-woff-font-converter">any online converter</a>
 (e.g. Google &ldquo;woff to ttf&rdquo;).</li>
 <li>Download <a href="https://birdfont.org">BirdFont</a>, a font editor. We&rsquo;ll use this to assemble the glyphs (characters) into
 a font file.</li>
 <li>Open BirdFont and ensure the name and description of the font are valid (this usually trips up macOS when importing into Font Book). <br>
-<img src="/images/try-before-you-buy-fonts/birdfont.png" alt="birdfont" /><br><br>
-<img src="/images/try-before-you-buy-fonts/birdfont2.png" alt="birdfont" /><br><br></li>
+<img src="/images/try-before-you-buy-fonts/birdfont.png" alt="birdfont"><br><br>
+<img src="/images/try-before-you-buy-fonts/birdfont2.png" alt="birdfont"><br><br></li>
 <li>Save the font project as a .bf (BirdFont project file) </li>
 <li>Export the font to a folder via menu and one of the exported TTF files should install correctly via OSX Font Book. </li>
 </ol>
-
 <h2 id="visual-trial">Visual trial</h2>
-
-<p><img src="/images/try-before-you-buy-fonts/trial.png" alt="trial" /></p>
-
+<p><img src="/images/try-before-you-buy-fonts/trial.png" alt="trial"></p>
 <p>Seeing the jarring lowercase &ldquo;f&rdquo; and lack of distinction between <code>(){}[]</code> at
 smaller sizes live inside the IDE, my decision was that this font
 wasn&rsquo;t any better than Isoevka.</p>

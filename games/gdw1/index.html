@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "games",
       "name" : "Gamedev Weekend 1",
       "headline" : "Gamedev Weekend 1",
-      "description" : "Junior\x26rsquo;s first 48 hour collaborative gamedev Life gets boring sometimes when you do the same thing over and over again by yourself. Two weeks ago, I had an epiphany: I didn\x26rsquo;t have to do the same thing by myself if there were people I could coax into doing it with me. Must have been what I\x26rsquo;d missed out on all this time.\nFinding people was easy enough: I scrounged 30 seconds of my day and put up a Facebook status update.",
+      "description" : "Junior\u0026rsquo;s first 48 hour collaborative gamedev Life gets boring sometimes when you do the same thing over and over again by yourself. Two weeks ago, I had an epiphany: I didn\u0026rsquo;t have to do the same thing by myself if there were people I could coax into doing it with me. Must have been what I\u0026rsquo;d missed out on all this time.\nFinding people was easy enough: I scrounged 30 seconds of my day and put up a Facebook status update.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2013",
-      "datePublished": "2013-04-21 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2013-04-21 00:00:00 \x2b0000 UTC",
+      "datePublished": "2013-04-21 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2013-04-21 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/games\/gdw1\/",
       "keywords" : [  ]
   }
@@ -91,88 +91,64 @@ Finding people was easy enough: I scrounged 30 seconds of my day and put up a Fa
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<h3 id="junior-s-first-48-hour-collaborative-gamedev">Junior&rsquo;s first 48 hour collaborative gamedev</h3>
-
+                <h3 id="juniors-first-48-hour-collaborative-gamedev">Junior&rsquo;s first 48 hour collaborative gamedev</h3>
 <p>Life gets boring sometimes when you do the same thing over and over
 again by yourself. Two weeks ago, I had an epiphany: I didn&rsquo;t have to do
 the same thing by myself if there were people I could coax into doing it
 with me. Must have been what I&rsquo;d missed out on all this time.</p>
-
 <p>Finding people was easy enough: I scrounged 30 seconds of my day and put up
 a Facebook status update.</p>
-
-<p><img src="/images/gdw1/1.jpg" alt="" /></p>
-
+<p><img src="/images/gdw1/1.jpg" alt=""></p>
 <pre><code>    &quot;Find adventure and excitement in game development!&quot;  
     &quot;Dedicate 48 hours of your time for the glory of the motherland!&quot;  
 
 (Not really though, it was slightly more boring than that.)
-</code></pre>
-
-<p>Luckily, some friends fell for the bait almost immediately. I contacted these
+</code></pre><p>Luckily, some friends fell for the bait almost immediately. I contacted these
 upstanding citizens and thinned down the list to whoever would be available soonest.</p>
-
 <p>There was about a week of pre-planning involved in this project. We started a measly
 scrap of a Google Doc and turned it into a kaleidoscope of schedules, tasks and game
 mechanics. It felt wise to ensure as smooth a start as possible. If we could make that
 happen, we&rsquo;d have an incredible amount of creative momentum.</p>
-
 <p>The resulting high level plan boiled down to using these technologies in our game:</p>
-
 <pre><code>Language  : Haxe
 Framework : NME
 Platform  : Flash
 </code></pre>
-
 <h3 id="move-fast-break-all-the-things">Move fast, break all the things</h3>
-
 <p>A classic slogan in the world of tech. Boy, did things break. Haxe turned out to be a poor choice of tech for a few reasons:</p>
-
 <ul>
 <li>No Haxe experts on the team, both of us were totally green in using the language. This meant that fixing compilation
 warnings and errors took up most of the coding time. Actual progress in programming the foundational features
-in the game proceeded at a snail&rsquo;s pace because of this.<br /></li>
+in the game proceeded at a snail&rsquo;s pace because of this.</li>
 <li>Flash has lackluster performance on mobile devices which support it. We could not figure out how to overcome
-touch event delays or if the device was even able to register certain events (like <code>touchend</code>) properly.<br /></li>
+touch event delays or if the device was even able to register certain events (like <code>touchend</code>) properly.</li>
 <li>Other &ldquo;subtle&rdquo;, but significant language annoyances which <a href="http://www.jetpackhq.com/blog/2012/12/04/whats-wrong-with-haxe/">this blog post</a>
-sums up pretty well.<br /></li>
-<li><a href="https://groups.google.com/forum/#!msg/haxenext/Ct6DqCavPmA/kamZZQUyYscJ">Near total lack of up to date and properly searchable API documentation.</a><br /></li>
-<li>We disregarded the key feature which had originally made us choose Haxe: its cross-compilation into many languages.<br />
+sums up pretty well.</li>
+<li><a href="https://groups.google.com/forum/#!msg/haxenext/Ct6DqCavPmA/kamZZQUyYscJ">Near total lack of up to date and properly searchable API documentation.</a></li>
+<li>We disregarded the key feature which had originally made us choose Haxe: its cross-compilation into many languages.<br>
 The decision to choose Flash as our target platform muted that advantage.</li>
 </ul>
-
 <p>Inevitably, we gave up trying to use this new language to write the game and switched to HTML5. No time was wasted trying
 to port the existing code over. Having devices ready for testing made this a confident decision and we enthusiastically
 wiped the slate clean.</p>
-
 <h3 id="game-mechanics">Game mechanics</h3>
-
 <p>A clever idea came out of some brainstorming we&rsquo;d done on the first night of the gamedev: combine the player&rsquo;s attack
 with the player&rsquo;s movement. With this key mechanic and the newly programmed collision detection for game objects, we
 whipped out a mini-game in about 8 hours time. Defend yourself from an onslaught of enemies in a top-down view
 reminiscent of <a href="http://www.mobygames.com/game/windows/crimsonland">Crimsonland</a>.</p>
-
 <p>The player has to steer his character and shoot wrenches at enemies simultaneously. When the enemies touch
 you they wear down your health and you slowly die. Enemies spawn faster as time goes on. An &lsquo;enemies killed&rsquo; counter
 keeps track of how many heads you&rsquo;ve bashed in with your infinite supply of airborne wrenches.</p>
-
 <p>I did most of the core engine coding, while Hesam tweaked the game balance and feel. This combination worked quite well
 since it meant there were fewer low level conflicts whenever any part of the game had to be changed. And about 9 hours
 later, we had a working build of the game that ran on both the Android tablet and the iPad.</p>
-
-<p><img src="/images/gdw1/2.jpg" alt="" /></p>
-
+<p><img src="/images/gdw1/2.jpg" alt=""></p>
 <h3 id="where-do-we-go-from-here">Where do we go from here?</h3>
-
 <p>We may reuse some of this code to refine the game idea into something more complete, though the experience of
 team-based game dev will have to suffice for now. As brutal as this event had started out, it was a miracle we got
 anything working at all. For our first taste of collaborative creation, we were very pleased with what we had at the
 end of 48 hours. Sunday brunch solidified that rewarding feeling in food form.</p>
-
 <h3 id="actual-time-spent">Actual Time Spent</h3>
-
 <pre><code>        Hours Used
 Day     for Game Dev     Total Hours
 
@@ -188,9 +164,7 @@ Around 40% of *that* time was spent going over more / new plans.
 The remaining time is a fair estimate of total physical production time
 e.g. drawing out mechanics diagrams, debate on how to balance the movement, etc.
 </code></pre>
-
 <h3 id="source-code">Source code</h3>
-
 <p><a href="https://github.com/jsyang/gdw1">See code on GitHub</a></p>
 
             </div>

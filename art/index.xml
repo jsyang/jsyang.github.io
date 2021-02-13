@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arts on jsyang.ca</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Arts on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/art/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/art/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WormForm - a Typography Block Sandbox</title>
       <link>http://jsyang.ca/art/wormform/</link>
@@ -28,7 +24,7 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/polymer-clay-2017/</guid>
-      <description>Petite Little Red Riding Hood After building Del a red mini-velo (named Little Red Riding Hood) last year, I thought I&amp;rsquo;d follow it up with a smaller version of the small bike as a gift during our first clay session. Having purchased a heat gun recently, I experimented with baking the pieces individually on a low heat setting, then joining them with industrial strength cyanoacrylate super glue. Here&amp;rsquo;s how it turned out:</description>
+      <description>Petite Little Red Riding Hood After building Del a red mini-velo (named Little Red Riding Hood) last year, I thought I&amp;rsquo;d follow it up with a smaller version of the small bike as a gift during our first clay session. Having purchased a heat gun recently, I experimented with baking the pieces individually on a low heat setting, then joining them with industrial strength cyanoacrylate super glue.</description>
     </item>
     
     <item>
@@ -37,7 +33,7 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Mon, 19 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/particle-tracks/</guid>
-      <description> Wrote a little procedural art widget drawing inspiration from bubble / cloud chambers used to study particle trajectories. This toy makes use of the excellent scrubbing dat.GUI library to change initial values.
+      <description>Wrote a little procedural art widget drawing inspiration from bubble / cloud chambers used to study particle trajectories. This toy makes use of the excellent scrubbing dat.GUI library to change initial values.
   Live play  Source code </description>
     </item>
     
@@ -47,7 +43,7 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Mon, 19 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/pewpew/</guid>
-      <description> I wrote this toy during a particularly long and unproductive meeting that I couldn&amp;rsquo;t leave. Turn almost any web page into a shooting gallery with a click of a button.
+      <description>I wrote this toy during a particularly long and unproductive meeting that I couldn&amp;rsquo;t leave. Turn almost any web page into a shooting gallery with a click of a button.
   Source code </description>
     </item>
     
@@ -57,8 +53,7 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/cellular-automata/</guid>
-      <description>This is a toy script that generates a random 2D celluar automata ruleset and applies it to a randomly generated world with each run of the web page. You can click on the viewport to reset it with a completely different universe, starting population and rules for the universe.
- Some universes are more stable than others, which may last for only a few cycles before all the cells die off.</description>
+      <description>This is a toy script that generates a random 2D celluar automata ruleset and applies it to a randomly generated world with each run of the web page. You can click on the viewport to reset it with a completely different universe, starting population and rules for the universe.</description>
     </item>
     
     <item>
@@ -78,8 +73,7 @@ New Year&amp;rsquo;s Eve 2014 Maze Maze generator remixed! New years message wri
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/art/raygun/</guid>
-      <description>Laser shooting prop gun After finishing a few basic machining courses, I was very much tempted to explore inventing and making something which was not a test weld or a simple bottle opener from 18 gauge mild steel. Enter the raygun shooting saloon. Initial morsels of the idea were inspired by a few prior instances of this laser toy that are scattered throughout the Internet.
-As most of the actual complexity lay in the programming of the microcontroller to poll for laser hits on the target, it was only natural to use this as my first actual machined project.</description>
+      <description>Laser shooting prop gun After finishing a few basic machining courses, I was very much tempted to explore inventing and making something which was not a test weld or a simple bottle opener from 18 gauge mild steel. Enter the raygun shooting saloon.</description>
     </item>
     
     <item>
@@ -92,10 +86,7 @@ As most of the actual complexity lay in the programming of the microcontroller t
   Starman1
       Starman2
       Starman3
-     A ceramic homage to Earthbound created as part of a ceramics course. The starman&amp;rsquo;s insignia is glazed in black. Its outer coat is spray painted with silver metallic paint.
-Instamorph T-Rex Skull August 2013
-  Trex1
-      Trex2</description>
+     A ceramic homage to Earthbound created as part of a ceramics course. The starman&amp;rsquo;s insignia is glazed in black.</description>
     </item>
     
     <item>

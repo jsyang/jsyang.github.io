@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cultures on jsyang.ca</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Cultures on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/culture/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/culture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How different languages sing Happy Birthday</title>
       <link>http://jsyang.ca/culture/how-different-languages-sing-happy-birthday/</link>
@@ -20,7 +16,7 @@
       <description>The end of year winter season is a time when many of my family and friends celebrate their birthdays. This year I came across a Cantonese birthday song beyond the basic &amp;ldquo;happy birthday&amp;rdquo; / 生日快樂 that made me ponder whether other such &amp;ldquo;folk&amp;rdquo; birthday songs existed.
 What are people singing about when they sing a common happy birthday song in their own language?
 Let&amp;rsquo;s start with the baseline:
-English Happy birthday to you Happy birthday to you Happy birthday dear &amp;lt;NAME&amp;gt; Happy birthday to you  Origin: an American children&amp;rsquo;s 1911 songbook derived from various earlier works going back to 1850s, possibly further.</description>
+English Happy birthday to you Happy birthday to you Happy birthday dear &amp;lt;NAME&amp;gt; Happy birthday to you Origin: an American children&amp;rsquo;s 1911 songbook derived from various earlier works going back to 1850s, possibly further.</description>
     </item>
     
   </channel>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2020",
-      "datePublished": "2020-01-10 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2020-01-10 00:00:00 \x2b0000 UTC",
+      "datePublished": "2020-01-10 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2020-01-10 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/hacks\/ghliveble\/",
       "keywords" : [  ]
   }
@@ -94,8 +94,6 @@
 
 
 
-
-
   
 
 
@@ -153,56 +151,38 @@
     </div>
 </div>
 
-
 <p>Ever since we visited the <a href="https://www.thenvm.org/">National Videogame Museum</a>, my wife and I got more and more into Guitar Hero style rhythm games.
 Late last year, I did some research and found a great open source project called <a href="https://clonehero.net/">Clone Hero</a> which aims to vastly improve upon games of this genre.</p>
-
 <p>For her birthday, I got an XBox360 version of the Guitar Hero Live controller which is meant to work with Windows PCs though with a steps of complicated set up before
- we could play. It worked well enough, but while looking on Amazon, I came across an iOS version of the same controller that used Bluetooth instead of having
- any dongles. They are still being sold (as of Jan 2020) for less than £5 with free shipping.</p>
-
-<p><img src="/images/ghliveble/ghliveboxart.png" alt="" /></p>
-
+we could play. It worked well enough, but while looking on Amazon, I came across an iOS version of the same controller that used Bluetooth instead of having
+any dongles. They are still being sold (as of Jan 2020) for less than £5 with free shipping.</p>
+<p><img src="/images/ghliveble/ghliveboxart.png" alt=""></p>
 <p>Why were they so cheap? <a href="https://en.wikipedia.org/wiki/Guitar_Hero_Live">Guitar Hero Live</a> was released on iOS in November 2015. The game was not as
 much of a commercial success as Activision had hoped for and so they began to <a href="https://support.activision.com/articles/en_US/FAQ/Guitar-Hero-Live-for-iOS-and-Apple-TV">pull many online aspects of the game from distribution</a>. The iOS version of the game
 was the only one that could make use of the Bluetooth controller and so when that was removed from the App Store on June 1, 2018, all of the unsold
 Guitar Hero Live iOS controller packages were rendered useless.</p>
-
-<p><img src="/images/ghliveble/ghlive.jpg" alt="" /></p>
-
+<p><img src="/images/ghliveble/ghlive.jpg" alt=""></p>
 <h2 id="reverse-engineered">Reverse engineered</h2>
-
 <p>I&rsquo;ve had some experience with <a href="/hacks/gear-vr-rev-eng/">reverse engineering Bluetooth controllers</a> before, so I gave reversing this controller a go as well.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/h2qbsIxWT_o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/h2qbsIxWT_o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
 
 <p>As you can see, my attempt was successful! It worked just fine, input lag from the controller was minimal and we didn&rsquo;t have to plug in any special dongles or
 install and config any special drivers.</p>
-
 <h2 id="ghliveble">GHLiveBLE</h2>
-
 <p>It&rsquo;s super simple to start and play Clone Hero with the GHLiveBLE app. All you need to do is have your guitar controller handy and open the app.
 Buy this Guitar Hero Live Bluetooth LE (GHLiveBLE) bridge app here:</p>
-
-<p><a href="https://cohesive.dev/ghliveble"><img src="/images/ghliveble/ghliveble-small.png" alt="" /></a></p>
-
+<p><a href="https://cohesive.dev/ghliveble"><img src="/images/ghliveble/ghliveble-small.png" alt=""></a></p>
 <h4><center><a href="https://cohesive.dev/ghliveble">cohesive.dev/GHLiveBLE</a></center></h4> 
- 
-
 <h2 id="controller-key">Controller key</h2>
-
 <p>To make things even more portable, I&rsquo;ve also created a 3D printable key to allow you to more easily separate the neck and body of
 Guitar Hero Live guitars. The key works for all guitar controller models which use this triangular slot.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/EBJln_9agEM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/EBJln_9agEM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
 
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -232,10 +212,8 @@ Guitar Hero Live guitars. The key works for all guitar controller models which u
 				</div>
 </div>
 
-
 <p>Total printing time of &lt; 5 min. You need to insert the key into the slot and turn it counter-clockwise, which will move the latch inside
 the guitar body away from the neck so you can slide the neck off.</p>
-
 <p><a href="https://www.thingiverse.com/thing:4095099">You can download it here on Thingiverse.</a></p>
 
             </div>

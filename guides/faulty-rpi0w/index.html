@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "guides",
       "name" : "Faulty Raspberry Pi Zero W",
       "headline" : "Faulty Raspberry Pi Zero W",
-      "description" : "If you\x26rsquo;ve done everything you\x26rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can\x26rsquo;t get it to boot up and recognize the Wifi, there\x26rsquo;s a chance you may have a defective board.\n  Setup After purchasing you should have been able to do this to get it working:\n https:\/\/gist.github.com\/gbaman\/50b6cca61dd1c3f88f41 https:\/\/gist.github.com\/gbaman\/975e2db164b3ca2b51ae11e45e8fd40a https:\/\/www.youtube.com\/watch?v=xj3MPmJhAPU  Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W",
+      "description" : "If you\u0026rsquo;ve done everything you\u0026rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can\u0026rsquo;t get it to boot up and recognize the Wifi, there\u0026rsquo;s a chance you may have a defective board.\n  Setup After purchasing you should have been able to do this to get it working:\n https:\/\/gist.github.com\/gbaman\/50b6cca61dd1c3f88f41 https:\/\/gist.github.com\/gbaman\/975e2db164b3ca2b51ae11e45e8fd40a https:\/\/www.youtube.com\/watch?v=xj3MPmJhAPU  Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2017",
-      "datePublished": "2017-10-01 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2017-10-01 00:00:00 \x2b0000 UTC",
+      "datePublished": "2017-10-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2017-10-01 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/guides\/faulty-rpi0w\/",
       "keywords" : [  ]
   }
@@ -92,38 +92,28 @@
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p>If you&rsquo;ve done everything you&rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can&rsquo;t
+                <p>If you&rsquo;ve done everything you&rsquo;ve known how to get a Raspberry Pi Zero W (v1.1) to work but can&rsquo;t
 get it to boot up and recognize the Wifi, there&rsquo;s a chance you may have a defective board.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/vv6KLQA2qJ0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/vv6KLQA2qJ0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="setup">Setup</h2>
-
 <p>After purchasing you should have been able to do this to get it working:</p>
-
 <ul>
 <li><a href="https://gist.github.com/gbaman/50b6cca61dd1c3f88f41">https://gist.github.com/gbaman/50b6cca61dd1c3f88f41</a></li>
 <li><a href="https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a">https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a</a></li>
 <li><a href="https://www.youtube.com/watch?v=xj3MPmJhAPU">https://www.youtube.com/watch?v=xj3MPmJhAPU</a></li>
 </ul>
-
 <p>Instead, research has led me to reach the same conclusions as these other people who have had the same issues with their RP0W</p>
-
 <ul>
 <li><a href="https://github.com/raspberrypi/firmware/issues/758">https://github.com/raspberrypi/firmware/issues/758</a></li>
 <li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=178362">https://www.raspberrypi.org/forums/viewtopic.php?t=178362</a></li>
 <li><a href="https://forum.core-electronics.com.au/t/pi-zero-w-firmware-showing-pi-model-b/1076/11">https://forum.core-electronics.com.au/t/pi-zero-w-firmware-showing-pi-model-b/1076/11</a></li>
 <li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=177652&amp;p=1132791">https://www.raspberrypi.org/forums/viewtopic.php?t=177652&amp;p=1132791</a></li>
 </ul>
-
 <p>Running <code>rpi-update</code> updated the firmware but hardware was still reporting bad results.</p>
-
 <pre><code>cat /sys/firmware/devicetree/base/model
 Raspberry Pi Model B Rev 2
 
@@ -145,9 +135,7 @@ Serial	: 00000000dbe19693
 uname -a
 Linux raspberrypi 4.9.50+ #1035 Wed Sep 13 22:53:09 BST 2017 armv6l GNU/Linux
 
-</code></pre>
-
-<p>Tried to update with <code>force_board_rev=0x9000c1</code> in <code>config.txt</code> but to no avail.
+</code></pre><p>Tried to update with <code>force_board_rev=0x9000c1</code> in <code>config.txt</code> but to no avail.
 I had to return my board to the seller, who promptly confirmed it was a faulty board.
 <strong>If you can reproduce these signs for your board, it is likely faulty.</strong></p>
 

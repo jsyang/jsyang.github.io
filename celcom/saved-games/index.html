@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2018",
-      "datePublished": "2018-12-16 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2018-12-16 00:00:00 \x2b0000 UTC",
+      "datePublished": "2018-12-16 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2018-12-16 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/celcom\/saved-games\/",
       "keywords" : [  ]
   }
@@ -92,33 +92,24 @@ As the gameplay solidified, finding a way to persist player progress grew more i
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/saved-games.md">here</a>.</em></p>
-
+                <p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/saved-games.md">here</a>.</em></p>
 <p>Celestial Combat is a game large in ambition and scope. Battles
 often span multiple solar systems with hundreds of spacecraft and
 planets with caches of materials for war production.</p>
-
 <p>As the gameplay solidified, finding a way to persist player progress grew more important.
 Saving score and progress within a battle means players are likely to come back to the game.</p>
-
 <h2 id="serialization">Serialization</h2>
-
 <p>At the heart of saved games is a computer science concept called <a href="https://en.wikipedia.org/wiki/Serialization"><em>serialization</em></a>.
 When you serialize the state of a program, you are turning the things represented in
 memory into a <em>series of bytes</em>. They can be a certain format: e.g. JSON or a predefined
 binary structure.</p>
-
 <p>The <a href="entity-component-system.md">ECS</a> architecture of Celestial Combat makes serialization easy.
 Game entities are all very basic classes that inherit a set of
 properties such as position (x,y) and a <code>type</code> field from the <code>LivingEntity</code> base class,
 then add their own properties to them, mostly fields relating to Components within the ECS pattern.</p>
-
 <p>The vast majority of these can be serialized via <code>JSON.stringify(...)</code> but what about
 fields that serve as references to other game entities? For instance, a planet that is
 occupied by a faction has references to its planetary structures:</p>
-
 <pre><code>class Planet extends LivingEntity {
 
     // Simple serialization
@@ -143,106 +134,98 @@ occupied by a faction has references to its planetary structures:</p>
     
     ...
 }
-</code></pre>
-
-<p>Handling references was not immediately straightforward and to implement
+</code></pre><p>Handling references was not immediately straightforward and to implement
 saving games, we would need to solve this problem and preserve those references somehow.</p>
-
 <h3 id="creation-ids">Creation IDs</h3>
-
 <p>If we can recognize that a game state is essentially an instance of a relational database,
 then we have a simple solution for this: use auto-incrementing primary keys or IDs to uniquely
 map references from one entity to another. In Celestial Combat, an ID is a number.</p>
-
 <p>These changes were done in a few steps:</p>
-
 <ol>
-<li><p>Within the <code>create()</code> of <code>src/client/Entity/index.ts</code>, we need to assign an ID field
-that is auto-incrementing. Its value is not mutated during the course of the game.</p></li>
-
-<li><p>This field needs to be set to a specific value when loading (deserializing) a saved game. Make it
-auto-increment by default or have it take a <code>creationId</code> just like any other field during the <code>create()</code> call.</p></li>
-
-<li><p>Use of Components (as part of ECS) adds specific references to other entities to implement its
+<li>
+<p>Within the <code>create()</code> of <code>src/client/Entity/index.ts</code>, we need to assign an ID field
+that is auto-incrementing. Its value is not mutated during the course of the game.</p>
+</li>
+<li>
+<p>This field needs to be set to a specific value when loading (deserializing) a saved game. Make it
+auto-increment by default or have it take a <code>creationId</code> just like any other field during the <code>create()</code> call.</p>
+</li>
+<li>
+<p>Use of Components (as part of ECS) adds specific references to other entities to implement its
 behavior. <code>const F_</code> inside <code>src/client/GameState/getEntityProperties.ts</code> defines a serialization map
-for this purpose.</p></li>
-
-<li><p>Entities are made up of Components. So map an entire Entity to a set of such Components.
-<code>const FIELDS_BY_ENTITY</code> in <code>src/client/GameState/getEntityProperties.ts</code>.</p></li>
+for this purpose.</p>
+</li>
+<li>
+<p>Entities are made up of Components. So map an entire Entity to a set of such Components.
+<code>const FIELDS_BY_ENTITY</code> in <code>src/client/GameState/getEntityProperties.ts</code>.</p>
+</li>
 </ol>
-
 <h2 id="deserialization">Deserialization</h2>
-
 <p>Once serialized, the game will need some way of recreating those references when loading a saved game.
 The game can do this in 2 passes:</p>
-
 <ol>
-<li><p>Deserialize the saved game data into an intermediate game state. All entities are created and have their
-non-reference fields filled in. Reference fields are not yet linked and remain represented as numbers.</p></li>
-
-<li><p>Inflate the references. From a collection of all entities, find by ID and set the values of the
+<li>
+<p>Deserialize the saved game data into an intermediate game state. All entities are created and have their
+non-reference fields filled in. Reference fields are not yet linked and remain represented as numbers.</p>
+</li>
+<li>
+<p>Inflate the references. From a collection of all entities, find by ID and set the values of the
 reference fields: numbers are mapped to entity instances.</p>
-
+</li>
+</ol>
 <pre><code>function inflateReferencesForEntity(entity, index, allEntities) {
-Object.keys(entity)
-    .forEach(prop =&gt; {
-        const value = entity[prop];
+    Object.keys(entity)
+        .forEach(prop =&gt; {
+            const value = entity[prop];
 
-        if (PROPERTY_IS_REFERENCE.test(prop) &amp;&amp; !isNaN(value)) {
-            entity[prop] = allEntities.find(e =&gt; e._creationId === value);
-        }
-    });
+            if (PROPERTY_IS_REFERENCE.test(prop) &amp;&amp; !isNaN(value)) {
+                entity[prop] = allEntities.find(e =&gt; e._creationId === value);
+            }
+        });
 }
 
 function deserialize(json: string): void {
-const all         = JSON.parse(json);
-let maxCreationId = 0;
+    const all         = JSON.parse(json);
+    let maxCreationId = 0;
 
-Entity.clearAll();
+    Entity.clearAll();
 
-// First pass, create all the entities, leaving references as numbers
-all.forEach(e =&gt; {
-    Entity.create(e.type, e);
+    // First pass, create all the entities, leaving references as numbers
+    all.forEach(e =&gt; {
+        Entity.create(e.type, e);
 
-    if (maxCreationId &lt; e._creationId) {
-        maxCreationId = e._creationId;
-    }
-});
+        if (maxCreationId &lt; e._creationId) {
+            maxCreationId = e._creationId;
+        }
+    });
 
-...
+    ...
 
-// Second pass, inflate references
-Entity.getAll().forEach(inflateReferencesForEntity);
+    // Second pass, inflate references
+    Entity.getAll().forEach(inflateReferencesForEntity);
     
-...
+    ...
 }
 
-</code></pre></li>
-</ol>
-
-<h2 id="saved-game-storage">Saved game storage</h2>
-
+</code></pre><h2 id="saved-game-storage">Saved game storage</h2>
 <p>Currently, Celestial Combat stores only supports storing a single saved game
 as compressed JSON in localStorage. It uses the <code>lz-string</code> compression package
 because:</p>
-
 <ul>
 <li>it is pure JS</li>
 <li>has no dependencies of its own</li>
 <li>is space-efficient (meant for use with localStorage)</li>
 </ul>
-
-<p>Of course, we also want to save other info about a game session, not just entities:
-- rank
-- score
-- number of consecutive wins / losses (for game over)</p>
-
+<p>Of course, we also want to save other info about a game session, not just entities:</p>
+<ul>
+<li>rank</li>
+<li>score</li>
+<li>number of consecutive wins / losses (for game over)</li>
+</ul>
 <p>These are easily handled by <code>JSON.stringify()</code> and <code>JSON.parse()</code> and stored in the same
 manner. Each being assigned its own localStorage key.</p>
-
 <p>You can find the all source code for saving / loading games under
 <code>src/client/GameState</code>.</p>
-
 <p>Thanks for reading!</p>
 
             </div>

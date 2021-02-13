@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "tools",
       "name" : "TSP Solver",
       "headline" : "TSP Solver",
-      "description" : "The travelling salesman problem (TSP) asks the following question: \x26ldquo;Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?\x26rdquo; It is an NP-hard problem in combinatorial optimization, important in operations research and theoretical computer science.\n Iteratively solving the Travelling Salesman problem with k-opt operations Fast operations such as 2-Opt are less computationally expensive, but due to granularity, more likely to become stuck in local extrema.",
+      "description" : "The travelling salesman problem (TSP) asks the following question: \u0026ldquo;Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?\u0026rdquo; It is an NP-hard problem in combinatorial optimization, important in operations research and theoretical computer science.\n Iteratively solving the Travelling Salesman problem with k-opt operations Fast operations such as 2-Opt are less computationally expensive, but due to granularity, more likely to become stuck in local extrema.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2011",
-      "datePublished": "2011-08-01 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2011-08-01 00:00:00 \x2b0000 UTC",
+      "datePublished": "2011-08-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2011-08-01 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/traveling-salesman\/",
       "keywords" : [  ]
   }
@@ -91,17 +91,12 @@
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<blockquote>
+                <blockquote>
 <p>The travelling salesman problem (TSP) asks the following question: &ldquo;Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?&rdquo; It is an NP-hard problem in combinatorial optimization, important in operations research and theoretical computer science.</p>
 </blockquote>
-
 <h3 id="iteratively-solving-the-travelling-salesman-problem-with-k-opt-operations">Iteratively solving the Travelling Salesman problem with k-opt operations</h3>
-
-<p><img src="/images/tsp/tsp-demo-1.png" alt="1" /></p>
-
-<pre><code class="language-text">Fast operations such as 2-Opt are less computationally expensive, but due to
+<p><img src="/images/tsp/tsp-demo-1.png" alt="1"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Fast operations such as 2-Opt are less computationally expensive, but due to
 granularity, more likely to become stuck in local extrema. The higher level
 operations such as 3- or 4-Opt are less likely to be trapped in the extrema.
 
@@ -153,7 +148,7 @@ CLUSTER     Group locations into clusters (neighborhoods) and optimize the graph
 
     Reversing the order of either interior or exterior completes the 2-opt.
 	Though the direction of the sequence is different in between these cases,
-	the geometry of the Tour remains the same; &quot;unknotting&quot; any crossed paths.
+	the geometry of the Tour remains the same; &#34;unknotting&#34; any crossed paths.
 
 --------------------------------------------------------------------------------
 3-Opt: MOVE operation
@@ -167,7 +162,7 @@ CLUSTER     Group locations into clusters (neighborhoods) and optimize the graph
 
     Cut the segment from the old sequence, and build the new sequence by
     adding anything before the start index, the segment and then appending any
-    remaining Locations in the old sequence that weren't in the segment.
+    remaining Locations in the old sequence that weren&#39;t in the segment.
 
                   Length 3
                   Segment         3-OPT MOVE           Shift   New position
@@ -216,10 +211,7 @@ CLUSTER     Group locations into clusters (neighborhoods) and optimize the graph
 --------------------------------------------------------------------------------
 4-Opt: SWAP operation ...
  
-</code></pre>
-
-<h3 id="source-code">Source code</h3>
-
+</code></pre></div><h3 id="source-code">Source code</h3>
 <p><a href="https://github.com/jsyang/TSP-Heuristics">See code on GitHub</a></p>
 
             </div>

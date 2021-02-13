@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "guides",
       "name" : "Finding nostalgic music from 1996 Microsoft Interactive CD Sampler",
       "headline" : "Finding nostalgic music from 1996 Microsoft Interactive CD Sampler",
-      "description" : "In my childhood, I used to move around a lot. We usually didn\x26rsquo;t have allowances for things that other kids used to hold onto, to be kept between moves. Instead I collected music files and other digital treasures that pleased my young brain.\nOne file that\x26rsquo;s firmly stuck in my memory was theme music for the 1996 Microsoft Interactive CD Sampler main menu. I rediscovered it on YouTube recently and it sounds like this:",
+      "description" : "In my childhood, I used to move around a lot. We usually didn\u0026rsquo;t have allowances for things that other kids used to hold onto, to be kept between moves. Instead I collected music files and other digital treasures that pleased my young brain.\nOne file that\u0026rsquo;s firmly stuck in my memory was theme music for the 1996 Microsoft Interactive CD Sampler main menu. I rediscovered it on YouTube recently and it sounds like this:",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-01-03 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-01-03 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-01-03 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-01-03 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/guides\/microsoft-interactive-cd-sampler-music\/",
       "keywords" : [  ]
   }
@@ -91,78 +91,58 @@ One file that&rsquo;s firmly stuck in my memory was theme music for the 1996 Mic
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p>In my childhood, I used to move around a lot. We usually didn&rsquo;t have
+                <p>In my childhood, I used to move around a lot. We usually didn&rsquo;t have
 allowances for things that other kids used to hold onto, to be kept
 between moves. Instead I collected music files and other digital treasures
 that pleased my young brain.</p>
-
 <p>One file that&rsquo;s firmly stuck in my memory was theme music for the
 1996 Microsoft Interactive CD Sampler main menu. I rediscovered it on
 YouTube recently and it sounds like this:</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/Vo0Aa_Wexpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/Vo0Aa_Wexpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
 
 <p>The quality of the YouTube version wasn&rsquo;t quite as crisp as I remembered
 so I set out to find the original WAV file from the CD. A simple Google
 search for &ldquo;microsoft interactive cd sampler&rdquo; brought me to the
 <a href="https://archive.org/details/cdrom-microsoftinteractivecdsampler1996">Internet Archive&rsquo;s (IA) page for this CD</a>.</p>
-
-<p><img src="/images/cd-sampler/iso.png" alt="view iso contents" /></p>
-
+<p><img src="/images/cd-sampler/iso.png" alt="view iso contents"></p>
 <p>The good folks at IA not only provide a valuable public resource but also
 allow easy access to the contents of this CD ISO image via some sort of
 middleware that allows you to peek inside an ISO to download a specific file
 from within.</p>
-
 <p>Clicking inside, we see a table of all the files (and file paths) available
 for download. We were getting closer but how would we find the right WAV file
 given the haystack of thousands of other files?</p>
-
 <h3 id="1-filtering">1. Filtering</h3>
-
 <p>It would be useful to filter out all the non-WAV files:
 we can do this within Chrome DevTools console:</p>
-
-<pre><code class="language-javascript">// Create an array with link elements that don't go to a WAV file
-Array.from($$('a:not([href*=&quot;.WAV&quot;])'))
-.forEach(a =&gt; {   
-    // Remove the nearest table row that contains these non-WAV files
-    const b = a.closest('tr'); 
-    b &amp;&amp; b.remove();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Create an array with link elements that don&#39;t go to a WAV file
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">$$</span>(<span style="color:#e6db74">&#39;a:not([href*=&#34;.WAV&#34;])&#39;</span>))
+.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">a</span> =&gt; {   
+    <span style="color:#75715e">// Remove the nearest table row that contains these non-WAV files
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#39;tr&#39;</span>); 
+    <span style="color:#a6e22e">b</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">remove</span>();
 });
-</code></pre>
-
-<h3 id="2-sorting">2. Sorting</h3>
-
+</code></pre></div><h3 id="2-sorting">2. Sorting</h3>
 <p>We need to sort WAV files by size: sound effects will be smaller files
 compared to music, which is generally much longer and in a higher quality.</p>
-
 <p>We&rsquo;re looking for the largest WAV files in this CD; in DevTools console, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Select the table to be operated on
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fileTable</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$$</span>(<span style="color:#e6db74">&#39;tbody&#39;</span>)[<span style="color:#ae81ff">0</span>];
 
-<pre><code class="language-javascript">// Select the table to be operated on
-fileTable = $$('tbody')[0];
-
-rowsSorted = Array.from(fileTable.querySelectorAll('tr'))
-.sort((b,a)=&gt;
-    /* Sort rows by size, descending (column 4 = index 3) */ 
-    parseFloat(a.children[3].innerText) - parseFloat(b.children[3].innerText)
+<span style="color:#a6e22e">rowsSorted</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">fileTable</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;tr&#39;</span>))
+.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">a</span>)=&gt;
+    <span style="color:#75715e">/* Sort rows by size, descending (column 4 = index 3) */</span> 
+    parseFloat(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">children</span>[<span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">innerText</span>) <span style="color:#f92672">-</span> parseFloat(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">children</span>[<span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">innerText</span>)
 );
 
-// Clear all the rows and add them back in sorted order
-while (fileTable.childElementCount) { fileTable.removeChild(fileTable.firstChild); }
-rowsSorted.forEach(r=&gt;fileTable.appendChild(r));
-</code></pre>
-
-<h2 id="found">Found!</h2>
-
-<p><img src="/images/cd-sampler/found.png" alt="found" /></p>
-
+<span style="color:#75715e">// Clear all the rows and add them back in sorted order
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">fileTable</span>.<span style="color:#a6e22e">childElementCount</span>) { <span style="color:#a6e22e">fileTable</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">fileTable</span>.<span style="color:#a6e22e">firstChild</span>); }
+<span style="color:#a6e22e">rowsSorted</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">fileTable</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">r</span>));
+</code></pre></div><h2 id="found">Found!</h2>
+<p><img src="/images/cd-sampler/found.png" alt="found"></p>
 <p>The second file in the sorted view sounded exactly like what we were after.
 At last, we&rsquo;ve come home to memory lane: <a href="https://archive.org/download/cdrom-microsoftinteractivecdsampler1996/microsoftinteractivecdsampler1996.iso/SAMPLER%2FSOUNDS%2FMAIN.WAV">SAMPLER/SOUNDS/MAIN.WAV</a></p>
 

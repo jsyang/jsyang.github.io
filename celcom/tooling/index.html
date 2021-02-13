@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-01-10 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-01-10 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-01-10 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-01-10 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/celcom\/tooling\/",
       "keywords" : [  ]
   }
@@ -92,125 +92,99 @@ Writing code is a necessary evil to get things done on a project and often the b
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/tooling.md">here</a>.</em></p>
-
+                <p><em>This post is a <a href="https://github.com/jsyang/celestial">Celestial Combat</a> devlog and also be found <a href="https://github.com/jsyang/celestial/blob/master/devlog/tooling.md">here</a>.</em></p>
 <p>Writing code is a necessary evil to get things done on a project and often the best kind of code
 is no code at all. Good tooling helps us do things:</p>
-
 <ul>
 <li>FASTER: avoid writing code when the task least requires it</li>
 <li>CHEAPER: avoid writing code when results are not worth the effort</li>
 <li>EASIER: avoid barriers for contributors of all skill levels</li>
 </ul>
-
 <h2 id="creating-game-art-easier">Creating game art (EASIER)</h2>
-
 <p>CelCom exclusively uses vector graphics, which is one of the simplest and most space-efficient ways
 to represent art in a game. Using vector graphics is a trade off in favor of using more CPU for less disk space.
 Vectors also don&rsquo;t lose resolution after scaling.</p>
-
 <p>All art in CelCom is expressed as polygons: arrays of points in sequential order. For example, a simple triangle is
 <code>[ [0,0], [8,0], [0,8], [0,0] ]</code>.
 As you might imagine, art that&rsquo;s even a little bit more sophisticated would be very tedious to code by hand.
 If we want to easily add to and iterate our game art we need an editor that the artist can draw inside and use to export
 to our game-native vector format.</p>
-
 <p>The <a href="http://jsyang.ca/celestial?editor">geometry editor tool</a> was created to do this. It can also be run locally:</p>
-
 <ol>
 <li><code>yarn watch</code></li>
-<li><a href="http://localhost:3000/?editor">http://localhost:3000/?editor</a></li>
+<li>http://localhost:3000/?editor</li>
 </ol>
-
 <p>The editor can create layers of polygons with an infinite undo history. See <code>LETTERS</code> within <code>src/client/constants.ts</code>
 for an example of the output. Further tweaks to the resulting coordinate arrays is possible with the simple helper
 function <code>transformPolygon()</code> inside <a href="https://github.com/jsyang/celestial/blob/master/src/client/Geometry.ts"><code>src/client/Geometry.ts</code></a>.</p>
-
-<p><img src="/images/celcom/editor.png" alt="geometry editor" /></p>
-
-<h2 id="creating-builds-faster-cheaper">Creating builds (FASTER + CHEAPER)</h2>
-
+<p><img src="/images/celcom/editor.png" alt="geometry editor"></p>
+<h2 id="creating-builds-faster--cheaper">Creating builds (FASTER + CHEAPER)</h2>
 <p>Previously the project used Webpack to create a single client-side JS file that would minimize the number of
 network requests as well as total load time. As of 2018, webpack is the standard bundler for many JS projects.</p>
-
 <p>It has a vast collection of plugins for configuring and transforming code and assets. This is also its main downside:
 you need to configure these plugins individually and orchestrate them. The level of effort required for the initial setup
 and continued maintenance (if you want it to build more things / more types of things) is sizable.</p>
-
 <p><code>webpack.config.js</code> files easily become sprawling messes of interdependent configs on large projects. Occasionally
 drawing attention away from feature development simply to keep the bundler working acceptably as the codebase scales.</p>
-
 <p>Eventually, some people got sick of doing that and proposed a better approach: avoiding as much as config as possible
 while achieving the same purpose of compiling client-side resources.</p>
-
 <h3 id="zero-config-bundler">&ldquo;Zero-config&rdquo; bundler</h3>
-
 <p><a href="https://parceljs.org">ParcelJS</a> is one such alternative to the config hell that many webpack projects become. It began
 a trend of thought for build tools in 2018 that quickly gained momentum. You install a single dependency for the bundler,
 point it to an entry point for each bundle / resource to produce and it takes care of the rest.
 Plugins are automatically installed when required, allowing the developer to focus more of their time on
 building features vs messing with the compilation toolchain.</p>
-
 <p>Switching over to [Parcel] vs <a href="https://github.com/jsyang/celestial/commit/7a5963fd952507c20e6eddbd0eed755b6fc4fca1">Webpack</a> caused:</p>
-
 <ul>
 <li>61 + 19 = 80 lines of dense config code to disappear; simply not needed!
-
 <ul>
 <li>replaced by a handful of <code>package.json</code> script commands</li>
-</ul></li>
+</ul>
+</li>
 <li>initial &ldquo;watch&rdquo; build time dropped from <code>12.18s</code> to <code>10.85s</code>
-
 <ul>
 <li>&ldquo;changed&rdquo; build times dropped from order of tens of seconds to tens of milliseconds! (greatest benefit, time-wise)</li>
-</ul></li>
+</ul>
+</li>
 <li>complete production build time dropped from <code>30.30s</code> to <code>28.21s</code></li>
 </ul>
-
 <p>The timings above were gathered from running the bundlers on my 2013 Macbook Air. Parcel is the clear winner here.
 It is not completely perfect however, some things that were straightforward in Webpack
 need clever workarounds / new ways of thinking with Parcel:</p>
-
 <ol>
-<li><p>Including resources into the bundles was not obvious: you need to <code>require()</code> sound files for instance.
-See <code>scripts/generateSoundsList.js</code> and <code>src/client/assets/sounds.ts</code> as examples.</p></li>
-
-<li><p>Some functionality was lost in regards to the Parcel plugin ecosystem not having equivalents to the Webpack counterparts:
-compiling markdown (<code>.md</code>) files had to be done via a short Node script instead.</p></li>
-
-<li><p>TypeScript support is good but the bundler does not do a typecheck during the transpilation. If you want to see
+<li>
+<p>Including resources into the bundles was not obvious: you need to <code>require()</code> sound files for instance.
+See <code>scripts/generateSoundsList.js</code> and <code>src/client/assets/sounds.ts</code> as examples.</p>
+</li>
+<li>
+<p>Some functionality was lost in regards to the Parcel plugin ecosystem not having equivalents to the Webpack counterparts:
+compiling markdown (<code>.md</code>) files had to be done via a short Node script instead.</p>
+</li>
+<li>
+<p>TypeScript support is good but the bundler does not do a typecheck during the transpilation. If you want to see
 build errors, you either need editor support (IntelliJ / VSCode will do this in the background) or you need to
-run the TS compiler in watch mode in a separate process.</p></li>
+run the TS compiler in watch mode in a separate process.</p>
+</li>
 </ol>
-
 <p>Parcel can also be huge in terms of number of its child dependencies within <code>node_modules/</code>, whereas this is
 limited with Webpack (being explicitly defined). Not really a major concern for people not developing on limited spec
 environments. Finally, the experimental scope hoisting functionality did not work well on this project owing to Parcel&rsquo;s
 lack of maturity. It created super-minified builds that did not work.</p>
-
 <p>Not quite &ldquo;zero-config&rdquo; but much closer than before!</p>
-
-<h2 id="releasing-builds-cheaper-easier">Releasing builds (CHEAPER + EASIER)</h2>
-
+<h2 id="releasing-builds-cheaper--easier">Releasing builds (CHEAPER + EASIER)</h2>
 <p>Hosting CelCom is provided by GitHub Pages: each commit into the <code>master</code> branch of the git repository publishes the
 codebase as a statically served website hosted on GitHub CDNs. This means publishing things is simple:</p>
-
 <ul>
 <li>no additional hosting is needed. same as version control provider</li>
 <li>publishing new builds is done by modifying files and then committing them</li>
 <li>general public receive updates immediately: cache time is &lt; 1 hour</li>
 </ul>
-
 <p>All we need to do to see which builds a client is receiving is to create a readily visible build tag that has the
 timestamp of build and the commit it built from. We use the <code>.env</code> approach here offered by Parcel and regenerate it
 for each production build via <code>scripts/generateDotEnv.js</code> Example:</p>
-
 <pre><code>BUILD_HASH=929e057
 BUILD_DATE=2019-01-02T21:51:52.227Z
 </code></pre>
-
             </div>
             
         </div>

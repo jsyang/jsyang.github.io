@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guides on jsyang.ca</title>
@@ -6,19 +6,14 @@
     <description>Recent content in Guides on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tiny Palm PVG100 phone on Three UK</title>
       <link>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</guid>
-      <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these. Manufactured by TCL, it retains the &amp;ldquo;Palm&amp;rdquo; brand that people remember from the by-gone PDA days.
-Originally the concept of the phone was as a kind of &amp;ldquo;gig&amp;rdquo; device where you would install a SIM card that kept the same phone number as your main phone but was small enough to take with you to an event where you could use a compact version of your main phone (with the majority of its features) in a pinch.</description>
+      <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these.</description>
     </item>
     
     <item>
@@ -80,7 +75,8 @@ Additionally, I wrote a simple 360 web viewer, so I can use any image host (e.g.
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/guides/mocute-bluetooth-gamepad/</guid>
-      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.</description>
+      <description>These cheap bluetooth gamepads are often branded and sold as remote shutter buttons for smartphones. I think their best purpose is actually to be used as gamepads, especially for mobile devices and bluetooth-enabled PCs. They can be routinely found on either eBay or Amazon for around $3 or 5 GBP, shipping included. This makes them one of the best value bluetooth input devices on the market as of 2018.
+Depending on the seller, the gamepads can be found under different branding, though functionally they are all the same device.</description>
     </item>
     
     <item>

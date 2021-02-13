@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "tools",
       "name" : "Tabular \/ vertical code alignment in ES without IntelliJ",
       "headline" : "Tabular \/ vertical code alignment in ES without IntelliJ",
-      "description" : "While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or \x26ldquo;vertical\x26rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:\n\/\/ (1) const bike: Record\x26lt;string|number\x26gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \x27Brompton\x27 }; \/\/ vs \/\/ (2) const bike: Record\x26lt;string|number\x26gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \x27Brompton\x27 };  The code in (2) is much clearer in tabular form.",
+      "description" : "While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or \u0026ldquo;vertical\u0026rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:\n\/\/ (1) const bike: Record\u0026lt;string|number\u0026gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \u0027Brompton\u0027 }; \/\/ vs \/\/ (2) const bike: Record\u0026lt;string|number\u0026gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: \u0027Brompton\u0027 }; The code in (2) is much clearer in tabular form.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2019",
-      "datePublished": "2019-01-22 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2019-01-22 00:00:00 \x2b0000 UTC",
+      "datePublished": "2019-01-22 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2019-01-22 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/tabular-vertical-alignment\/",
       "keywords" : [  ]
   }
@@ -37,7 +37,7 @@
   <meta property="og:title" content="Tabular / vertical code alignment in ES without IntelliJ - jsyang.ca" />
   <meta property="og:type" content="article" />
   <meta name="description" content="While block indentation alignment (1) is enough for most people, I believe further alignment formatters, especially tabular or &ldquo;vertical&rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:
-// (1) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; };  The code in (2) is much clearer in tabular form." />
+// (1) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; // vs // (2) const bike: Record&lt;string|number&gt; = { wheelSize: 16, topTubeLength: 24.5, manufacturer: &#39;Brompton&#39; }; The code in (2) is much clearer in tabular form." />
 
   <link
     rel="stylesheet"
@@ -91,11 +91,8 @@
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<p>While block indentation alignment (1) is enough for most people, I believe further alignment formatters,
+                <p>While block indentation alignment (1) is enough for most people, I believe further alignment formatters,
 especially tabular or &ldquo;vertical&rdquo; alignment (2) tools, can greatly help in reducing the time it takes to visually process details in code:</p>
-
 <pre><code>// (1)
 const bike: Record&lt;string|number&gt; = {
     wheelSize: 16,
@@ -110,30 +107,19 @@ const bike: Record&lt;string|number&gt; = {
     topTubeLength:  24.5,
     manufacturer:   'Brompton'
 };
-</code></pre>
-
-<p>The code in (2) is much clearer in tabular form.</p>
-
+</code></pre><p>The code in (2) is much clearer in tabular form.</p>
 <h2 id="formatters">Formatters</h2>
-
 <p>Every code-formatter out there can already do (1), e.g. <a href="https://prettier.io/">prettier</a>, <a href="https://www.npmjs.com/package/js-beautify">js-beautifier</a>.
 But very few can automatically align your object values vertically. Outside of using a built-in IDE code-formatting plugin, such as ones
 provided by IntelliJ IDEs (WebStorm, Android Studio), your options are limited on tools for this.</p>
-
-<p><img src="/images/tabular-vertical-alignment/ide-formatter.png" alt="ide-formatter" /></p>
-
-<h2 id="eslint-https-eslint-org"><a href="https://eslint.org/">ESLint</a></h2>
-
+<p><img src="/images/tabular-vertical-alignment/ide-formatter.png" alt="ide-formatter"></p>
+<h2 id="eslinthttpseslintorg"><a href="https://eslint.org/">ESLint</a></h2>
 <p>I recently discovered that ESLint can actually do this in the same way that prettier does: automatically fix alignment.
 It will also do this for Typescript files through a plugin <code>@typescript-eslint/parser</code>!
 As a proof of concept, you can create a file called <code>notAligned.ts</code> that contains code from (1).</p>
-
 <p>The formatting rule to use for this alignment is the <code>key-spacing</code> and the CLI command to apply the alignment fixes directly is</p>
-
 <pre><code>eslint --fix --parser &quot;@typescript-eslint/parser&quot; --rule 'key-spacing: [&quot;warn&quot;, {align: &quot;value&quot;} ]' --rule 'indent: [&quot;warn&quot;]' notAligned.ts
-</code></pre>
-
-<p>Once complete, you can peek inside <code>notAligned.ts</code> to see that it should now look like (2).
+</code></pre><p>Once complete, you can peek inside <code>notAligned.ts</code> to see that it should now look like (2).
 This was quite the revelation for me!</p>
 
             </div>

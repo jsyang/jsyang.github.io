@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
       "copyrightYear" : "2009",
-      "datePublished": "2009-10-20 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2009-10-20 00:00:00 \x2b0000 UTC",
+      "datePublished": "2009-10-20 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2009-10-20 00:00:00 \u002b0000 UTC",
       "url" : "http:\/\/jsyang.ca\/tools\/gmbrowser\/",
       "keywords" : [  ]
   }
@@ -91,48 +91,35 @@ Originally this was written as a fast and dirty way to get lots of map data for 
             </header>
 
             <div class="post-content markdown-body">
-                
-
-<h3 id="cache-google-maps-tiles-by-browsing-the-location-of-interest">Cache Google Maps tiles by browsing the location of interest</h3>
-
+                <h3 id="cache-google-maps-tiles-by-browsing-the-location-of-interest">Cache Google Maps tiles by browsing the location of interest</h3>
 <p>This is simple C app that I wrote up and tested in about 2 hours that automatically
 saves the map tiles of Google Maps as you browse a location of interest. The bundled
 tool, <code>tiler</code> is a handy utility for arranging the matrix of the gathered Google Maps
 tiles for a certain zoom level.</p>
-
 <p>Originally this was written as a fast and dirty way to get lots of map data for an
 independent project in the summer of 2009. As the API or URLs may have changed since
 then, its current working status is not guaranteed. As of May 2010, it still works.</p>
-
-<p><img src="/images/gmbrowser/gmbrowser-1.png" alt="" />
+<p><img src="/images/gmbrowser/gmbrowser-1.png" alt="">
 Zoom level 4, centered North Carolina</p>
-
-<p><img src="/images/gmbrowser/gmbrowser-2.png" alt="" />
+<p><img src="/images/gmbrowser/gmbrowser-2.png" alt="">
 Sample directory with some saved tiles</p>
-
 <p>The tile images are saved into the app directory under folders corresponding to their
 zoom level (0 - 20). Controls and interface are minimal: use your mouse wheel to zoom
 in and out, click and drag to move the map and Esc to quit.</p>
-
 <p>One note: the graphics library that I used to read the PNG files is NOT- threadsafe so
 you may encounter distorted palettes and crashing if your internet connection is slow
 or unreliable. If GMBrowser keeps crashing, run the generated fixme.bat file. It will
 clear the problematic directory (make sure you want to do this before you run it!)</p>
-
 <h3 id="sample-tile-output">Sample Tile Output</h3>
-
 <style>
     #body img[data-map="true"] { margin: 0; height: 256px; width: 256px; }
     #map-table td { border: 0 ; padding: 0; height: 256px; width: 256px; }
     #map-table { width: max-content; }
 </style>
-
 <div style="height: 600px; background: gray; overflow: auto;"> 
 <table cellpadding=0 cellspacing=0 id="map-table"><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5988.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5988.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5989.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5989.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5990.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5990.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5991.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5991.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5992.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5992.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5993.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5993.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5994.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5994.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5995.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5995.png></td></tr><tr><td><img data-map="true"src=/images/gmbrowser/map/4524_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4525_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4526_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4527_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4528_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4529_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4530_5996.png></td><td><img data-map="true"src=/images/gmbrowser/map/4531_5996.png></td></tr></table>
 </div>
-
 <h3 id="update-2017">Update 2017</h3>
-
 <p>Of course, much more sophisticated tools exist now for extracting map data. Or if you want to go next-level, there&rsquo;s always the <a href="https://www.openstreetmap.org">OpenStreetMaps</a> project which seeks to be a fully open-sourced replacement for the proprietary mapping services like Google Maps.</p>
 
             </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on jsyang.ca</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Games on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://jsyang.ca/games/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/games/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Celestial Combat</title>
       <link>http://jsyang.ca/games/celcom/</link>
@@ -19,7 +15,7 @@
       <guid>http://jsyang.ca/games/celcom/</guid>
       <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.
 Excerpt from &amp;ldquo;How to play&amp;rdquo;  You begin with either an invasion fleet (1 x Fighter + 4 invasion Freighters) or a single occupied planet.
-To colonize planets, you must land on them when they are unoccupied with your Fighter.</description>
+To colonize planets, you must land on them when they are unoccupied with your Fighter. The landing will plant a beacon, starting the flow of Freighters and raw materials sent to construct facilities on the planet.</description>
     </item>
     
     <item>
@@ -40,8 +36,8 @@ I had grandiose visions for this game, but sadly the scope of that meant it woul
       <guid>http://jsyang.ca/games/gdw2/</guid>
       <description>My second gamedev weekend project, this time I attempted to create a web version of a popular board game: Kulami.
 Development finished on 30/05/2013. Current version has been patched to run in modern browsers (WebAudio API was changed since 2013).
-Original features: - an intermediate skill-level AI player with taunts (filthy meatbag!) - RANDOM or a completely user-defined board layout - final score breakdown
-Play it now  How to play Construct board layout Drag the tiles to form a board of non-overlapping tiles.</description>
+Original features:
+ an intermediate skill-level AI player with taunts (filthy meatbag!) RANDOM or a completely user-defined board layout final score breakdown  Play it now  How to play Construct board layout Drag the tiles to form a board of non-overlapping tiles.</description>
     </item>
     
     <item>
@@ -62,10 +58,7 @@ Finding people was easy enough: I scrounged 30 seconds of my day and put up a Fa
       <guid>http://jsyang.ca/games/jscc/</guid>
       <description>A Command and Conquer engine in JS Update Nov. 2011:
 Aditya Ravi Shankar created a version that uses canvas blitting instead of DOM manipulation.
- Your unfinished C&amp;amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.
-  http://www.adityaravishankar.com/projects/games/command-and-conquer/
- http://www.adityaravishankar.com/2011/11/command-and-conquer-programming-an-rts-game-in-html5-and-javascript/
-  This was a very ambitious project to fully recreate the first C&amp;amp;C game and introduce in-game objects for expansion by user scripting.</description>
+ Your unfinished C&amp;amp;C demo inspired me to give it a shot. My version uses HTML5/Canvas and works in Chrome/Firefox.</description>
     </item>
     
     <item>
@@ -76,7 +69,7 @@ Aditya Ravi Shankar created a version that uses canvas blitting instead of DOM m
       <guid>http://jsyang.ca/games/flash-games/</guid>
       <description>Wrote and animated a lot of Flash games/animations back in the early 2000s during my time in high-school. Here are a sample of some of the better ones.
 Defend 2 - Super Tank (2004) 
-Controls  WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver.</description>
+Controls  WASD to move the tank mouse to aim, click to fire SPACE to switch weapons  Base Attack - 2D War Simulator (2002) This was sort of half-way between a game and screen-saver. Two armies (white vs black) fight each other.</description>
     </item>
     
   </channel>
