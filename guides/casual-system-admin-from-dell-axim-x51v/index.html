@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/" />
+  <link rel="canonical" href="http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "guides",
+      "name" : "Casual System Admin from a Dell Axim X51v PDA",
+      "headline" : "Casual System Admin from a Dell Axim X51v PDA",
+      "description" : "10 Easy Steps to being the coolest sysadmin in 2005 Ever wonder how complicated it would be to do some casual Linux administration from a mid-2000s PocketPC device? Wonder no more! I\u0026rsquo;ll show you how a Dell Axim X51v along with an infrared wireless keyboard can successfully connect via SSH into an Amazon EC2 Linux instance.\n  Download your PEM file, this is your private key. Required for normal SSH connections to access your instance.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-02-18 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-02-18 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/guides\/casual-system-admin-from-dell-axim-x51v\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Casual System Admin from a Dell Axim X51v PDA - jsyang.ca</title>
+  <meta property="og:title" content="Casual System Admin from a Dell Axim X51v PDA - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="10 Easy Steps to being the coolest sysadmin in 2005 Ever wonder how complicated it would be to do some casual Linux administration from a mid-2000s PocketPC device? Wonder no more! I&rsquo;ll show you how a Dell Axim X51v along with an infrared wireless keyboard can successfully connect via SSH into an Amazon EC2 Linux instance.
+  Download your PEM file, this is your private key. Required for normal SSH connections to access your instance." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+  <script data-ad-client="ca-pub-7841618875441136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Casual System Admin from a Dell Axim X51v PDA</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2021-02-18 00:00:00 UTC">
+                            18 Feb 2021
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <p><img src="/images/dell-axim-x51v/ssh-terminal.jpg" alt="x51v ssh terminal"></p>
+<h2 id="10-easy-steps-to-being-the-coolest-sysadmin-in-2005">10 Easy Steps to being the coolest sysadmin in 2005</h2>
+<p>Ever wonder how complicated it would be to do some casual Linux administration from a mid-2000s PocketPC device?
+Wonder no more! I&rsquo;ll show you how a <a href="https://en.wikipedia.org/wiki/Dell_Axim#X51_family">Dell Axim X51v</a> along with
+an infrared wireless keyboard can successfully connect via SSH into an Amazon EC2 Linux instance.</p>
+<ol>
+<li>
+<p>Download your PEM file, this is your private key. Required for normal SSH connections to access your instance. (You should already have this)</p>
+</li>
+<li>
+<p>Ensure your local network gateway has access to the instance; <a href="https://aws.amazon.com/premiumsupport/knowledge-center/ec2-block-or-allow-ips/">your public IP should be whitelisted for SSH</a>.</p>
+</li>
+<li>
+<p>You&rsquo;ll need to install PuTTY to get a utility to convert the SSH PEM key format into a PuTTY PPK key.</p>
+</li>
+</ol>
+<pre><code>//// Contents of a PEM key look like this: ////
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAxZls7NgRS5rtDH+mCgEeqSO12BiPAY2dhZZbTkPEoDUVqG46
+PHGIBBERISHFKS3xE4eMMY+uWPriviY0W12EFqYBUJDq6GmGSQPMSI8Kep7OgVGK
+d2t3/Lq+I8ZqlFwAgPwS7n18mlgTV/YyA0HCCIa+kZGKqbsuylfsODUAJGQqOtUM
+FKX4+O45RrJwcQGI2M+pbD4+Ow28iEsNP3flQKvamNuezm2VallhGiO/E39UITrB
+27FWM1pLQo5etyE378h5q8BKMGKt1ZPxPhjiNjBefGZ1Dscw7CA5
+-----END RSA PRIVATE KEY-----
+
+//// Contents of a PPK key look like this: ////
+
+PuTTY-User-Key-File-2: ssh-rsa
+Encryption: none
+Comment: imported-openssh-key
+Public-Lines: 3
+AAAAB3NzaC1yc2EAAAADAQABAAABAQDFmWzs2BFLmu0Mf6YKAR6pI7XYGI8BjZ2F
+llGIBBERISHobjo8c6DjH6iBW0UpLfETh4wxj65Y+uK+JjRbXYQWpgFQkOroaYZJ
+1DxehJUvZpuZqLSUGvZrUzbYmx25oVE5+x6UBSA0NUiTpq6jWFPH
+Private-Lines: 3
+AAABAFLQsak2CVGhldYWLbWlsH78+3qdGFpzSuCxGoVbu63VccVMpVWutHBcVVgZ
+s4GIBBERISHcVhru01cUVf8w22pOmuB0TC+qAmDZmaWTZbXslun2Dc1tGjWu4n/F
+S0KOXrchN+/IeavASjBirdWT8T4Y4jYwXnxmdQ7HMOwgOQ==
+Private-MAC: 5fGIBBERISHda60d2e8b049e655e4a8a78bb18dc
+</code></pre><ol start="4">
+<li>
+<p>Install <a href="https://en.wikipedia.org/wiki/PuTTY">PuTTY</a> on your main computer to get that <code>puttygen</code> tool.</p>
+</li>
+<li>
+<p>Open a CLI shell in the directory where the PEM file is located and run <code>puttygen YOURKEYFILE.pem -o YOURKEYFILE.ppk</code> to convert the key into the PPK format</p>
+</li>
+<li>
+<p>Install PocketPuTTY for Windows CE on your X51V (<a href="/bin/PocketPutty.Feb28.2007.zip">download here</a>)</p>
+<ul>
+<li>Easiest way to do this is via SD card</li>
+</ul>
+</li>
+<li>
+<p>When you&rsquo;ve copied the program EXE over, you&rsquo;ll need to set up the SSH connection configs:</p>
+<ul>
+<li>Auto-login username (e.g. <code>ubuntu</code>)</li>
+<li>Hostname (e.g. <code>145.184.9.204</code> or <code>ssh.example.com</code>)</li>
+<li>Transfer the PPK key file that was generated to your PDA and use the file as the &ldquo;private key file for authentication&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>Once the config is ready, you&rsquo;ll want to save the details as a stored session.</p>
+</li>
+<li>
+<p>Connect a keyboard to make the experience a bit more practical. I used a ThinkOutside Palm Wireless keyboard to
+type commands more quickly.</p>
+</li>
+<li>
+<p>Connect to your local network (WiFi, Bluetooth, ActiveSync, or Ethernet) which gives the PDA access to the internet. Finally,
+click on the &ldquo;Open&rdquo; button to initiate an SSH session. You will need to tap on the terminal window once to give focus to the app
+for auto-login.</p>
+</li>
+</ol>
+<center>
+<h3 id="span-stylecolorgreenfont-weightboldyoure-connected-and-cool-as-a-cucumberspan"><span style="color:green;font-weight:bold">You&rsquo;re connected and cool as a cucumber!</span></h3>
+</center>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

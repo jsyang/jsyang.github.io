@@ -6,7 +6,17 @@
     <description>Recent content in Guides on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Casual System Admin from a Dell Axim X51v PDA</title>
+      <link>http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/</guid>
+      <description>10 Easy Steps to being the coolest sysadmin in 2005 Ever wonder how complicated it would be to do some casual Linux administration from a mid-2000s PocketPC device? Wonder no more! I&amp;rsquo;ll show you how a Dell Axim X51v along with an infrared wireless keyboard can successfully connect via SSH into an Amazon EC2 Linux instance.
+  Download your PEM file, this is your private key. Required for normal SSH connections to access your instance.</description>
+    </item>
+    
     <item>
       <title>Tiny Palm PVG100 phone on Three UK</title>
       <link>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</link>
