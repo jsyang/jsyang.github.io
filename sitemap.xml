@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://jsyang.ca/franklin-electronics/</loc>
+    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/hardware/</loc>
+    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/</loc>
+    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/</loc>
     <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url>
@@ -13,17 +28,7 @@
   </url>
   
   <url>
-    <loc>http://jsyang.ca/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://jsyang.ca/hardware/navteq-bt332-bluetooth-gps-receiver/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/hardware/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url>
   

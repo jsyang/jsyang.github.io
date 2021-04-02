@@ -17,9 +17,9 @@
            "@id": "http:\/\/jsyang.ca\/"
       },
       "articleSection" : "hardware",
-      "name" : "Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]",
-      "headline" : "Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]",
-      "description" : "2021-02-13: This is a work in progress!  As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I\u0026rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).\nBefore phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port.",
+      "name" : "Dell NavTeq BT-332 Bluetooth GPS Receiver",
+      "headline" : "Dell NavTeq BT-332 Bluetooth GPS Receiver",
+      "description" : "As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I\u0026rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).\nBefore phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -33,10 +33,10 @@
       "keywords" : [  ]
   }
 </script>
-<title>Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP] - jsyang.ca</title>
-  <meta property="og:title" content="Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP] - jsyang.ca" />
+<title>Dell NavTeq BT-332 Bluetooth GPS Receiver - jsyang.ca</title>
+  <meta property="og:title" content="Dell NavTeq BT-332 Bluetooth GPS Receiver - jsyang.ca" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="2021-02-13: This is a work in progress!  As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I&rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).
+  <meta name="description" content="As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver that I&rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).
 Before phones and other devices integrated location sensors the common setup was having an external GPS receiver that would process and relay location data via Bluetooth or physically connected serial (RS-232) port." />
 
   <link
@@ -73,7 +73,7 @@ Before phones and other devices integrated location sensors the common setup was
                 <div class="head-line"></div>
             </a>
             <header class="post-header">
-                <h1 class="post-title">Dell NavTeq BT-332 Bluetooth GPS Receiver [WIP]</h1>
+                <h1 class="post-title">Dell NavTeq BT-332 Bluetooth GPS Receiver</h1>
                 <div class="row">
                     <div class="col-xs-6">
                         
@@ -91,10 +91,7 @@ Before phones and other devices integrated location sensors the common setup was
             </header>
 
             <div class="post-content markdown-body">
-                <div style="border-radius: 2em; padding: 0.5em; background: palegoldenrod; text-align: center; margin-bottom: 2em">
-<b>2021-02-13</b>: This is a work in progress!
-</div>
-<p>As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver
+                <p>As part of a Dell Axim PDA bundle, I came into possession of this curious Dell Navteq BT-332 Bluetooth GPS Receiver
 that I&rsquo;m planning to use with an offline OSM app on a laptop (something normally without a location sensor).</p>
 <p>Before phones and other devices integrated location sensors the common setup was having an external GPS receiver that
 would process and relay location data via Bluetooth or physically connected serial (RS-232) port. Many manufacturers
@@ -160,7 +157,10 @@ $GPGSA,A,1,,,,,,,,,,,,,,,*1E
 $GPRMC,000621.061,V,,,,,,,110905,,*21
 $GPGGA,000622.073,,,,,0,00,,,M,0.0,M,,0000*54
 $GPGSA,A,1,,,,,,,,,,,,,,,*1E
-</code></pre><h2 id="further-dev-resources-for-bt-spp">Further dev resources for BT-SPP</h2>
+</code></pre><h2 id="gps-bluetooth-spp-parser">GPS Bluetooth SPP Parser</h2>
+<p>I ended up writing a NMEA parser for NodeJS which is able to connect to and consume data from this GPS module. See
+my GitHub repo <a href="https://github.com/jsyang/gps-bt-serial"><code>gps-bt-serial</code></a> for details.</p>
+<h2 id="further-dev-resources-for-bt-spp">Further dev resources for BT-SPP</h2>
 <ul>
 <li><a href="https://github.com/rusel1989/react-native-bluetooth-serial/issues/16">React Native Bluetooth Serial Port wrapper library</a></li>
 <li><a href="https://forum.arduino.cc/index.php?topic=487187.0">Arduino library for working with NMEA messages</a></li>
