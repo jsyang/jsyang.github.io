@@ -79,7 +79,7 @@ Before phones and other devices integrated location sensors the common setup was
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/games/sandbox3d/</guid>
-      <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.</description>
+      <description></description>
     </item>
     
     <item>
@@ -147,7 +147,8 @@ I knew I had to put something together to play with this system that laid out as
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/hardware/ghlive-controller-rate-testing/</guid>
-      <description>                             </description>
+      <description>After releasing the GHLiveBLE tool, there were a number of hardcore Clone Hero enthusiasts who were curious to find out the poll rate of the GHLive bluetooth guitar controller. Given that the poll rate being how fast the controller can register button presses to the computer, a higher rate would allow for more &amp;ldquo;precise&amp;rdquo; play for the dedicated rhythm game fans.
+And so, I set out to find the limits of the Guitar Hero Live hardware.</description>
     </item>
     
     <item>
