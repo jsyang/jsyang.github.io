@@ -19,7 +19,7 @@
       "articleSection" : "games",
       "name" : "Sierra AGI Adventure Game Interpreter",
       "headline" : "Sierra AGI Adventure Game Interpreter",
-      "description" : "This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line\u0026rsquo;s Adventure Game Interpreter was created in the mid 80\u0026rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra\u0026rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.",
+      "description" : "My holiday project of implementing a Sierra AGI web runtime is coming along nicely. The game engine was revolutionary for its time. It was effectively an entire creative suite (content tooling, bytecode VMs for distribution to different computer architectures) that allowed the early Sierra On-Line game company to sell its games on many different early personal computer systems.\n The virtual machine was based around an in-house developed C-like programming language called \u0026ldquo;Logic\u0026rdquo;.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -36,7 +36,8 @@
 <title>Sierra AGI Adventure Game Interpreter - jsyang.ca</title>
   <meta property="og:title" content="Sierra AGI Adventure Game Interpreter - jsyang.ca" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&rsquo;s Adventure Game Interpreter was created in the mid 80&rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms." />
+  <meta name="description" content="My holiday project of implementing a Sierra AGI web runtime is coming along nicely. The game engine was revolutionary for its time. It was effectively an entire creative suite (content tooling, bytecode VMs for distribution to different computer architectures) that allowed the early Sierra On-Line game company to sell its games on many different early personal computer systems.
+ The virtual machine was based around an in-house developed C-like programming language called &ldquo;Logic&rdquo;." />
 
   <link
     rel="stylesheet"
@@ -90,22 +91,36 @@
             </header>
 
             <div class="post-content markdown-body">
-                <blockquote>
-<p>This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&rsquo;s Adventure Game Interpreter was created in the mid 80&rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.</p>
-</blockquote>
+                <p>My holiday project of implementing a Sierra AGI web runtime is coming along nicely. The game engine was revolutionary for its time. It was effectively an entire creative suite (content tooling, bytecode VMs for distribution to different computer architectures) that allowed the early Sierra On-Line game company to sell its games on many different early personal computer systems.</p>
 <blockquote>
 <p>The virtual machine was based around an in-house developed C-like programming language called &ldquo;Logic&rdquo;. When the programmer compiled a Logic file, the compiler produced an 8-bit &ldquo;opcode&rdquo; for each statement. In the interpreter, each opcode was defined in a jump table which simply pointed to an assembler subroutine. This made the system very fast and ridiculously elegant, because the logic itself never needed to be recompiled no matter what the target platform was. It was also fairly easy to extend the system which can be witnessed by the numerous versions of AGI interpreters produced by Sierra.</p>
 </blockquote>
+<p><img src="/images/agijs/Screen-Shot-2020-12-28-at-12.44.53-AM.png" alt=""></p>
 <blockquote>
 <p>By the time these games were created, storage was limited and expensive. To reduce asset size, the game&rsquo;s background images were defined as vector graphics instead of full raster images. When the game needed to display a new background image, it was drawn into a buffer and finally blitted to the screen. This is interesting because this theoretically allows us to rescale the images to any resolution. It&rsquo;s also interesting from an artistic perspective as it allows us to trace how the artist originally drawed the pictures, command by command.</p>
 </blockquote>
-<blockquote>
-<p>Another interesting feature of the engine was its ability render a room with a pseudo-perspective. The engine divided the screen into 15 sections, called priority bands. This was basically a kind of low-resolution Z-buffer. All background drawing commands were drawn both with a visual color and a priority value, so everytime the engine had to draw an animated object, each of its pixels were compared against the backgrounds pixel&rsquo;s priority value to decide if the pixel was to be drawn or not. All control-lines and boundaries where the player could not go was also drawn into this priority buffer.</p>
-</blockquote>
+<p>Topical for 2021: Adobe Flash Player, another type of runtime technology for interactive content. Very much ahead of its time, now finally being laid to rest by its corporate owner who chose the path of closed source propriety rather than attempting to using the technology to set a standard.</p>
+<p>With my AGI web runtime, you can load the original game files directly and play them in your browser.</p>
+<p>In building on this project I&rsquo;ve also stumbled upon lots of cool tidbits along the way. For instance, I figured out why the game engine doesn&rsquo;t handle F11 and F12 keys: the game engine&rsquo;s initial hardware target was the IBM PC Jr (1984), which doesn&rsquo;t have those keys on its keyboard.</p>
+<p><img src="/images/agijs/ibm-pcjr-kb.jpg" alt=""></p>
 <p>I forked the original library and implemented a large number of features. The additions I added made it possible play Space Quest II in the interpreter. Lots of low-level VM debugging was done to get to a workable state and its compatibility is still low.</p>
-<p>Major changes:</p>
+<p><img src="/images/agijs/Screen-Shot-2021-01-09-at-12.54.00-AM.png" alt=""></p>
+<p>Progress at 2021-01-09.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/bRZgpt3uO78" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Sample of the TTS enhancement.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/udyuLtkhqyM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Longer video demo of the runtime in action playing SpaceQuest 2.</p>
+<h2 id="major-changes">Major changes</h2>
 <ul>
-<li>TTS for all in-game dialog</li>
+<li>TTS for all in-game dialog text</li>
 <li>saving and restoring game states to localstorage</li>
 <li>Implemented the menu bar common to AGI games</li>
 <li>Implement available player actions as buttons</li>
@@ -115,7 +130,8 @@
 <li>Implemented inventory item graphic display</li>
 <li>Implemented interpreter clock</li>
 </ul>
-<p>The changes were transformational to the original project. It is much more of a complete game engine than the JS tech demo of the original <code>agi.js</code> project. As with any large and novel software project: devils were in the details. Confronting quirks in the VM bytecode, register implementation, and hacks used by the game designers / developers to afford compatibility with published games gave me tremendous opportunity to learn about ABI design (Application Binary Interface) and emulation. For now this fork of the project has paused, source code being available here: <a href="https://github.com/jsyang/agi">https://github.com/jsyang/agi</a>.</p>
+<p>The changes were transformational to the original project. It is much more of a complete game engine than the JS tech demo of the original <code>agi.js</code> project. As with any large and novel software project: devils were in the details. Confronting quirks in the VM bytecode, register implementation, and hacks used by the game designers / developers to afford compatibility with published games gave me tremendous opportunity to learn about ABI design (Application Binary Interface) and emulation.</p>
+<p>For now this fork of the project has paused, source code being available here: <a href="https://github.com/jsyang/agi">https://github.com/jsyang/agi</a>.</p>
 
             </div>
             
