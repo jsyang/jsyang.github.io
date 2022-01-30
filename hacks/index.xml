@@ -6,7 +6,16 @@
     <description>Recent content in Hacks on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hacks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TODO-- Raspberry Pi based parallel ROM dumper</title>
+      <link>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</guid>
+      <description>                              For the Bookman Archive, TDB  </description>
+    </item>
+    
     <item>
       <title>Guitar Hero Live Bluetooth controller</title>
       <link>http://jsyang.ca/hacks/ghliveble/</link>

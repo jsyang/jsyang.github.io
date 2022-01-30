@@ -6,7 +6,26 @@
     <description>Recent content on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello world in circuit board design: the most basic KiCad 6 tutorial</title>
+      <link>http://jsyang.ca/guides/kicad-basic-pcb-design/</link>
+      <pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/kicad-basic-pcb-design/</guid>
+      <description>KiCad is the open source standard for PCB design and these days a prerequisite for cheap professional PCB manufacture. I&amp;rsquo;m learning this tool out of necessity; the ultimate goal is to create a breakout board for a TSOP-50 (50-pin Thin Small Outline Package format) mask ROM chip located on a Franklin Bookman II device containing its onboard firmware in order to further my reverse engineering efforts on the system.
+Once this board is created, it can be ordered through PCBWay, JLPCB, ALLPCB or any budget professional small-scale PCB manufacturer.</description>
+    </item>
+    
+    <item>
+      <title>TODO-- Raspberry Pi based parallel ROM dumper</title>
+      <link>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</guid>
+      <description>                              For the Bookman Archive, TDB  </description>
+    </item>
+    
     <item>
       <title>Franklin BOOKMAN Data Archive</title>
       <link>http://jsyang.ca/franklin-electronics/</link>
@@ -43,6 +62,24 @@ Before phones and other devices integrated location sensors the common setup was
       
       <guid>http://jsyang.ca/hardware/think-outside-bluetooth-folding-keyboard/</guid>
       <description>When the local coronavirus restrictions were enacted early on this year, I was determined not to let this time go to waste. The idea: read more and improve my writing by removing distractions where possible. Distraction-free writing (post coming soon) and other activities of this sort require a lot of forethought and set-up to have a chance at consistent success.</description>
+    </item>
+    
+    <item>
+      <title>Sierra AGI Adventure Game Interpreter</title>
+      <link>http://jsyang.ca/games/sierra-agi-js/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/sierra-agi-js/</guid>
+      <description>This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&amp;rsquo;s Adventure Game Interpreter was created in the mid 80&amp;rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&amp;rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.</description>
+    </item>
+    
+    <item>
+      <title>TODO-- 3D Terrain Sandbox and Game Engine</title>
+      <link>http://jsyang.ca/games/sandbox3d/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/sandbox3d/</guid>
+      <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.</description>
     </item>
     
     <item>
@@ -102,6 +139,15 @@ I knew I had to put something together to play with this system that laid out as
       
       <guid>http://jsyang.ca/guides/tiny-palm-pvg100-phone-on-three-uk/</guid>
       <description>I&amp;rsquo;ve always favored peculiarly sized versions of everyday things (for instance, my small-wheel bike obsessions), so when Verizon paired with TCL to release a tiny 3.3 inch Android &amp;ldquo;companion&amp;rdquo; phone in November 2018, I kept a close watch on where I might be able to source one of these.</description>
+    </item>
+    
+    <item>
+      <title>Guitar Hero Live Bluetooth Controller Poll Rate Testing Jig</title>
+      <link>http://jsyang.ca/hardware/ghlive-controller-rate-testing/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hardware/ghlive-controller-rate-testing/</guid>
+      <description>                             </description>
     </item>
     
     <item>

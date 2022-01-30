@@ -6,7 +6,17 @@
     <description>Recent content in Guides on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello world in circuit board design: the most basic KiCad 6 tutorial</title>
+      <link>http://jsyang.ca/guides/kicad-basic-pcb-design/</link>
+      <pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/kicad-basic-pcb-design/</guid>
+      <description>KiCad is the open source standard for PCB design and these days a prerequisite for cheap professional PCB manufacture. I&amp;rsquo;m learning this tool out of necessity; the ultimate goal is to create a breakout board for a TSOP-50 (50-pin Thin Small Outline Package format) mask ROM chip located on a Franklin Bookman II device containing its onboard firmware in order to further my reverse engineering efforts on the system.
+Once this board is created, it can be ordered through PCBWay, JLPCB, ALLPCB or any budget professional small-scale PCB manufacturer.</description>
+    </item>
+    
     <item>
       <title>Casual System Admin from a Dell Axim X51v PDA</title>
       <link>http://jsyang.ca/guides/casual-system-admin-from-dell-axim-x51v/</link>

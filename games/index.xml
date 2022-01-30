@@ -6,7 +6,25 @@
     <description>Recent content in Games on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/games/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/games/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sierra AGI Adventure Game Interpreter</title>
+      <link>http://jsyang.ca/games/sierra-agi-js/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/sierra-agi-js/</guid>
+      <description>This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&amp;rsquo;s Adventure Game Interpreter was created in the mid 80&amp;rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&amp;rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.</description>
+    </item>
+    
+    <item>
+      <title>TODO-- 3D Terrain Sandbox and Game Engine</title>
+      <link>http://jsyang.ca/games/sandbox3d/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/games/sandbox3d/</guid>
+      <description>Originally written as a way to experiment with vector graphics in PixiJS. It has since formed into a complete game. Celestial Combat is a game of galactic colonization, and conquest.</description>
+    </item>
+    
     <item>
       <title>Celestial Combat</title>
       <link>http://jsyang.ca/games/celcom/</link>

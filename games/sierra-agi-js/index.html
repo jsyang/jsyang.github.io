@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/games/sierra-agi-js/" />
+  <link rel="canonical" href="http://jsyang.ca/games/sierra-agi-js/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "games",
+      "name" : "Sierra AGI Adventure Game Interpreter",
+      "headline" : "Sierra AGI Adventure Game Interpreter",
+      "description" : "This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line\u0026rsquo;s Adventure Game Interpreter was created in the mid 80\u0026rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra\u0026rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-01-18 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-01-18 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/games\/sierra-agi-js\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Sierra AGI Adventure Game Interpreter - jsyang.ca</title>
+  <meta property="og:title" content="Sierra AGI Adventure Game Interpreter - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&rsquo;s Adventure Game Interpreter was created in the mid 80&rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Sierra AGI Adventure Game Interpreter</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2021-01-18 00:00:00 UTC">
+                            18 Jan 2021
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <blockquote>
+<p>This is a project that aims to recreate one of the most beautiful game engines ever created. Sierra On-Line&rsquo;s Adventure Game Interpreter was created in the mid 80&rsquo;s by Sierra employees Jeff Stephenson and Chris Iden and quickly became the cornerstone on which many of Sierra&rsquo;s early titles would be based. AGI was built around the concept of a virtual machine that made it fairly easy for Sierra to port their games to multiple platforms.</p>
+</blockquote>
+<blockquote>
+<p>The virtual machine was based around an in-house developed C-like programming language called &ldquo;Logic&rdquo;. When the programmer compiled a Logic file, the compiler produced an 8-bit &ldquo;opcode&rdquo; for each statement. In the interpreter, each opcode was defined in a jump table which simply pointed to an assembler subroutine. This made the system very fast and ridiculously elegant, because the logic itself never needed to be recompiled no matter what the target platform was. It was also fairly easy to extend the system which can be witnessed by the numerous versions of AGI interpreters produced by Sierra.</p>
+</blockquote>
+<blockquote>
+<p>By the time these games were created, storage was limited and expensive. To reduce asset size, the game&rsquo;s background images were defined as vector graphics instead of full raster images. When the game needed to display a new background image, it was drawn into a buffer and finally blitted to the screen. This is interesting because this theoretically allows us to rescale the images to any resolution. It&rsquo;s also interesting from an artistic perspective as it allows us to trace how the artist originally drawed the pictures, command by command.</p>
+</blockquote>
+<blockquote>
+<p>Another interesting feature of the engine was its ability render a room with a pseudo-perspective. The engine divided the screen into 15 sections, called priority bands. This was basically a kind of low-resolution Z-buffer. All background drawing commands were drawn both with a visual color and a priority value, so everytime the engine had to draw an animated object, each of its pixels were compared against the backgrounds pixel&rsquo;s priority value to decide if the pixel was to be drawn or not. All control-lines and boundaries where the player could not go was also drawn into this priority buffer.</p>
+</blockquote>
+<p>I forked the original library and implemented a large number of features. The additions I added made it possible play Space Quest II in the interpreter. Lots of low-level VM debugging was done to get to a workable state and its compatibility is still low.</p>
+<p>Major changes:</p>
+<ul>
+<li>TTS for all in-game dialog</li>
+<li>saving and restoring game states to localstorage</li>
+<li>Implemented the menu bar common to AGI games</li>
+<li>Implement available player actions as buttons</li>
+<li>Game objects respect priority areas on-screen</li>
+<li>Fix drawing routines to be more compatible with behavior seen in published games</li>
+<li>Implemented missing movement modes for game objects (chase player, etc.)</li>
+<li>Implemented inventory item graphic display</li>
+<li>Implemented interpreter clock</li>
+</ul>
+<p>The changes were transformational to the original project. It is much more of a complete game engine than the JS tech demo of the original <code>agi.js</code> project. As with any large and novel software project: devils were in the details. Confronting quirks in the VM bytecode, register implementation, and hacks used by the game designers / developers to afford compatibility with published games gave me tremendous opportunity to learn about ABI design (Application Binary Interface) and emulation. For now this fork of the project has paused, source code being available here: <a href="https://github.com/jsyang/agi">https://github.com/jsyang/agi</a>.</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

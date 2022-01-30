@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/guides/kicad-basic-pcb-design/" />
+  <link rel="canonical" href="http://jsyang.ca/guides/kicad-basic-pcb-design/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "guides",
+      "name" : "Hello world in circuit board design: the most basic KiCad 6 tutorial",
+      "headline" : "Hello world in circuit board design: the most basic KiCad 6 tutorial",
+      "description" : "KiCad is the open source standard for PCB design and these days a prerequisite for cheap professional PCB manufacture. I\u0026rsquo;m learning this tool out of necessity; the ultimate goal is to create a breakout board for a TSOP-50 (50-pin Thin Small Outline Package format) mask ROM chip located on a Franklin Bookman II device containing its onboard firmware in order to further my reverse engineering efforts on the system.\nOnce this board is created, it can be ordered through PCBWay, JLPCB, ALLPCB or any budget professional small-scale PCB manufacturer.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-01-03 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2022-01-03 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/guides\/kicad-basic-pcb-design\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Hello world in circuit board design: the most basic KiCad 6 tutorial - jsyang.ca</title>
+  <meta property="og:title" content="Hello world in circuit board design: the most basic KiCad 6 tutorial - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="KiCad is the open source standard for PCB design and these days a prerequisite for cheap professional PCB manufacture. I&rsquo;m learning this tool out of necessity; the ultimate goal is to create a breakout board for a TSOP-50 (50-pin Thin Small Outline Package format) mask ROM chip located on a Franklin Bookman II device containing its onboard firmware in order to further my reverse engineering efforts on the system.
+Once this board is created, it can be ordered through PCBWay, JLPCB, ALLPCB or any budget professional small-scale PCB manufacturer." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Hello world in circuit board design: the most basic KiCad 6 tutorial</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2022-01-03 00:00:00 UTC">
+                            03 Jan 2022
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <p><img src="/images/kicad-pcb-guide-1/kicad_logo_small.png" alt=""></p>
+<p>KiCad is the open source standard for PCB design and these days a prerequisite for cheap professional PCB manufacture. I&rsquo;m learning this tool out of necessity; the ultimate goal is to create a breakout board for a TSOP-50 (50-pin Thin Small Outline Package format) mask ROM chip located on a <a href="https://jsyang.ca/franklin-electronics/reverse-engineering.html">Franklin Bookman II device containing its onboard firmware</a> in order to further my reverse engineering efforts on the system.</p>
+<p>Once this board is created, it can be ordered through PCBWay, JLPCB, ALLPCB or any budget professional small-scale PCB manufacturer. This is likely the simplest project that we can undertake; a &ldquo;hello world&rdquo; of PCB design which is both useful and a realistic goal for a first stab.</p>
+<p>With these end results in mind, let&rsquo;s begin:</p>
+<h2 id="part-a-logical-chip-design">Part A: Logical chip design</h2>
+<ol>
+<li>
+<p>We&rsquo;ll be using KiCad 6.0.0 (released 2021-12-15), download and install it for your OS from <a href="https://www.kicad.org/">https://www.kicad.org/</a></p>
+</li>
+<li>
+<p>Open up KiCad and via menus: <code>File &gt; New Project</code>
+Then create a folder to contain the new project files: <code>tsop50breakout</code></p>
+</li>
+</ol>
+<p><img src="/images/kicad-pcb-guide-1/1.png" alt=""></p>
+<ol start="3">
+<li>
+<p>Open the &ldquo;Symbol Editor&rdquo;.</p>
+</li>
+<li>
+<p>Select the &ldquo;Memory_ROM&rdquo; item in the library list on the left.
+<img src="/images/kicad-pcb-guide-1/2.png" alt=""></p>
+</li>
+<li>
+<p>Then in the editor toolbar (top left) click on the New Symbol icon</p>
+</li>
+<li>
+<p>Name this symbol <code>TSOP50</code></p>
+</li>
+<li>
+<p>There should now be 2 lines of text on top of each other: &ldquo;TSOP50&rdquo; and &ldquo;U&rdquo;. Move the mouse cursor over this text and press M on the keyboard (for move) then move the mouse cursor to a new location where the text will be translated.</p>
+</li>
+<li>
+<p>On the right hand side toolbar, click on the &ldquo;Add a pin (P)&rdquo; icon to add our chip&rsquo;s pins</p>
+</li>
+</ol>
+<p><img src="/images/kicad-pcb-guide-1/3.png" alt=""></p>
+<ol start="9">
+<li>
+<p>Name this pin &ldquo;1&rdquo;
+<img src="/images/kicad-pcb-guide-1/4.png" alt=""></p>
+</li>
+<li>
+<p>Duplicate the pin 25 times per side with the Cmd-D hotkey, renaming each pin an increasing number for its new name: e.g. 2, 3, 4, &hellip;, 48, 49, 50</p>
+</li>
+<li>
+<p>Select a bank of 25 pins and use the &ldquo;Flip selected items from left to right (X)&rdquo;, make sure to align the pins so that the word &ldquo;Input&rdquo; is facing toward the center of the chip in the final pin orientation.
+<img src="/images/kicad-pcb-guide-1/5.png" alt=""></p>
+</li>
+<li>
+<p>Draw the chip body with the Rectangle tool and you should end up with something like this:
+<img src="/images/kicad-pcb-guide-1/7.png" alt="">
+<img src="/images/kicad-pcb-guide-1/6.png" alt=""></p>
+</li>
+<li>
+<p>Click the floppy disk icon in the top left toolbar to &ldquo;Save all changes&rdquo;.</p>
+</li>
+</ol>
+<p>You are now done creating this custom symbol. Store it in your library under &ldquo;Memory_ROM&rdquo;. The logical chip design has been completed.</p>
+<h2 id="part-b-footprint-editor">Part B: Footprint Editor</h2>
+<ol>
+<li>Open the Footprint Editor
+<img src="/images/kicad-pcb-guide-1/8.png" alt=""></li>
+<li>In the top left toolbar click on the &ldquo;Create a new footprint using the Footprint Wizard&rdquo;
+<img src="/images/kicad-pcb-guide-1/9.png" alt=""></li>
+<li>Select the &ldquo;SOIC&rdquo; (10) Footprint Generator, which will take in some parameters you can set to generate a template footprint
+<img src="/images/kicad-pcb-guide-1/10.png" alt=""></li>
+<li>In the parameters table, change to these values, leaving others as defaults:</li>
+</ol>
+<blockquote>
+<ul>
+<li>pad count = 50</li>
+<li>pad length = 8 mm</li>
+<li>row spacing = 16 mm</li>
+</ul>
+<blockquote>
+<p>(this sets the space between the rows as being at most 16mm apart)</p>
+</blockquote>
+</blockquote>
+<ol start="5">
+<li>Click on the &ldquo;Export footprint to editor&rdquo; to export this chip footprint!
+<img src="/images/kicad-pcb-guide-1/11.png" alt=""></li>
+<li>Once back inside the main Footprint Editor, save the footprint by clicking on the floppy disk icon and then saving it within the &ldquo;Package_SO&rdquo; library as &ldquo;TSOP-50&rdquo;
+<img src="/images/kicad-pcb-guide-1/12.png" alt=""></li>
+</ol>
+<p>You will notice this is very similar to the existing &ldquo;TSOP-II-54_22.2x10.16mm_P0.8mm&rdquo; footprint, which is exactly as intended. With only 50 pins, we would not require the extra 4 but can use this as a backup footprint for manufacturing.</p>
+<h2 id="part-c-schematic-editor">Part C: Schematic Editor</h2>
+<ol>
+<li>
+<p>Open the schematic and insert the &ldquo;TSOP-50&rdquo; symbol into it that you created from Part A</p>
+</li>
+<li>
+<p>Add 2 x &ldquo;Conn 01x25&rdquo; generic connector symbols to the schematic diagram</p>
+</li>
+<li>
+<p>Double click on each of the three components in your schematic
+And ensure they have footprints tied to them from the symbol library</p>
+</li>
+</ol>
+<ul>
+<li>J1 (1 x 25 connector) should be tied to</li>
+<li>J2 (1 x 25 connector)</li>
+<li>U1 (TSOP-50)
+<img src="/images/kicad-pcb-guide-1/13.png" alt=""></li>
+</ul>
+<ol start="4">
+<li>Ensure all the pins / traces of the components are linked to one another with traces</li>
+<li>Save the schematic and exit the editor.</li>
+</ol>
+<h2 id="part-d-pcb-editor">Part D: PCB Editor</h2>
+<ol>
+<li>
+<p>Either use the schematic created from Part C &hellip; OR insert the footprints manually with the &ldquo;Add a footprint&rdquo; icon
+<img src="/images/kicad-pcb-guide-1/15.png" alt=""></p>
+</li>
+<li>
+<p>Once the component footprints are in, you can draw the traces with the &ldquo;Route tracks (x)&rdquo; tool
+<img src="/images/kicad-pcb-guide-1/16.png" alt=""></p>
+</li>
+<li>
+<p>Using the V key, you can choose to route traces through vias so they can make use of the underside of the PCB
+<img src="/images/kicad-pcb-guide-1/14.png" alt=""></p>
+</li>
+<li>
+<p>Once components and traces are all laid out accordingly, you can draw a rectangular (or other shape) bound to indicate the main PCB body. Use the &ldquo;Edge.Cuts&rdquo; layer for this. It is usually in yellow.</p>
+</li>
+<li>
+<p>Once your PCB has been drawn, you can also view it in 3D via &ldquo;View &gt; 3D Viewer&rdquo;</p>
+</li>
+</ol>
+<p><img src="/images/kicad-pcb-guide-1/17.png" alt=""></p>
+<p>The breakout board is now complete!</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>
