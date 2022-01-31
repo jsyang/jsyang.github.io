@@ -17,9 +17,9 @@
            "@id": "http:\/\/jsyang.ca\/"
       },
       "articleSection" : "games",
-      "name" : "TODO-- 3D Terrain Sandbox and Game Engine",
-      "headline" : "TODO-- 3D Terrain Sandbox and Game Engine",
-      "description" : "",
+      "name" : "3D Terrain Sandbox and Game Engine",
+      "headline" : "3D Terrain Sandbox and Game Engine",
+      "description" : "Holiday projects in the 2020 season were extremely plentiful owing to the local COVID-19 lockdown measures. This was another game-related venture that I undertook in late November 2020 til early January 2021. What started off as a simple three.js experimentation sandbox to learn the ins and outs of the library and its API soon became a vastly expanded custom game engine project. Progress is documented below:\nFirst signs of life: a simple randomized 3D heightmap terrain generator with orbit controls",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
@@ -33,10 +33,11 @@
       "keywords" : [  ]
   }
 </script>
-<title>TODO-- 3D Terrain Sandbox and Game Engine - jsyang.ca</title>
-  <meta property="og:title" content="TODO-- 3D Terrain Sandbox and Game Engine - jsyang.ca" />
+<title>3D Terrain Sandbox and Game Engine - jsyang.ca</title>
+  <meta property="og:title" content="3D Terrain Sandbox and Game Engine - jsyang.ca" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="" />
+  <meta name="description" content="Holiday projects in the 2020 season were extremely plentiful owing to the local COVID-19 lockdown measures. This was another game-related venture that I undertook in late November 2020 til early January 2021. What started off as a simple three.js experimentation sandbox to learn the ins and outs of the library and its API soon became a vastly expanded custom game engine project. Progress is documented below:
+First signs of life: a simple randomized 3D heightmap terrain generator with orbit controls" />
 
   <link
     rel="stylesheet"
@@ -72,7 +73,7 @@
                 <div class="head-line"></div>
             </a>
             <header class="post-header">
-                <h1 class="post-title">TODO-- 3D Terrain Sandbox and Game Engine</h1>
+                <h1 class="post-title">3D Terrain Sandbox and Game Engine</h1>
                 <div class="row">
                     <div class="col-xs-6">
                         
@@ -90,7 +91,74 @@
             </header>
 
             <div class="post-content markdown-body">
-                
+                <p>Holiday projects in the 2020 season were extremely plentiful owing to the local COVID-19 lockdown measures. This was another game-related venture that I undertook in late November 2020 til early January 2021. What started off as a simple <a href="https://threejs.org/"><code>three.js</code></a> experimentation sandbox to learn the ins and outs of the library and its API soon became a vastly expanded custom game engine project. Progress is documented below:</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-26-at-8.10.50-PM.png" alt=""></p>
+<p>First signs of life: a simple randomized 3D heightmap terrain generator with orbit controls</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/-5-mf6gMZog" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<br>
+Video of the initial terrain editor, using brushes to increase / decrease elevation of the terrain
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-27-at-3.01.15-AM.png" alt=""></p>
+<p>Addition of trees and the ability to &ldquo;spraypaint&rdquo; them onto terrain</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-27-at-3.03.04-AM.png" alt=""></p>
+<p>Appearance of &ldquo;water&rdquo; for areas below sea-level</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-27-at-4.57.01-AM.png" alt=""></p>
+<p>This build added the ability to paint the terrain through the editor, giving the land a slightly more believable look</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-27-at-4.49.15-PM.png" alt=""></p>
+<p>Added a skybox and ambient lighting. Textures on terrain downscaled for a stylistic low-poly / low-spec look</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-11-28-at-1.57.45-AM.png" alt=""></p>
+<p>Added shrubbery and other small plants which were represented by instanced sprites</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/GGxLeAQrtTY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<br>
+<p>Created a FPS mode where the player can walk around the environment</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/aH_5sL0TK5s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Tanks, weaponry, collision detection, entity pathing, and a game loop were all added in this build</p>
+<p><img src="/images/fps-demo/Screen-Shot-2020-12-01-at-1.05.53-AM.png" alt=""></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/G_JtoGS9xgM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<br>
+<p>Different vehicles and entities were added, along with a complete Entity-Component-System (ECS) framework to manage all of the composite interactions for weapon types, ammo types, etc.</p>
+<p>Here you can see two groups of foot soldiers engaging each other in basic ranged combat as well as corpses and vehicle husks.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Ex5Mu7-QYoA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<br>
+<p>The latest update here is simply a full fledged demo of nearly all aspects of the FPS mode of the engine so far</p>
+<h2 id="live">Live</h2>
+<p>You can access the latest builds of this demo here:</p>
+<ul>
+<li>
+<p><a href="https://jsyang.ca/fps3/simple/index.html">Terrain Editor</a></p>
+<ul>
+<li>Click the instructions for more details</li>
+</ul>
+</li>
+<li>
+<p><a href="https://jsyang.ca/fps3/simple/fps.html">Begin a simulator session</a></p>
+<ul>
+<li>Note: you can only use this once a terrain has been created</li>
+</ul>
+</li>
+</ul>
+<h2 id="source-code">Source code</h2>
+<p>Source code for this demo lives here: <a href="https://github.com/jsyang/fps3">github.com/jsyang/fps3</a></p>
+
             </div>
             
         </div>

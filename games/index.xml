@@ -18,12 +18,13 @@
     </item>
     
     <item>
-      <title>TODO-- 3D Terrain Sandbox and Game Engine</title>
+      <title>3D Terrain Sandbox and Game Engine</title>
       <link>http://jsyang.ca/games/sandbox3d/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>http://jsyang.ca/games/sandbox3d/</guid>
-      <description></description>
+      <description>Holiday projects in the 2020 season were extremely plentiful owing to the local COVID-19 lockdown measures. This was another game-related venture that I undertook in late November 2020 til early January 2021. What started off as a simple three.js experimentation sandbox to learn the ins and outs of the library and its API soon became a vastly expanded custom game engine project. Progress is documented below:
+First signs of life: a simple randomized 3D heightmap terrain generator with orbit controls</description>
     </item>
     
     <item>
