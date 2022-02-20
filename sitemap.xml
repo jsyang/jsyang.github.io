@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://jsyang.ca/hacks/</loc>
+    <lastmod>2022-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/</loc>
+    <lastmod>2022-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jsyang.ca/hacks/bookman-desktop-manager-cd-key-reversed/</loc>
+    <lastmod>2022-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jsyang.ca/guides/</loc>
     <lastmod>2022-01-03T00:00:00+00:00</lastmod>
   </url>
@@ -10,16 +25,6 @@
   <url>
     <loc>http://jsyang.ca/guides/kicad-basic-pcb-design/</loc>
     <lastmod>2022-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/</loc>
-    <lastmod>2022-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jsyang.ca/hacks/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

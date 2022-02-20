@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/hacks/bookman-desktop-manager-cd-key-reversed/" />
+  <link rel="canonical" href="http://jsyang.ca/hacks/bookman-desktop-manager-cd-key-reversed/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "hacks",
+      "name" : "Writing a CD-key generator for the Bookman Desktop Manager",
+      "headline" : "Writing a CD-key generator for the Bookman Desktop Manager",
+      "description" : "A bit of history Franklin Bookman devices were early eBook readers with plug in ROM cards that distributed (mostly) reference content. Later iterations could read user-written memory cards containing licensed content. These models often came with a \u0026ldquo;connectivity kit\u0026rdquo; that included\n a serial \/ USB data transfer cable a 2MB \/ 4MB read-write memory card a CD-ROM with the Bookman Desktop Manager software 💿  ☝️ Contents of this are of great interest    Example of a CD with a key code sticker DRM scheme Installing the Bookman Desktop Manager (BDM) requires the entry of a valid CD key.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-02-18 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2022-02-18 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/hacks\/bookman-desktop-manager-cd-key-reversed\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Writing a CD-key generator for the Bookman Desktop Manager - jsyang.ca</title>
+  <meta property="og:title" content="Writing a CD-key generator for the Bookman Desktop Manager - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="A bit of history Franklin Bookman devices were early eBook readers with plug in ROM cards that distributed (mostly) reference content. Later iterations could read user-written memory cards containing licensed content. These models often came with a &ldquo;connectivity kit&rdquo; that included
+ a serial / USB data transfer cable a 2MB / 4MB read-write memory card a CD-ROM with the Bookman Desktop Manager software 💿  ☝️ Contents of this are of great interest    Example of a CD with a key code sticker DRM scheme Installing the Bookman Desktop Manager (BDM) requires the entry of a valid CD key." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Writing a CD-key generator for the Bookman Desktop Manager</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2022-02-18 00:00:00 UTC">
+                            18 Feb 2022
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <h2 id="a-bit-of-history">A bit of history</h2>
+<p><a href="https://jsyang.ca/franklin-electronics">Franklin Bookman</a> devices were early eBook readers with plug in ROM cards that distributed (mostly) reference content. Later iterations could read user-written memory cards containing licensed content. These models often came with a <a href="https://jsyang.ca/franklin-electronics/carts?BCD-2">&ldquo;connectivity kit&rdquo;</a> that included</p>
+<ul>
+<li>a serial / USB data transfer cable</li>
+<li>a 2MB / 4MB read-write memory card</li>
+<li><strong>a CD-ROM with the Bookman Desktop Manager software</strong> 💿
+<ul>
+<li>☝️ Contents of this are of great interest</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-of-a-cd-with-a-key-code-sticker">Example of a CD with a key code sticker</h2>
+<p><img src="/images/bdm-cd-key/BCD-2.5.jpg" alt="BCD-4"></p>
+<h3 id="drm-scheme">DRM scheme</h3>
+<p>Installing the Bookman Desktop Manager (BDM) requires the entry of a valid CD key. This unique key was used to generate a PID (Peripheral IDentification) number that was bound to a Franklin.com consumer account. eBooks with <a href="https://en.wikipedia.org/wiki/Digital_rights_management">DRM</a> could then be bought and downloaded from the DRM servers, ensuring only a single user could write the content to memory cards with their BDM program.</p>
+<!--
+In short the DRM worked like this:
+
+1. Start the BDM install program from the CD
+2. Enter the unique CD-key
+3. Setup program takes the CD-key and generates a PID (CD-key + some system hardware identifier)
+4. BDM install completes successfully and you can transfer data to the memory card
+5. User buys a title from Franklin.com through their website
+6. User downloads files for the title. These are generated using the PID:
+    a. An encrypted copy of the actual content (ex: reference book or speaking dictionary)
+    b. A license file for the encrypted content
+7. If the PID matches, the content is successfully decrypted and can be transferred for consumption on a Bookman3 device
+-->
+<p>As part of ongoing research for the reverse engineering side of the <a href="https://jsyang.ca/franklin-electronics">Bookman Archive</a>, I wanted to probe deeply into the workings of BDM; after all, it contained all the Bookman3 data transfer code that would prove useful in further technical investigations.</p>
+<p>Though several examples of CD-keys along with the <a href="https://jsyang.ca/franklin-electronics/#supporting-software">different versions of BDM</a> were graciously donated, I could not resist the reverse engineering challenge in front of me. My goal was to create a CD-key generator that would allow anybody to defeat the CD-key validation step of the BDM install program.</p>
+<p>Even if you could generate a CD-key, it was highly unlikely this could be used to download paid content free of charge for many reasons. Franklin.com stopped operating its eBook download service sometime in the late 2000s, making downloads impossible for everybody, including users with &ldquo;real&rdquo; CD-keys. So ethically there were no issues either.</p>
+<p>With that out of the way, let&rsquo;s walk through the process.</p>
+<h3 id="step-1-extract-the-installshield-files">Step 1: Extract the InstallShield files</h3>
+<p>The BDM setup program used InstallShield as the setup platform to run custom logic and put files in their final destinations. Extract all of the files with <a href="https://github.com/twogood/unshield"><code>unshield</code></a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install `unshield` in MacOS</span>
+brew install unshield
+
+<span style="color:#75715e"># Go within the directory where the InstallShield file `data1.cab` is located and extract all files from </span>
+<span style="color:#75715e"># this setup package into a directory called `extracted`</span>
+unshield x data1.cab -d extracted 
+</code></pre></div><p>You will find a file called <code>installbm3.dll</code>. This contains all the PID and CD-key validation logic. We need to look inside.
+<img src="/images/bdm-cd-key/installbm3.dll.png" alt="installbm3.dll"></p>
+<h3 id="step-2-first-look-at-the-file-in-ghidra">Step 2: First look at the file in Ghidra</h3>
+<p>Ghidra is a software reverse engineering toolkit that allows us to pick apart compiled code in various ways. We will use this to analyze exactly what the validation logic is doing.</p>
+<p>When you are opening the <code>installbm3.dll</code> file for the first time, Ghidra will ask if you want it to auto-analyze the binary content after correctly identifying it as a little-endian x86 32-bit PE format <a href="https://en.wikipedia.org/wiki/Dynamic-link_library">DLL</a>.</p>
+<p><img src="/images/bdm-cd-key/ghidra0.png" alt="installbm3.dll"></p>
+<p>Say yes; it will identify two exported functions from the shared library: <code>entry</code> and <code>install</code>.</p>
+<p><img src="/images/bdm-cd-key/ghidra1.png" alt="installbm3.dll"></p>
+<p>Also identified are several long strings of interest:</p>
+<ul>
+<li><code>&quot;203: Invalid symbol&quot;</code> at address <code>0x10007080</code></li>
+<li><code>&quot;204: Invalid check digit&quot;</code> at address <code>0x10007094</code></li>
+<li><code>&quot;202: Wrong length&quot;</code> at address <code>0x100070b0</code></li>
+<li><code>&quot;201: Missing '-'&quot;</code> at address <code>0x100070c4</code></li>
+</ul>
+<p><img src="/images/bdm-cd-key/ghidra2.png" alt="installbm3.dll"></p>
+<p>This last string is most interesting because we know valid CD-keys always contain a dash between a front 4 digits and rear 4 digits. We can check what code references this string: the instruction at address <code>0x10001012</code>. Looking at the decompiler window, the instruction forms part of an IF statement, part of a function that contain <code>return</code>s with some of the other strings; highly likely this is the validation function.</p>
+<p><img src="/images/bdm-cd-key/ghidra3.png" alt="installbm3.dll"></p>
+<h3 id="step-3-analysis-of-the-logic-flow">Step 3: Analysis of the logic flow</h3>
+<p>Decompilation makes it fairly clear at this point:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">FUN_10001000</span>(<span style="color:#66d9ef">int</span> param_1,uint <span style="color:#f92672">*</span>param_2) {
+    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>pcVar1;
+    uint uVar2;
+    uint uVar3;
+    uint uVar4;
+    uint uVar5;
+    uint uVar6;
+    uint uVar7;
+    uint uVar8;
+    <span style="color:#66d9ef">int</span> iVar9;
+    <span style="color:#66d9ef">char</span> local_c [<span style="color:#ae81ff">12</span>];
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)(param_1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span>) {
+        <span style="color:#66d9ef">return</span> s_201:_Missing_<span style="color:#e6db74">&#39;-&#39;</span>_100070c4;
+    }
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)(param_1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\0&#39;</span>) {
+        <span style="color:#66d9ef">return</span> s_202:_Wrong_length_100070b0;
+    }
+    iVar9 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">do</span> {
+        <span style="color:#66d9ef">if</span> (iVar9 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span>) {
+        pcVar1 <span style="color:#f92672">=</span> FUN_10001110((<span style="color:#66d9ef">int</span>)(local_c <span style="color:#f92672">+</span> iVar9)[param_1 <span style="color:#f92672">-</span> (<span style="color:#66d9ef">int</span>)local_c]);
+        local_c[iVar9] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span>)pcVar1;
+        <span style="color:#66d9ef">if</span> ((<span style="color:#66d9ef">char</span>)pcVar1 <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">return</span> s_203:_Invalid_symbol_10007080;
+        }
+        }
+        iVar9 <span style="color:#f92672">=</span> iVar9 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    } <span style="color:#66d9ef">while</span> (iVar9 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>);
+    uVar2 <span style="color:#f92672">=</span> FUN_100011c0((<span style="color:#66d9ef">int</span>)local_c);
+    <span style="color:#66d9ef">if</span> (uVar2 <span style="color:#f92672">!=</span> (<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">8</span>]) {
+        <span style="color:#66d9ef">return</span> s_204:_Invalid_check_digit_10007094;
+    }
+    uVar2 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">0</span>],<span style="color:#ae81ff">0x1e</span>);
+    uVar3 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">1</span>],<span style="color:#ae81ff">0x19</span>);
+    uVar4 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">2</span>],<span style="color:#ae81ff">0x14</span>);
+    uVar5 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">3</span>],<span style="color:#ae81ff">0xf</span>);
+    uVar6 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">5</span>],<span style="color:#ae81ff">10</span>);
+    uVar7 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">6</span>],<span style="color:#ae81ff">5</span>);
+    uVar8 <span style="color:#f92672">=</span> FUN_10001220((<span style="color:#66d9ef">int</span>)local_c[<span style="color:#ae81ff">7</span>],<span style="color:#ae81ff">0</span>);
+    uVar2 <span style="color:#f92672">=</span> FUN_10001140(uVar2 <span style="color:#f92672">|</span> uVar3 <span style="color:#f92672">|</span> uVar4 <span style="color:#f92672">|</span> uVar5 <span style="color:#f92672">|</span> uVar6 <span style="color:#f92672">|</span> uVar7 <span style="color:#f92672">|</span> uVar8);
+    <span style="color:#f92672">*</span>param_2 <span style="color:#f92672">=</span> uVar2;
+    
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>DAT_10007078;
+}
+</code></pre></div><p>Translating into plain English pseudo-code:</p>
+<ol>
+<li>Take in 2 arguments: a C string, and a pointer</li>
+<li>Check if the 4th character is a dash, return with an error message if not</li>
+<li>Check if the string is 9 characters long, return with an error message if not</li>
+<li>Apply a function to each character of the string, excluding the 4th character &ldquo;-&rdquo; and store it in an <code>char[12]</code> array</li>
+<li>Use the <code>char[12]</code> array to generate a check digit and compare it with the last digit of the same array</li>
+<li>Check if the generated check digit matches the last digit, return with an error if not
+(We can definitely say that <strong>last digit of the CD-key is used as a check digit</strong>)</li>
+<li>Do some bitwise operations with the <code>char[12]</code> array values to generate another value (possibly the PID)</li>
+<li>Store that PID value at pointer argument location</li>
+<li>Return with an address of some unknown</li>
+</ol>
+<p>Looking into #4 here, we see the function applied to each character calls a <a href="https://www.cplusplus.com/reference/cstring/strchr/">standard library function <code>strchr</code></a> that returns either the pointer to the first instance of a character found within the search string or a null pointer. The search string references a 32 length C string at address <code>0x10007030</code> that has the value <code>26B0KEL1AFD9M38T5NPGZ7XHYV4WJRCS</code>. I strongly believe this is the set of valid CD-key characters.</p>
+<p>The function from #4 then returns either the value -1 or a number between 0 and 31 inclusive (the index of the character within the search string).</p>
+<p>Finally, the function from #5 takes only a single argument: a <code>char *</code>, and proceeds to perform some sort of bitwise transformation on each of its 7 members (skipping the dash character index) to pack into a single <code>uint</code> value as the return.</p>
+<p><img src="/images/bdm-cd-key/ghidra4.png" alt="installbm3.dll"></p>
+<p>This was definitely the most cryptic part so far.</p>
+<h3 id="step-4-try-to-recreate-the-mechanism">Step 4: Try to recreate the mechanism</h3>
+<p>Possessing all of these findings, along with a list of known valid CD-keys, I attempted to write some NodeJS code to regenerate the check digits. If the generated check digit matched the last digit of the known valid CD-keys then we could be confident a keygen could be created!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">VALID_DIGITS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;26B0KEL1AFD9M38T5NPGZ7XHYV4WJRCS&#39;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">translatePID7toOffsets</span>(<span style="color:#a6e22e">pid7</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">offsets7</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint32Array</span>(<span style="color:#ae81ff">8</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">4</span>) {
+            <span style="color:#a6e22e">offsets7</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">VALID_DIGITS</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">pid7</span>[<span style="color:#a6e22e">i</span>]);
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">offsets7</span>;
+}
+
+<span style="color:#75715e">// Translated from C code to JS
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCheckDigit</span>(<span style="color:#a6e22e">pid7Offsets</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint32Array</span>(<span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkDigit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint32Array</span>(<span style="color:#ae81ff">1</span>);;
+    <span style="color:#a6e22e">multiplier</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x2f</span>;
+
+    <span style="color:#66d9ef">do</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span>) {
+            <span style="color:#a6e22e">checkDigit</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">pid7Offsets</span>[<span style="color:#a6e22e">index</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x25</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">multiplier</span>[<span style="color:#ae81ff">0</span>];
+        }
+
+        <span style="color:#a6e22e">multiplier</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*=</span> <span style="color:#a6e22e">multiplier</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>;
+    } <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>);
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">digitCharCode</span> <span style="color:#f92672">=</span> ((<span style="color:#a6e22e">checkDigit</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x7c00</span> <span style="color:#f92672">^</span> <span style="color:#a6e22e">checkDigit</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x7c00</span>) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">^</span> <span style="color:#a6e22e">checkDigit</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x3e0</span>) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">^</span> <span style="color:#a6e22e">checkDigit</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x1f</span>;
+
+
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">multiplier</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;digitCharCode&#39;</span>, <span style="color:#a6e22e">digitCharCode</span>);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">VALID_DIGITS</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">digitCharCode</span>, <span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#75715e">// Known valid CD-keys (from photos)
+</span><span style="color:#75715e"></span><span style="color:#e6db74">`HG7S-W0TT
+</span><span style="color:#e6db74">ZPAS-T8YN
+</span><span style="color:#e6db74">7PVG-VGNK
+</span><span style="color:#e6db74">XXAC-V8DH
+</span><span style="color:#e6db74">HMLS-WGF6
+</span><span style="color:#e6db74">ZFXX-N8L3
+</span><span style="color:#e6db74">HGNG-9W8R`</span>
+    .<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">trim</span>())
+    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">getCheckDigit</span>(<span style="color:#a6e22e">translatePID7toOffsets</span>(<span style="color:#a6e22e">a</span>))))
+</code></pre></div><p>No matter what I tried, this first draft of the code would not produce the correct check digit&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ node cd-keygen.js
+<span style="color:#ae81ff">1906018618</span>
+digitCharCode <span style="color:#ae81ff">6</span>
+HG7S-W0TT <span style="color:#ae81ff">4</span>
+-1400466497
+digitCharCode <span style="color:#ae81ff">11</span>
+ZPAS-T8YN <span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">1928381235</span>
+digitCharCode <span style="color:#ae81ff">27</span>
+7PVG-VGNK E
+<span style="color:#ae81ff">1319657504</span>
+digitCharCode <span style="color:#ae81ff">9</span>
+XXAC-V8DH H
+-344035836
+digitCharCode <span style="color:#ae81ff">19</span>
+HMLS-WGF6 <span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">1035679003</span>
+digitCharCode <span style="color:#ae81ff">8</span>
+ZFXX-N8L3 Y
+-2131405270
+digitCharCode <span style="color:#ae81ff">4</span>
+HGNG-9W8R J
+</code></pre></div><p>The <code>getCheckDigit()</code> function was definitely not behaving the same as its decompiled C counterpart.</p>
+<h3 id="step-5-learn-something">Step 5: Learn something</h3>
+<p>Running through the logic in my head and in a NodeJS REPL, it struck me: surely the <code>multiplier</code> variable that I&rsquo;d been using was being overflowed within 2 or 3 iterations of the loop both in C and in JS. Why would the code produce an overflow here?</p>
+<p>I slept on this question for a day only to produce a further question:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/18195715/why-is-unsigned-integer-overflow-defined-behavior-but-signed-integer-overflow-is">What happens when you overflow an <code>unsigned int</code> value in C (compiled in 32-bit x86)?</a>
+<ul>
+<li>Signed integers overflows cause undefined behavior: i.e. anything can happen (not deterministic)</li>
+<li>Unsigned integers overflows wrap around in 2^N modulo and <strong>IS DETERMINISTIC</strong></li>
+</ul>
+</li>
+</ul>
+<p>Answering that, I started to realize that the deterministic overflow being used in that function meant the developers were doing this intentionally! And sure enough, after modifying the JS code to align with C-style <code>unsigned int</code> behavior (through the use of the <code>js-cuint</code> package)&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">UINT32</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;cuint&#39;</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">VALID_DIGITS</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;26B0KEL1AFD9M38T5NPGZ7XHYV4WJRCS&#39;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">translatePID7toOffsets</span>(<span style="color:#a6e22e">pid7</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">offsets7</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint32Array</span>(<span style="color:#ae81ff">8</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">4</span>) {
+            <span style="color:#a6e22e">offsets7</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">VALID_DIGITS</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">pid7</span>[<span style="color:#a6e22e">i</span>]);
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">offsets7</span>;
+}
+
+<span style="color:#75715e">// Must replicate C uint overflow behaviors
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCheckDigit</span>(<span style="color:#a6e22e">pid7Offsets</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0x2f</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkDigit</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0</span>);
+
+    <span style="color:#66d9ef">do</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span>) {
+            <span style="color:#a6e22e">checkDigit</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">UINT32</span>(<span style="color:#a6e22e">pid7Offsets</span>[<span style="color:#a6e22e">index</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x25</span>).<span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">multiplier</span>))
+        }
+        <span style="color:#a6e22e">multiplier</span>.<span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">multiplier</span>);
+        <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>;
+    } <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>);
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkDigitInstances</span> <span style="color:#f92672">=</span> [
+        <span style="color:#a6e22e">checkDigit</span>.<span style="color:#a6e22e">clone</span>(),
+        <span style="color:#a6e22e">checkDigit</span>.<span style="color:#a6e22e">clone</span>(),
+        <span style="color:#a6e22e">checkDigit</span>.<span style="color:#a6e22e">clone</span>(),
+        <span style="color:#a6e22e">checkDigit</span>.<span style="color:#a6e22e">clone</span>()
+    ];
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">digitCharCode</span> <span style="color:#f92672">=</span> ((<span style="color:#a6e22e">checkDigitInstances</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">shiftRight</span>(<span style="color:#ae81ff">5</span>).<span style="color:#a6e22e">and</span>(<span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0x7c00</span>)).<span style="color:#a6e22e">xor</span>(<span style="color:#a6e22e">checkDigitInstances</span>[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">and</span>(<span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0x7c00</span>)))).<span style="color:#a6e22e">shiftRight</span>(<span style="color:#ae81ff">5</span>).<span style="color:#a6e22e">xor</span>(<span style="color:#a6e22e">checkDigitInstances</span>[<span style="color:#ae81ff">2</span>].<span style="color:#a6e22e">and</span>(<span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0x3e0</span>)))).<span style="color:#a6e22e">shiftRight</span>(<span style="color:#ae81ff">5</span>).<span style="color:#a6e22e">xor</span>(<span style="color:#a6e22e">checkDigitInstances</span>[<span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">and</span>(<span style="color:#a6e22e">UINT32</span>(<span style="color:#ae81ff">0x1f</span>)));
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">VALID_DIGITS</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">digitCharCode</span>, <span style="color:#ae81ff">1</span>);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">VALID_DIGITS</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">digitCharCode</span>, <span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#75715e">// Known valid CD-keys (from photos)
+</span><span style="color:#75715e"></span><span style="color:#e6db74">`HG7S-W0TT
+</span><span style="color:#e6db74">ZPAS-T8YN
+</span><span style="color:#e6db74">7PVG-VGNK
+</span><span style="color:#e6db74">XXAC-V8DH
+</span><span style="color:#e6db74">HMLS-WGF6
+</span><span style="color:#e6db74">ZFXX-N8L3
+</span><span style="color:#e6db74">HGNG-9W8R`</span>
+    .<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">trim</span>())
+    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">getCheckDigit</span>(<span style="color:#a6e22e">translatePID7toOffsets</span>(<span style="color:#a6e22e">a</span>))));
+</code></pre></div><p>I successfully replicated the code to generate the final digit. Great success!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ node cd-keygen.js
+HG7S-W0TT T
+ZPAS-T8YN N
+7PVG-VGNK K
+XXAC-V8DH H
+HMLS-WGF6 6
+ZFXX-N8L3 3
+HGNG-9W8R R
+</code></pre></div><p><em>7 digits with 32 characters possible for each digit gives a space of <code>32^7 = 34,359,738,368</code> or over 34 billion possible valid CD keys!</em></p>
+<p>For a copy of the NodeJS source code, please see the file here: <a href="https://jsyang.ca/franklin-electronics/reveng/dlls/cd-keygen.js"><code>cd-keygen.js</code></a>. I will likely add a web-based version of the keygen to the <a href="https://jsyang.ca/franklin-electronics">Bookman Archive</a> as a result of this effort. Thanks for reading and I hope you learned something like I did!</p>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

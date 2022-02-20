@@ -6,7 +6,17 @@
     <description>Recent content on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing a CD-key generator for the Bookman Desktop Manager</title>
+      <link>http://jsyang.ca/hacks/bookman-desktop-manager-cd-key-reversed/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hacks/bookman-desktop-manager-cd-key-reversed/</guid>
+      <description>A bit of history Franklin Bookman devices were early eBook readers with plug in ROM cards that distributed (mostly) reference content. Later iterations could read user-written memory cards containing licensed content. These models often came with a &amp;ldquo;connectivity kit&amp;rdquo; that included
+ a serial / USB data transfer cable a 2MB / 4MB read-write memory card a CD-ROM with the Bookman Desktop Manager software 💿  ☝️ Contents of this are of great interest    Example of a CD with a key code sticker DRM scheme Installing the Bookman Desktop Manager (BDM) requires the entry of a valid CD key.</description>
+    </item>
+    
     <item>
       <title>Hello world in circuit board design: the most basic KiCad 6 tutorial</title>
       <link>http://jsyang.ca/guides/kicad-basic-pcb-design/</link>
