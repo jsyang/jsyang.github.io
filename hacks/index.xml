@@ -6,7 +6,16 @@
     <description>Recent content in Hacks on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hacks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/hacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parallel ROM dumper for an obsolete cartridge-based eBook reader</title>
+      <link>http://jsyang.ca/hacks/parallel-rom-dumper-for-an-obsolete-ebook-reader/</link>
+      <pubDate>Fri, 02 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/hacks/parallel-rom-dumper-for-an-obsolete-ebook-reader/</guid>
+      <description>As part of the reverse engineering effort for the Bookman Archive, I uncovered the pinouts for the ROM cartridges of the Bookman systems. The process of discovery is noted here in the Bookman Archive&amp;rsquo;s Reverse Engineering page. This post will elaborate on the design of the ROM dumper and how I overcame the obstacles preventing its reliable function.</description>
+    </item>
+    
     <item>
       <title>Writing a CD-key generator for the Franklin Bookman Desktop Manager</title>
       <link>http://jsyang.ca/hacks/franklin-bookman-desktop-manager-cd-key-scheme-reversed/</link>
@@ -15,15 +24,6 @@
       <guid>http://jsyang.ca/hacks/franklin-bookman-desktop-manager-cd-key-scheme-reversed/</guid>
       <description>A bit of history Franklin Bookman devices were early eBook readers with plug in ROM cards that distributed (mostly) reference content. Later iterations could read user-written memory cards containing licensed content. These models often came with a &amp;ldquo;connectivity kit&amp;rdquo; that included
  a serial / USB data transfer cable a 2MB / 4MB read-write memory card a CD-ROM with the Bookman Desktop Manager software 💿  ☝️ Contents of this are of great interest    Example of a CD with a key code sticker DRM scheme Installing the Bookman Desktop Manager (BDM) requires the entry of a valid CD key.</description>
-    </item>
-    
-    <item>
-      <title>TODO-- Raspberry Pi based parallel ROM dumper</title>
-      <link>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/</guid>
-      <description>                              For the Bookman Archive, TDB  </description>
     </item>
     
     <item>

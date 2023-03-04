@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="jsyang.ca" />
-  <meta property="og:url" content="http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/" />
-  <link rel="canonical" href="http://jsyang.ca/hacks/raspberry-pi-parallel-rom-dumper/" /><script type="application/ld+json">
+  <meta property="og:url" content="http://jsyang.ca/hacks/parallel-rom-dumper-for-an-obsolete-ebook-reader/" />
+  <link rel="canonical" href="http://jsyang.ca/hacks/parallel-rom-dumper-for-an-obsolete-ebook-reader/" /><script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,26 +17,26 @@
            "@id": "http:\/\/jsyang.ca\/"
       },
       "articleSection" : "hacks",
-      "name" : "TODO-- Raspberry Pi based parallel ROM dumper",
-      "headline" : "TODO-- Raspberry Pi based parallel ROM dumper",
-      "description" : "                              For the Bookman Archive, TDB  ",
+      "name" : "Parallel ROM dumper for an obsolete cartridge-based eBook reader",
+      "headline" : "Parallel ROM dumper for an obsolete cartridge-based eBook reader",
+      "description" : "As part of the reverse engineering effort for the Bookman Archive, I uncovered the pinouts for the ROM cartridges of the Bookman systems. The process of discovery is noted here in the Bookman Archive\u0026rsquo;s Reverse Engineering page. This post will elaborate on the design of the ROM dumper and how I overcame the obstacles preventing its reliable function.",
       "inLanguage" : "en-US",
       "author" : "jsyang.ca",
       "creator" : "jsyang.ca",
       "publisher": "jsyang.ca",
       "accountablePerson" : "jsyang.ca",
       "copyrightHolder" : "jsyang.ca",
-      "copyrightYear" : "2021",
-      "datePublished": "2021-10-01 00:00:00 \u002b0000 UTC",
-      "dateModified" : "2021-10-01 00:00:00 \u002b0000 UTC",
-      "url" : "http:\/\/jsyang.ca\/hacks\/raspberry-pi-parallel-rom-dumper\/",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-12-02 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2022-12-02 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/hacks\/parallel-rom-dumper-for-an-obsolete-ebook-reader\/",
       "keywords" : [  ]
   }
 </script>
-<title>TODO-- Raspberry Pi based parallel ROM dumper - jsyang.ca</title>
-  <meta property="og:title" content="TODO-- Raspberry Pi based parallel ROM dumper - jsyang.ca" />
+<title>Parallel ROM dumper for an obsolete cartridge-based eBook reader - jsyang.ca</title>
+  <meta property="og:title" content="Parallel ROM dumper for an obsolete cartridge-based eBook reader - jsyang.ca" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="                              For the Bookman Archive, TDB  " />
+  <meta name="description" content="As part of the reverse engineering effort for the Bookman Archive, I uncovered the pinouts for the ROM cartridges of the Bookman systems. The process of discovery is noted here in the Bookman Archive&rsquo;s Reverse Engineering page. This post will elaborate on the design of the ROM dumper and how I overcame the obstacles preventing its reliable function." />
 
   <link
     rel="stylesheet"
@@ -72,12 +72,12 @@
                 <div class="head-line"></div>
             </a>
             <header class="post-header">
-                <h1 class="post-title">TODO-- Raspberry Pi based parallel ROM dumper</h1>
+                <h1 class="post-title">Parallel ROM dumper for an obsolete cartridge-based eBook reader</h1>
                 <div class="row">
                     <div class="col-xs-6">
                         
-                            <time class="post-date" datetime="2021-10-01 00:00:00 UTC">
-                            01 Oct 2021
+                            <time class="post-date" datetime="2022-12-02 00:00:00 UTC">
+                            02 Dec 2022
                             </time>
                         
                     </div>
@@ -151,8 +151,16 @@
     </div>
 </div>
 
+<p>As part of the reverse engineering effort for the Bookman Archive, I uncovered the pinouts for the ROM cartridges of the Bookman systems. The process of discovery is <a href="https://bookmanarchive.com/reverse-engineering">noted here in the Bookman Archive&rsquo;s Reverse Engineering page</a>. This post will elaborate on the design of the ROM dumper and how I overcame the obstacles preventing its reliable function.</p>
+<h2 id="completion-of-the-pinout-mapping">Completion of the pinout mapping</h2>
+<p>The pinout mapping in its initial pass turned out to be incomplete as there were some misconceptions and unhandled cases:</p>
 <ul>
-<li>For the Bookman Archive, TDB</li>
+<li>
+<p>Mapping only accounted for the first flash memory chip. Two chips were populated for larger capacity cards and without the proper pinout mapping, we&rsquo;d be limited to ROM dumps that were entirely stored on chip 1.</p>
+</li>
+<li>
+<p>Address pins were not correctly understood. The datasheets for the flash memory chips mentioned several different modes of operation, which included a pin that could called be A<sub>-1</sub> or A<sub>0</sub> depending on how the chip was used. In order to address the maximum 4MB (4194304 bytes) of storage offered by the largest Bookman cards, the address bus would need 22 pins. A<sub>-1</sub> is effectively the first pin for larger cards.</p>
+</li>
 </ul>
 
             </div>
