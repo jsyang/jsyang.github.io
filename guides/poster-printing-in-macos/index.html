@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="jsyang.ca" />
+  <meta property="og:url" content="http://jsyang.ca/guides/poster-printing-in-macos/" />
+  <link rel="canonical" href="http://jsyang.ca/guides/poster-printing-in-macos/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/jsyang.ca\/"
+      },
+      "articleSection" : "guides",
+      "name" : "Printing large posters and documents (correctly) in MacOS",
+      "headline" : "Printing large posters and documents (correctly) in MacOS",
+      "description" : "If you\u0026rsquo;ve ever had trouble printing large images and documents properly on MacOS, read on!\nBackground Home learning is an essential part of early primary education and the UK Department for Education has some nicely distilled guidance on what sort of topics should be covered to advance through all the yearly checkpoints. As part of my own effort in promoting numeracy within the family, I wrote a simple web-based number line \/ number grid generator that can produce a variety of different visual aids for counting practice.",
+      "inLanguage" : "en-US",
+      "author" : "jsyang.ca",
+      "creator" : "jsyang.ca",
+      "publisher": "jsyang.ca",
+      "accountablePerson" : "jsyang.ca",
+      "copyrightHolder" : "jsyang.ca",
+      "copyrightYear" : "2023",
+      "datePublished": "2023-10-11 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2023-10-11 00:00:00 \u002b0000 UTC",
+      "url" : "http:\/\/jsyang.ca\/guides\/poster-printing-in-macos\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Printing large posters and documents (correctly) in MacOS - jsyang.ca</title>
+  <meta property="og:title" content="Printing large posters and documents (correctly) in MacOS - jsyang.ca" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="If you&rsquo;ve ever had trouble printing large images and documents properly on MacOS, read on!
+Background Home learning is an essential part of early primary education and the UK Department for Education has some nicely distilled guidance on what sort of topics should be covered to advance through all the yearly checkpoints. As part of my own effort in promoting numeracy within the family, I wrote a simple web-based number line / number grid generator that can produce a variety of different visual aids for counting practice." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="jsyang.ca">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+
+  
+</head>
+
+
+<body>
+<article class="post " id="article">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <a href="/">
+                <div class="head-line"></div>
+            </a>
+            <header class="post-header">
+                <h1 class="post-title">Printing large posters and documents (correctly) in MacOS</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                            <time class="post-date" datetime="2023-10-11 00:00:00 UTC">
+                            11 Oct 2023
+                            </time>
+                        
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="post-author">
+                            <a target="_blank" href="http://jsyang.ca/">&larr; Back to jsyang.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content markdown-body">
+                <p>If you&rsquo;ve ever had trouble printing large images and documents properly on MacOS, read on!</p>
+<h2 id="background">Background</h2>
+<p>Home learning is an essential part of early primary education and the UK Department for Education has some <a href="https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools">nicely distilled guidance</a> on what sort of topics should be covered to advance through all the yearly checkpoints. As part of my own effort in promoting numeracy within the family, I wrote a simple web-based number line / <a href="https://github.com/jsyang/edu/tree/master/numbergrid">number grid generator</a> that can produce a variety of different visual aids for counting practice. The charts these tools generate are usually much larger than a single sheet of A4 paper when printed.</p>
+<center>
+<img src="/images/poster-printing/numbergrid.png">
+</center>
+<p>If you try to print the image by the usual means (system print dialog), it will cut off the horizontal overflow and only print the vertically overflowing areas of the figure. This leaves the number grid incomplete and therefore useless if printed in this way!</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nSwoEpcwc9I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="finding-a-solution">Finding a solution</h2>
+<p>First, I tried a few basic Google searches. All of them returned either irrelevant answers on the Apple Support forums (answers here were a complete waste of time) and StackOverflow or a suggestion of running Adobe Reader software (a whooping 400MB install) to print an image. I finally stumbled across the essential keywords &ldquo;poster printing&rdquo; that hit on using software specifically created to slice images into printable sheets to be fed as is into the OS' native printing function. All of the common Google results for &ldquo;poster printing macos&rdquo; were paid apps which sold through the App Store, also less than ideal.</p>
+<p>An epiphany was born when I realized that this missing functionality was probably also missing in Ubuntu! One <code>ubuntu poster printing</code> search result later and we have arrived at the best solution: open source, zero-cost, and easy to use. This app is called <a href="https://sourceforge.net/projects/posterazor/">Posterazor</a> and you can even <a href="https://posterazor.sourceforge.io/online">run it entirely in the browser</a> through WebASM, which avoids the need to download and install anything!</p>
+<h2 id="solution-workflow">Solution workflow</h2>
+<p>Here are all the steps involved in printing anything large!</p>
+<ol>
+<li>Open web page in your browser: we&rsquo;ll use Chrome for our example.</li>
+<li>Open the Developer Tools (<code>Cmd + Option + J</code>).<br><img src="/images/poster-printing/devprompt1.png"></li>
+<li>Open the developer command input (<code>Cmd + Shift + P</code>), then type in <code>&quot;full screenshot&quot;</code> and hit Enter to run this command.<br><img src="/images/poster-printing/devprompt2.png"></li>
+<li>Screenshot is saved to your Downloads folder.</li>
+<li>Use the <a href="https://posterazor.sourceforge.io/online">online version of Posterazor</a> and load in the screenshot file as the input. Set paper size accordingly (A4 for my printer). Leave all other details as default unless needed.</li>
+<li>After the last step in Posterazor a PDF file of all the image tiles is downloaded.</li>
+<li>Print out the PDF and physically crop and stitch the tiles together to form your poster.</li>
+</ol>
+<h3 id="many-thanks-to-the-posterazor-developers-for-creating-this-great-tool">Many thanks to the Posterazor developers for creating this great tool!</h3>
+
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+
+
+<script>
+    
+    var sc_project, sc_invisible=1, sc_security="29e623f2";
+    if(location.hostname === 'localhost') {
+        sc_project = 1337;
+    } else {
+        sc_project = 5678638;
+    }
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><img src="https://c.statcounter.com/5678638/0/29e623f2/1/"/></noscript>
+
+
+</body>
+</html>

@@ -6,7 +6,17 @@
     <description>Recent content in Guides on jsyang.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://jsyang.ca/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Printing large posters and documents (correctly) in MacOS</title>
+      <link>http://jsyang.ca/guides/poster-printing-in-macos/</link>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://jsyang.ca/guides/poster-printing-in-macos/</guid>
+      <description>If you&amp;rsquo;ve ever had trouble printing large images and documents properly on MacOS, read on!
+Background Home learning is an essential part of early primary education and the UK Department for Education has some nicely distilled guidance on what sort of topics should be covered to advance through all the yearly checkpoints. As part of my own effort in promoting numeracy within the family, I wrote a simple web-based number line / number grid generator that can produce a variety of different visual aids for counting practice.</description>
+    </item>
+    
     <item>
       <title>Mapping Serial Ports in Wine</title>
       <link>http://jsyang.ca/guides/mapping-serial-ports-in-wine/</link>
